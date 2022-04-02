@@ -1,116 +1,205 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Machine Learning and Neural Networks &mdash; Introduction to Computer-based Physical Modeling 22 1 documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+    <meta name="generator" content="sphinx-4.4.0, furo 2021.09.08"/>
+        <title>Machine Learning and Neural Networks - Introduction to Computer-based Physical Modeling 22 22 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="../../_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" /> 
-</head>
+  }
+  body[data-theme="dark"] {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
+  @media (prefers-color-scheme: dark) {
+    body:not([data-theme="light"]) {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+  }
+</style></head>
+  <body>
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" />
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
 
-<body class="wy-body-for-nav"> 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> Introduction to Computer-based Physical Modeling 22
-            <img src="../../_static/mona_logo.png" class="logo" alt="Logo"/>
-          </a>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Course Information:</span></p>
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">Introduction to Computer-based Physical Modeling 22 22 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/mona_logo.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">Introduction to Computer-based Physical Modeling 22 22 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Course Information:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../course-info/website.html">This Website</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../course-info/schedule.html">Course Schedule</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../course-info/assignments.html">Assignments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../course-info/exam.html">Exams</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../course-info/resources.html">Resources</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../course-info/resources.html#molecular-nanophotonics-group">Molecular Nanophotonics Group</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../course-info/resources.html#additional-advanced-courses">Additional Advanced Courses</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../course-info/resources.html#python-documentation">Python Documentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../course-info/resources.html#python-tutorials">Python Tutorials</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../../course-info/resources.html">Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../course-info/instructor.html">Instructor</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Jupyter Notebooks:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../lectures/Intro/overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Intro/Introduction2Jupyter.html">Introduction to Jupyter</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Intro/Introduction2Jupyter.html#What-is-Jupyter-Notebook?">What is Jupyter Notebook?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Intro/Introduction2Jupyter.html#Notebook-editor">Notebook editor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Intro/Introduction2Jupyter.html#Kernels">Kernels</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Intro/Introduction2Jupyter.html#Notebook-documents">Notebook documents</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../Intro/NotebookEditor.html">Notebook editor</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Intro/NotebookEditor.html#Edit-mode">Edit mode</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Intro/NotebookEditor.html#Command-mode">Command mode</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Intro/NotebookEditor.html#Keyboard-navigation">Keyboard navigation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Intro/NotebookEditor.html#Running-code">Running code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Intro/NotebookEditor.html#Managing-the-kernel">Managing the kernel</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../Intro/Introduction2Jupyter.html">Introduction to Jupyter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Intro/NotebookEditor.html">Notebook editor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Intro/EditCells.html">Entering code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Intro/EditCells.html#Entering-Markdown">Entering Markdown</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Intro/EditCells.html#Markdown-basics">Markdown basics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Intro/EditCells.html#Headings">Headings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Intro/EditCells.html#Embedded-code">Embedded code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Intro/EditCells.html#LaTeX-equations">LaTeX equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Intro/EditCells.html#Images">Images</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Intro/EditCells.html#Videos">Videos</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../Intro/EditCells.html#Entering-Markdown">Entering Markdown</a></li>
 </ul>
 
-        </div>
-      </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">Introduction to Computer-based Physical Modeling 22</a>
-      </nav>
-
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Machine Learning and Neural Networks</li>
-      <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/fcichos/CompSoft21/blob/main//source/notebooks/L12/2_reinforcement_learning.ipynb" class="fa fa-github"> Edit on GitHub</a>
-      </li>
-  </ul>
-  <hr/>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
-  
+</div>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          
 <style>
 /* CSS for nbsphinx extension */
 
@@ -357,32 +446,10 @@ div.rendered_html tbody tr:nth-child(odd) {
 div.rendered_html tbody tr:hover {
   background: rgba(66, 165, 245, 0.2);
 }
-
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
 </style>
 <div class="admonition note">
 <p>This page was generated from <cite>/home/lectures/CompSoft22/source/notebooks/L12/2_reinforcement_learning.ipynb</cite>.
-<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/CompSoft21/main?urlpath=tree//home/lectures/CompSoft22/source/notebooks/L12/2_reinforcement_learning.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"></a></span></p>
+<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/CompSoft21/main?urlpath=tree//home/lectures/CompSoft22/source/notebooks/L12/2_reinforcement_learning.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
 </div>
 <section id="Machine-Learning-and-Neural-Networks">
 <h1>Machine Learning and Neural Networks<a class="headerlink" href="#Machine-Learning-and-Neural-Networks" title="Permalink to this headline">¶</a></h1>
@@ -405,21 +472,21 @@ learning. We will do that in a way that you calculate as much as possible in pur
 
 
 <span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = 'retina'
 
 <span class="c1"># default values for plotting</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
-                     <span class="s1">&#39;axes.titlesize&#39;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
-                     <span class="s1">&#39;axes.labelsize&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
-                     <span class="s1">&#39;axes.labelpad&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
-                     <span class="s1">&#39;lines.linewidth&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-                     <span class="s1">&#39;lines.markersize&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
-                     <span class="s1">&#39;xtick.labelsize&#39;</span> <span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
-                     <span class="s1">&#39;ytick.labelsize&#39;</span> <span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
-                     <span class="s1">&#39;xtick.top&#39;</span> <span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-                     <span class="s1">&#39;xtick.direction&#39;</span> <span class="p">:</span> <span class="s1">&#39;in&#39;</span><span class="p">,</span>
-                     <span class="s1">&#39;ytick.right&#39;</span> <span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-                     <span class="s1">&#39;ytick.direction&#39;</span> <span class="p">:</span> <span class="s1">&#39;in&#39;</span><span class="p">,})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">'font.size'</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+                     <span class="s1">'axes.titlesize'</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
+                     <span class="s1">'axes.labelsize'</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+                     <span class="s1">'axes.labelpad'</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+                     <span class="s1">'lines.linewidth'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                     <span class="s1">'lines.markersize'</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+                     <span class="s1">'xtick.labelsize'</span> <span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+                     <span class="s1">'ytick.labelsize'</span> <span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+                     <span class="s1">'xtick.top'</span> <span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                     <span class="s1">'xtick.direction'</span> <span class="p">:</span> <span class="s1">'in'</span><span class="p">,</span>
+                     <span class="s1">'ytick.right'</span> <span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                     <span class="s1">'ytick.direction'</span> <span class="p">:</span> <span class="s1">'in'</span><span class="p">,})</span>
 </pre></div>
 </div>
 </div>
@@ -432,15 +499,15 @@ learning. We will do that in a way that you calculate as much as possible in pur
 <li><p>unsupervised learning: let the system figure out what is right or wrong</p></li>
 </ul>
 <p>The graphics below gives a small summary. In our course, we cannot cover all methods. We will focus on <strong>Reinforcement Learning</strong> and <strong>Neural Networks</strong> just to show you, how things could look in Python.</p>
-<img alt="../../_images/ml_overview.png" src="../../_images/ml_overview.png" />
+<img alt="../../_images/ml_overview.png" src="../../_images/ml_overview.png">
 <p>Image taken from F. Cichos et al. Nature Machine Intelligence (2020).</p>
-</section>
+</img></section>
 <section id="Reinforcement-Learning">
 <h2>Reinforcement Learning<a class="headerlink" href="#Reinforcement-Learning" title="Permalink to this headline">¶</a></h2>
 <p>Reinforcement learning is learning what to do—how to map situations to actions—so as to maximize a numerical reward signal. The learner or agent is not told which actions to take, as in most forms of machine learning, but instead must discover which actions yield the most reward by trying them. In the most interesting and challenging cases, actions may affect not only the immediate reward but also the next situation and, through that, all subsequent rewards. These two
 characteristics—trial-and-error search and delayed reward—are the two most important distinguishing features of reinforcement learning.</p>
 <p>It has been around since the 1950s but gained momentum only in 2013 with the demonstrations of DeepMind on how to learn play Atari games like pong. The graphic below shows some of its applications in the field of robotics and gaming.</p>
-<img alt="overview_rl" src="../../_images/overview_RL.png" />
+<img alt="overview_rl" src="../../_images/overview_RL.png"/>
 <section id="Markov-Decision-Process">
 <h3>Markov Decision Process<a class="headerlink" href="#Markov-Decision-Process" title="Permalink to this headline">¶</a></h3>
 <p>The key element of reinforcement learning is the so-called Markov Decision Process. The Markov decision process (MDP) denotes a formalism of planning actions in the face of uncertainty. A MDP consist formally of</p>
@@ -453,13 +520,13 @@ characteristics—trial-and-error search and delayed reward—are the two most i
 <li><p><span class="math notranslate nohighlight">\(R\)</span>: A reward function</p></li>
 </ul>
 <p>We begin in an initial state <span class="math notranslate nohighlight">\(s_{i,j}\)</span> drawn from the distribution <span class="math notranslate nohighlight">\(D\)</span>. At each time step <span class="math notranslate nohighlight">\(t\)</span>, we then have to pick an action, for example <span class="math notranslate nohighlight">\(a_1(t)\)</span> , as a result of which our state transitions to some state <span class="math notranslate nohighlight">\(s_{i,j+1}\)</span>. The states do not nessecarily correspond to spatial positions, however, as we talk about the gridworld later we may use this example to understand the procedures.</p>
-<img alt="gw_with_path" src="../../_images/gw_with_path.png" />
+<img alt="gw_with_path" src="../../_images/gw_with_path.png"/>
 <p>By repeatedly picking actions, we traverse some sequence of states</p>
-<div class="math notranslate nohighlight">
-\[s_{0,0}\rightarrow s_{0,1}\rightarrow s_{1,1}+\ldots\]</div>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[s_{0,0}\rightarrow s_{0,1}\rightarrow s_{1,1}+\ldots\]</div></div>
 <p>Our total reward is then the sum of discounted rewards along this sequence of states</p>
-<div class="math notranslate nohighlight">
-\[R(s_{0,0})+\gamma R(s_{0,1})+ \gamma^2 R(s_{1,1})+ \ldots\]</div>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[R(s_{0,0})+\gamma R(s_{0,1})+ \gamma^2 R(s_{1,1})+ \ldots\]</div></div>
 <p>Here, the discount factor <span class="math notranslate nohighlight">\(\gamma\)</span>, which is typically strictly less than one, causes rewards obtained immediately to be more valuable than those obtained in the future.</p>
 <p>In reinforcement learning, our goal is to find a way of choosing actions <span class="math notranslate nohighlight">\(a_0\)</span>,<span class="math notranslate nohighlight">\(a_1, \ldots\)</span> over time, so as to maximize the expected value of the rewards. The sequence of actions that realizes the maximum reward is called the optimal policy <span class="math notranslate nohighlight">\(\pi^{*}\)</span>. A sequence of actions in general is called a policy <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
 <section id="Methods-or-RL">
@@ -467,18 +534,18 @@ characteristics—trial-and-error search and delayed reward—are the two most i
 <p>There are different methods available to find the optimal policy. If we know the transition probabilities <span class="math notranslate nohighlight">\(P_{sa}\)</span> the methods are called model-based algorithms. The so-called value interation procedure would be one of those methods, which we, however, do not consider.</p>
 <p>If we don’t know the transition probabilities, then its model-free RL. We will have a look at one of those mode-free algorithms, which is Q‐learning.</p>
 <p>In Q-learning, the value of an action in a state is measured by its Q-value. The expectation value <span class="math notranslate nohighlight">\(E\)</span> of the rewards with and initial state and action for a given policy is the Q-function or Q-value.</p>
-<div class="math notranslate nohighlight">
-\[Q^{\pi}(s,a)=E[R(s_{0},a_{0})+\gamma R(s_{1},a_{1})+ \gamma^2 R(s_{2},a_{2})+ \ldots | s_{0}=s,a_{0}=a,a_{t}=\pi(s_{t})]\]</div>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[Q^{\pi}(s,a)=E[R(s_{0},a_{0})+\gamma R(s_{1},a_{1})+ \gamma^2 R(s_{2},a_{2})+ \ldots | s_{0}=s,a_{0}=a,a_{t}=\pi(s_{t})]\]</div></div>
 <p>This sounds complicated but is in principle easy. There is a Q-value for all actions of each state. Thus if we have 4 actions an 25 states, we have to store in total 100 Q-values.</p>
 <p>For the optimal sequence of actions - for the best way to go - this Q value becomes a maximum.</p>
-<div class="math notranslate nohighlight">
-\[Q^{*}(s,a)=\max_{\pi}Q^{\pi}(s,a)\]</div>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[Q^{*}(s,a)=\max_{\pi}Q^{\pi}(s,a)\]</div></div>
 <p>The policy which gives the sequence of actions to be carried out to get the maximum reward is then calculated by</p>
-<div class="math notranslate nohighlight">
-\[\pi^{*}(s)={\rm argmax_{a}}Q^{*}(s,a)\]</div>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\pi^{*}(s)={\rm argmax_{a}}Q^{*}(s,a)\]</div></div>
 <p>The <strong>Q-learning</strong> algorithm is now an iterative procedure of updating the Q-value of each state and action which converges to the optimal policy <span class="math notranslate nohighlight">\(\pi^{*}\)</span>. It is given by</p>
-<div class="math notranslate nohighlight">
-\[Q_{t+\Delta t}(s,a)  = Q_t(s,a) + \alpha\big[R(s) + \gamma \max_{a'}Q_t(s',a')-Q_t(s,a)\big]\]</div>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[Q_{t+\Delta t}(s,a)  = Q_t(s,a) + \alpha\big[R(s) + \gamma \max_{a'}Q_t(s',a')-Q_t(s,a)\big]\]</div></div>
 <p>This states, that the current Q-value of the current state <span class="math notranslate nohighlight">\(s\)</span> and the taken action <span class="math notranslate nohighlight">\(a\)</span> for the next step is calculated from its current value <span class="math notranslate nohighlight">\(Q_t(s,a)\)</span> plus an update value. This update value is calculated by multiplying the so-called learing rate <span class="math notranslate nohighlight">\(\alpha\)</span> with the reward <span class="math notranslate nohighlight">\(R\)</span> obtained when taking the action plus a discounted value (discounted by <span class="math notranslate nohighlight">\(\gamma\)</span>) when taking the best action in the next state <span class="math notranslate nohighlight">\(\gamma \max_{a'}Q_t(s',a')\)</span>. This is the procedure
 we would like to explore in a small Python program, which is not too difficult.</p>
 </section>
@@ -488,9 +555,9 @@ we would like to explore in a small Python program, which is not too difficult.<
 <h2>Navigating a Grid World<a class="headerlink" href="#Navigating-a-Grid-World" title="Permalink to this headline">¶</a></h2>
 <p>For our Python course we will have a look at the standard problem of reinforcement learning, which is the navigation in a grid world. Each of the grid cells below represents a state <span class="math notranslate nohighlight">\(s\)</span> in which an object could reside. In each of these states, the object can take several actions. If it may step to left, right, up or down, there are 4 actions, which we may call <span class="math notranslate nohighlight">\(a_{1},a_{2},a_{3}\)</span> and <span class="math notranslate nohighlight">\(a_{4}\)</span>.</p>
 <p>This image below shows our gridworld, with 25 states, where the shaded state is the goal state where we want the agent to go to independent of its intial state.</p>
-<img alt="gridworld" src="../../_images/gridworld.png" />
+<img alt="gridworld" src="../../_images/gridworld.png"/>
 <p>In each of these state, we have 4 possible action as depicted below</p>
-<img alt="actions" src="../../_images/state_n_action.png" />
+<img alt="actions" src="../../_images/state_n_action.png"/>
 <section id="Initialize-Reinforcement-Learning">
 <h3>Initialize Reinforcement Learning<a class="headerlink" href="#Initialize-Reinforcement-Learning" title="Permalink to this headline">¶</a></h3>
 <p>At first we would like to initialize our problem. We have as depicted above 25 states, where one state is the goal state. We would like to use 4 actions to move between the states so our Q-value matrix has 100 entries. We would like to give a penalty of <span class="math notranslate nohighlight">\(R=-1\)</span> for all states except for the goal state where we give a reward of <span class="math notranslate nohighlight">\(R=10\)</span>.</p>
@@ -584,8 +651,8 @@ we would like to explore in a small Python program, which is not too difficult.<
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">qsum</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;transition&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$\sum Q$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'transition'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$\sum Q$'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
@@ -594,15 +661,15 @@ we would like to explore in a small Python program, which is not too difficult.<
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/notebooks_L12_2_reinforcement_learning_49_0.png" class="no-scaled-link" src="../../_images/notebooks_L12_2_reinforcement_learning_49_0.png" style="width: 454px; height: 280px;" />
+<img alt="../../_images/notebooks_L12_2_reinforcement_learning_49_0.png" class="no-scaled-link" src="../../_images/notebooks_L12_2_reinforcement_learning_49_0.png" style="width: 454px; height: 280px;"/>
 </div>
 </div>
 </section>
 <section id="Policy">
 <h3>Policy<a class="headerlink" href="#Policy" title="Permalink to this headline">¶</a></h3>
 <p>The policy is obtained by taking the best actions with the larges Q-value from our Q-matrix.</p>
-<div class="math notranslate nohighlight">
-\[\pi^{*}(s)={\rm argmax_{a}}Q^{*}(s,a)\]</div>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\pi^{*}(s)={\rm argmax_{a}}Q^{*}(s,a)\]</div></div>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[810]:
 </pre></div>
@@ -628,10 +695,10 @@ we would like to explore in a small Python program, which is not too difficult.<
         <span class="k">if</span> <span class="n">policy</span><span class="p">[</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">]</span><span class="o">!=-</span><span class="mi">1</span><span class="p">:</span>
             <span class="n">vec</span><span class="o">=</span><span class="n">acl</span><span class="p">[</span><span class="n">policy</span><span class="p">[</span><span class="n">k</span><span class="p">,</span><span class="n">l</span><span class="p">]]</span><span class="o">*</span><span class="mi">2</span>
             <span class="k">if</span> <span class="n">i</span><span class="o">!=</span><span class="n">n_rows</span><span class="o">*</span><span class="n">n_columns</span><span class="p">:</span>
-                <span class="n">plt</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">vec</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">-</span><span class="n">vec</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">vec</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">vec</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">fc</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s2">&quot;k&quot;</span><span class="p">,</span><span class="n">head_width</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">head_length</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.01</span> <span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
+                <span class="n">plt</span><span class="o">.</span><span class="n">arrow</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="n">vec</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">y</span><span class="o">-</span><span class="n">vec</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span> <span class="n">vec</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">vec</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">fc</span><span class="o">=</span><span class="s2">"k"</span><span class="p">,</span> <span class="n">ec</span><span class="o">=</span><span class="s2">"k"</span><span class="p">,</span><span class="n">head_width</span><span class="o">=</span><span class="mf">0.6</span><span class="p">,</span> <span class="n">head_length</span><span class="o">=</span><span class="mf">0.8</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mf">0.01</span> <span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
 
         <span class="k">else</span><span class="p">:</span>
-            <span class="n">rect</span><span class="o">=</span><span class="n">patches</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="n">y</span><span class="o">-</span><span class="mi">3</span><span class="p">),</span> <span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;green&#39;</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+            <span class="n">rect</span><span class="o">=</span><span class="n">patches</span><span class="o">.</span><span class="n">Rectangle</span><span class="p">((</span><span class="n">x</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="n">y</span><span class="o">-</span><span class="mi">3</span><span class="p">),</span> <span class="mi">6</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'green'</span><span class="p">,</span><span class="n">alpha</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
             <span class="n">ax</span><span class="o">.</span><span class="n">add_patch</span><span class="p">(</span><span class="n">rect</span><span class="p">)</span>
         <span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span>
 
@@ -639,7 +706,7 @@ we would like to explore in a small Python program, which is not too difficult.<
 <span class="n">plt</span><span class="o">.</span><span class="n">yticks</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n_rows</span><span class="o">*</span><span class="n">n_columns</span><span class="p">,</span> <span class="n">step</span><span class="o">=</span><span class="mi">6</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">6</span><span class="o">*</span><span class="n">n_columns</span><span class="p">)</span><span class="n">b</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">6</span><span class="o">*</span><span class="n">n_rows</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;k&#39;</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s1">&#39;--&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">(</span><span class="n">lw</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">color</span><span class="o">=</span><span class="s1">'k'</span><span class="p">,</span><span class="n">ls</span><span class="o">=</span><span class="s1">'--'</span><span class="p">)</span>
 
 <span class="n">f</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">xaxis</span><span class="o">.</span><span class="n">set_ticklabels</span><span class="p">([])</span>
 <span class="n">f</span><span class="o">.</span><span class="n">axes</span><span class="o">.</span><span class="n">yaxis</span><span class="o">.</span><span class="n">set_ticklabels</span><span class="p">([])</span>
@@ -651,7 +718,7 @@ we would like to explore in a small Python program, which is not too difficult.<
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/notebooks_L12_2_reinforcement_learning_54_0.png" class="no-scaled-link" src="../../_images/notebooks_L12_2_reinforcement_learning_54_0.png" style="width: 349px; height: 340px;" />
+<img alt="../../_images/notebooks_L12_2_reinforcement_learning_54_0.png" class="no-scaled-link" src="../../_images/notebooks_L12_2_reinforcement_learning_54_0.png" style="width: 349px; height: 340px;"/>
 </div>
 </div>
 </section>
@@ -664,34 +731,81 @@ we would like to explore in a small Python program, which is not too difficult.<
 </script></section>
 </section>
 
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
 
-           </div>
+        <div class="related-information">
+              Copyright &#169; 2022, Frank Cichos |
+            Last updated on Apr 02, 2022. |
+            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+              and
+              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+              <a href="https://github.com/pradyunsg/furo">Furo theme</a>. |
+            <a class="muted-link" href="../../_sources/notebooks/L12/2_reinforcement_learning.ipynb.txt"
+               rel="nofollow">
+              Show Source
+            </a>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Machine Learning and Neural Networks</a><ul>
+<li><a class="reference internal" href="#Overview">Overview</a></li>
+<li><a class="reference internal" href="#Reinforcement-Learning">Reinforcement Learning</a><ul>
+<li><a class="reference internal" href="#Markov-Decision-Process">Markov Decision Process</a><ul>
+<li><a class="reference internal" href="#Methods-or-RL">Methods or RL</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Navigating-a-Grid-World">Navigating a Grid World</a><ul>
+<li><a class="reference internal" href="#Initialize-Reinforcement-Learning">Initialize Reinforcement Learning</a></li>
+<li><a class="reference internal" href="#List-of-actions">List of actions</a></li>
+<li><a class="reference internal" href="#Initial-state">Initial state</a></li>
+<li><a class="reference internal" href="#Reinforcement-Learning-Loop">Reinforcement Learning Loop</a></li>
+<li><a class="reference internal" href="#Convergence-of-the-Q-learning">Convergence of the Q-learning</a></li>
+<li><a class="reference internal" href="#Policy">Policy</a></li>
+<li><a class="reference internal" href="#Plot-the-policy">Plot the policy</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Where-to-go-from-here">Where to go from here</a></li>
+</ul>
+</li>
+</ul>
+
           </div>
-          <footer>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>&#169; Copyright 2022, Frank Cichos.
-      <span class="lastupdated">Last updated on Apr 02, 2022.
-      </span></p>
-  </div>
-
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
-
-</footer>
         </div>
       </div>
-    </section>
+      
+      
+    </aside>
   </div>
-  <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
-
-</body>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/scripts/main.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
 </html>

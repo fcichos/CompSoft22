@@ -1,116 +1,205 @@
-<!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tunneling through a barrier &mdash; Introduction to Computer-based Physical Modeling 22 1 documentation</title>
-      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/theme_overrides.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+    <meta name="generator" content="sphinx-4.4.0, furo 2021.09.08"/>
+        <title>Tunneling through a barrier - Introduction to Computer-based Physical Modeling 22 22 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
   
-        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/doctools.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
-        <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
-        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="../../_static/js/theme.js"></script>
-    <link rel="index" title="Index" href="../../genindex.html" />
-    <link rel="search" title="Search" href="../../search.html" /> 
-</head>
+  }
+  body[data-theme="dark"] {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
+  @media (prefers-color-scheme: dark) {
+    body:not([data-theme="light"]) {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+  }
+</style></head>
+  <body>
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" />
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
 
-<body class="wy-body-for-nav"> 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
-      <div class="wy-side-scroll">
-        <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> Introduction to Computer-based Physical Modeling 22
-            <img src="../../_static/mona_logo.png" class="logo" alt="Logo"/>
-          </a>
-<div role="search">
-  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
-    <input type="hidden" name="check_keywords" value="yes" />
-    <input type="hidden" name="area" value="default" />
-  </form>
-</div>
-        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Course Information:</span></p>
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">Introduction to Computer-based Physical Modeling 22 22 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/mona_logo.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">Introduction to Computer-based Physical Modeling 22 22 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Course Information:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../course-info/website.html">This Website</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../course-info/schedule.html">Course Schedule</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../course-info/assignments.html">Assignments</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../course-info/exam.html">Exams</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../course-info/resources.html">Resources</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../course-info/resources.html#molecular-nanophotonics-group">Molecular Nanophotonics Group</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../course-info/resources.html#additional-advanced-courses">Additional Advanced Courses</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../course-info/resources.html#python-documentation">Python Documentation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../course-info/resources.html#python-tutorials">Python Tutorials</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../../course-info/resources.html">Resources</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../course-info/instructor.html">Instructor</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Jupyter Notebooks:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../lectures/Intro/overview.html">Overview</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Intro/Introduction2Jupyter.html">Introduction to Jupyter</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Intro/Introduction2Jupyter.html#What-is-Jupyter-Notebook?">What is Jupyter Notebook?</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Intro/Introduction2Jupyter.html#Notebook-editor">Notebook editor</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Intro/Introduction2Jupyter.html#Kernels">Kernels</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Intro/Introduction2Jupyter.html#Notebook-documents">Notebook documents</a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="../Intro/NotebookEditor.html">Notebook editor</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Intro/NotebookEditor.html#Edit-mode">Edit mode</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Intro/NotebookEditor.html#Command-mode">Command mode</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Intro/NotebookEditor.html#Keyboard-navigation">Keyboard navigation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Intro/NotebookEditor.html#Running-code">Running code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Intro/NotebookEditor.html#Managing-the-kernel">Managing the kernel</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../Intro/Introduction2Jupyter.html">Introduction to Jupyter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Intro/NotebookEditor.html">Notebook editor</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Intro/EditCells.html">Entering code</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../Intro/EditCells.html#Entering-Markdown">Entering Markdown</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="../Intro/EditCells.html#Markdown-basics">Markdown basics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Intro/EditCells.html#Headings">Headings</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Intro/EditCells.html#Embedded-code">Embedded code</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Intro/EditCells.html#LaTeX-equations">LaTeX equations</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Intro/EditCells.html#Images">Images</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../Intro/EditCells.html#Videos">Videos</a></li>
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../Intro/EditCells.html#Entering-Markdown">Entering Markdown</a></li>
 </ul>
 
-        </div>
-      </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="../../index.html">Introduction to Computer-based Physical Modeling 22</a>
-      </nav>
-
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="Page navigation">
-  <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Tunneling through a barrier</li>
-      <li class="wy-breadcrumbs-aside">
-              <a href="https://github.com/fcichos/CompSoft21/blob/main//source/notebooks/L11/3_tunneling.ipynb" class="fa fa-github"> Edit on GitHub</a>
-      </li>
-  </ul>
-  <hr/>
 </div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-           <div itemprop="articleBody">
-             
-  
+</div>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          
 <style>
 /* CSS for nbsphinx extension */
 
@@ -357,32 +446,10 @@ div.rendered_html tbody tr:nth-child(odd) {
 div.rendered_html tbody tr:hover {
   background: rgba(66, 165, 245, 0.2);
 }
-
-/* CSS overrides for sphinx_rtd_theme */
-
-/* 24px margin */
-.nbinput.nblast.container,
-.nboutput.nblast.container {
-    margin-bottom: 19px;  /* padding has already 5px */
-}
-
-/* ... except between code cells! */
-.nblast.container + .nbinput.container {
-    margin-top: -19px;
-}
-
-.admonition > p:before {
-    margin-right: 4px;  /* make room for the exclamation icon */
-}
-
-/* Fix math alignment, see https://github.com/rtfd/sphinx_rtd_theme/pull/686 */
-.math {
-    text-align: unset;
-}
 </style>
 <div class="admonition note">
 <p>This page was generated from <cite>/home/lectures/CompSoft22/source/notebooks/L11/3_tunneling.ipynb</cite>.
-<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/CompSoft21/main?urlpath=tree//home/lectures/CompSoft22/source/notebooks/L11/3_tunneling.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"></a></span></p>
+<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/CompSoft21/main?urlpath=tree//home/lectures/CompSoft22/source/notebooks/L11/3_tunneling.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
 </div>
 <section id="Tunneling-through-a-barrier">
 <h1>Tunneling through a barrier<a class="headerlink" href="#Tunneling-through-a-barrier" title="Permalink to this headline">¶</a></h1>
@@ -404,21 +471,21 @@ div.rendered_html tbody tr:hover {
 
 
 <span class="o">%</span><span class="k">matplotlib</span> inline
-<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = 'retina'
 
 <span class="c1"># default values for plotting</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">&#39;font.size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
-                     <span class="s1">&#39;axes.titlesize&#39;</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
-                     <span class="s1">&#39;axes.labelsize&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
-                     <span class="s1">&#39;axes.labelpad&#39;</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
-                     <span class="s1">&#39;lines.linewidth&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-                     <span class="s1">&#39;lines.markersize&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
-                     <span class="s1">&#39;xtick.labelsize&#39;</span> <span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
-                     <span class="s1">&#39;ytick.labelsize&#39;</span> <span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
-                     <span class="s1">&#39;xtick.top&#39;</span> <span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-                     <span class="s1">&#39;xtick.direction&#39;</span> <span class="p">:</span> <span class="s1">&#39;in&#39;</span><span class="p">,</span>
-                     <span class="s1">&#39;ytick.right&#39;</span> <span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-                     <span class="s1">&#39;ytick.direction&#39;</span> <span class="p">:</span> <span class="s1">&#39;in&#39;</span><span class="p">,})</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">'font.size'</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+                     <span class="s1">'axes.titlesize'</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
+                     <span class="s1">'axes.labelsize'</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+                     <span class="s1">'axes.labelpad'</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+                     <span class="s1">'lines.linewidth'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                     <span class="s1">'lines.markersize'</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+                     <span class="s1">'xtick.labelsize'</span> <span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+                     <span class="s1">'ytick.labelsize'</span> <span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+                     <span class="s1">'xtick.top'</span> <span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                     <span class="s1">'xtick.direction'</span> <span class="p">:</span> <span class="s1">'in'</span><span class="p">,</span>
+                     <span class="s1">'ytick.right'</span> <span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                     <span class="s1">'ytick.direction'</span> <span class="p">:</span> <span class="s1">'in'</span><span class="p">,})</span>
 </pre></div>
 </div>
 </div>
@@ -447,21 +514,21 @@ i\hbar \frac{\partial \tilde{\Psi}}{\partial t}=\frac{\hbar^{2}k^{2}}{2m}\tilde{
 <h2>Crank Nicolson Solution<a class="headerlink" href="#Crank-Nicolson-Solution" title="Permalink to this headline">¶</a></h2>
 <p>We will pursue two different numerical solutions. The first solution, will be equivalent to the solution of the diffusion equation we did in Lecture 7. Here we need to write our Hamilton operator as a matrix with the second derivative and the potential. Lets assume you know how to create this matrix also from the last lecture.</p>
 <p>Then we just need to get the time dependence, which we obtain from finite differences as</p>
-<div class="math notranslate nohighlight">
-\[\frac{\Psi(x,t+dt)-\Psi(x,t)}{dt}\approx -\frac{i}{\hbar} H\Psi(x,t)\]</div>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\frac{\Psi(x,t+dt)-\Psi(x,t)}{dt}\approx -\frac{i}{\hbar} H\Psi(x,t)\]</div></div>
 <p>in the forward direction and and similarly</p>
-<div class="math notranslate nohighlight">
-\[\frac{\Psi(x,t+dt)-\Psi(x,t)}{dt}\approx -\frac{i}{\hbar}  H\Psi(x,t+dt)\]</div>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\frac{\Psi(x,t+dt)-\Psi(x,t)}{dt}\approx -\frac{i}{\hbar}  H\Psi(x,t+dt)\]</div></div>
 <p>in the backward direcction.</p>
 <p>Therefore</p>
-<div class="math notranslate nohighlight">
-\[\frac{\Psi(x,t+dt)-\Psi(x,t)}{dt}\approx \frac{1}{2i\hbar } H\Psi(x,t)+\frac{1}{2i\hbar} H\Psi(x,t+dt)\]</div>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\frac{\Psi(x,t+dt)-\Psi(x,t)}{dt}\approx \frac{1}{2i\hbar } H\Psi(x,t)+\frac{1}{2i\hbar} H\Psi(x,t+dt)\]</div></div>
 <p>or</p>
-<div class="math notranslate nohighlight">
-\[\left(1-\frac{dt}{2i\hbar} H\right)\Psi(x,t+dt)=\left(1+\frac{dt}{2i\hbar} H\right)\Psi(x,t)\]</div>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\left(1-\frac{dt}{2i\hbar} H\right)\Psi(x,t+dt)=\left(1+\frac{dt}{2i\hbar} H\right)\Psi(x,t)\]</div></div>
 <p>and finally</p>
-<div class="math notranslate nohighlight">
-\[\Psi(x,t+dt)=\left(1-\frac{dt}{2i\hbar} H\right)^{-1}\left(1+\frac{dt}{2i\hbar} H\right)\Psi(x,t)\]</div>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\Psi(x,t+dt)=\left(1-\frac{dt}{2i\hbar} H\right)^{-1}\left(1+\frac{dt}{2i\hbar} H\right)\Psi(x,t)\]</div></div>
 <p>Once we have calculated the Matrix of the hamiltonian and have provided an initial wavepacket, we can immediately propagate the initial wavepacket to later times. This seems easy with what we learned earlier.</p>
 <section id="Setup-Domain">
 <h3>Setup Domain<a class="headerlink" href="#Setup-Domain" title="Permalink to this headline">¶</a></h3>
@@ -555,15 +622,15 @@ i\hbar \frac{\partial \tilde{\Psi}}{\partial t}=\frac{\hbar^{2}k^{2}}{2m}\tilde{
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x-position&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$|\Psi(x,t)|^2$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'x-position'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$|\Psi(x,t)|^2$'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">potential</span><span class="p">,</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
-<span class="c1">#ax.plot(x,20*prob,&#39;g&#39;)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">potential</span><span class="p">,</span><span class="s1">'k'</span><span class="p">)</span>
+<span class="c1">#ax.plot(x,20*prob,'g')</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
 
 <span class="n">background</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">copy_from_bbox</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">bbox</span><span class="p">)</span>
-<span class="n">points</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">20</span><span class="o">*</span><span class="n">prob</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">points</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">20</span><span class="o">*</span><span class="n">prob</span><span class="p">,</span><span class="s1">'g'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
@@ -617,12 +684,12 @@ i\hbar \frac{\partial \tilde{\Psi}}{\partial t}=\frac{\hbar^{2}k^{2}}{2m}\tilde{
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[271]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#&lt;img src=&quot;cranck_nicolson_animation.mov&quot; width=&quot;600&quot;&gt;</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#&lt;img src="cranck_nicolson_animation.mov" width="600"&gt;</span>
 </pre></div>
 </div>
 </div>
-<img alt="Figure" src="../../_images/cranck_nicolson_animation.mov" />
-</section>
+<img alt="Figure" src="../../_images/cranck_nicolson_animation.mov">
+</img></section>
 </section>
 <section id="Split-Step-Method">
 <h2>Split Step Method<a class="headerlink" href="#Split-Step-Method" title="Permalink to this headline">¶</a></h2>
@@ -636,30 +703,30 @@ i\hbar \frac{\partial \tilde{\Psi}}{\partial t}=\frac{\hbar^{2}k^{2}}{2m}\tilde{
 \hat{N}=V(x,t)
 \end{equation}</span></p>
 <p>such that</p>
-<div class="math notranslate nohighlight">
-\[i\hbar\frac{\partial \Psi(x,t)}{\partial t} = [\hat{D}+\hat{N}]\, \Psi\]</div>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[i\hbar\frac{\partial \Psi(x,t)}{\partial t} = [\hat{D}+\hat{N}]\, \Psi\]</div></div>
 <p>with the solution</p>
-<div class="math notranslate nohighlight">
-\[\Psi(x,t)=e^{-i(\hat{D}+\hat{N})t/\hbar}\, \Psi(x,0)\]</div>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\Psi(x,t)=e^{-i(\hat{D}+\hat{N})t/\hbar}\, \Psi(x,0)\]</div></div>
 <p>If we only make a small timestep <span class="math notranslate nohighlight">\(dt\)</span>, we can write the latter equation also as</p>
-<div class="math notranslate nohighlight">
-\[\Psi(x,t+dt)=e^{-i\hat{D}dt/\hbar}e^{-i\hat{N}dt/\hbar} \Psi(x,t)\]</div>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\Psi(x,t+dt)=e^{-i\hat{D}dt/\hbar}e^{-i\hat{N}dt/\hbar} \Psi(x,t)\]</div></div>
 <p>We may now turn to momentum space by taking the Fourier transform <span class="math notranslate nohighlight">\(F\)</span></p>
-<div class="math notranslate nohighlight">
-\[\tilde{\Psi}(k,t+dt)=F\left [e^{-i\hat{D}dt/\hbar}e^{-i\hat{N}dt/\hbar}\,\Psi(k,t) \right ]\]</div>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\tilde{\Psi}(k,t+dt)=F\left [e^{-i\hat{D}dt/\hbar}e^{-i\hat{N}dt/\hbar}\,\Psi(k,t) \right ]\]</div></div>
 <p>What we know now from the momentum Schrödinger equation is that the operator <span class="math notranslate nohighlight">\(\hat{D}\)</span> will just turn into a multiplication with <span class="math notranslate nohighlight">\(\hbar k^2/2m\)</span> in momentum space and therefore</p>
-<div class="math notranslate nohighlight">
-\[\tilde{\Psi}(k,t+dt)=e^{i\frac{\hbar k^2}{2m}dt}F\left [e^{-i\hat{N}dt/\hbar}\, \Psi(k,t)\right]\]</div>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\tilde{\Psi}(k,t+dt)=e^{i\frac{\hbar k^2}{2m}dt}F\left [e^{-i\hat{N}dt/\hbar}\, \Psi(k,t)\right]\]</div></div>
 <p>Thus if we just do the inverse Fourier transform of that, we obtain</p>
-<div class="math notranslate nohighlight">
-\[\Psi(x,t+dt)=F^{-1}\left [ e^{i\frac{\hbar k^2}{2m}dt} F\left [e^{-i\hat{N}dt/\hbar}\,\Psi(x,t) \right ]  \right]\]</div>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\Psi(x,t+dt)=F^{-1}\left [ e^{i\frac{\hbar k^2}{2m}dt} F\left [e^{-i\hat{N}dt/\hbar}\,\Psi(x,t) \right ]  \right]\]</div></div>
 <p>This is the receipe for the solution of the time dependent Schrödinger equation. We will do this simulation with the help of the FFT we considered already earlier.</p>
 <section id="id1">
 <h3>Setup Domain<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>We first need to setup our domain together with the time resolution.</p>
 <div class="admonition warning">
-<p class="admonition-title fa fa-exclamation-circle">Bug</p>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>There is still a bug in my code below. I could not find it but I&#39;m willing to donate a pizza for the first to identify and correct this bug.
+<p class="admonition-title">Bug</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>There is still a bug in my code below. I could not find it but I'm willing to donate a pizza for the first to identify and correct this bug.
 
 Update: Looks like the bug has been found and all is good now! That means, sorry, pizza is gone!
 </pre></div>
@@ -720,10 +787,10 @@ Update: Looks like the bug has been found and all is good now! That means, sorry
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">V_x</span><span class="p">,</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">V_x</span><span class="p">,</span><span class="s1">'k'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x-position&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$V(x)$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'x-position'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'$V(x)$'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -733,7 +800,7 @@ Update: Looks like the bug has been found and all is good now! That means, sorry
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/notebooks_L11_3_tunneling_46_0.png" class="no-scaled-link" src="../../_images/notebooks_L11_3_tunneling_46_0.png" style="width: 697px; height: 268px;" />
+<img alt="../../_images/notebooks_L11_3_tunneling_46_0.png" class="no-scaled-link" src="../../_images/notebooks_L11_3_tunneling_46_0.png" style="width: 697px; height: 268px;"/>
 </div>
 </div>
 </section>
@@ -760,8 +827,8 @@ Update: Looks like the bug has been found and all is good now! That means, sorry
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">psi</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x-position&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$|\Psi(x)|^2$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'x-position'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'$|\Psi(x)|^2$'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
@@ -771,7 +838,7 @@ Update: Looks like the bug has been found and all is good now! That means, sorry
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/notebooks_L11_3_tunneling_50_0.png" class="no-scaled-link" src="../../_images/notebooks_L11_3_tunneling_50_0.png" style="width: 698px; height: 268px;" />
+<img alt="../../_images/notebooks_L11_3_tunneling_50_0.png" class="no-scaled-link" src="../../_images/notebooks_L11_3_tunneling_50_0.png" style="width: 698px; height: 268px;"/>
 </div>
 </div>
 </section>
@@ -779,11 +846,11 @@ Update: Looks like the bug has been found and all is good now! That means, sorry
 <h3>Fourier Transform Setup<a class="headerlink" href="#Fourier-Transform-Setup" title="Permalink to this headline">¶</a></h3>
 <p>When doing the Fourier transform we switch between the spatial and the momentum domain. We will use for that purpose the Fast Fourier Transform Function as we did already earlier. As compared to what has been written in the equations above, that means we switch to a discrete space and miss some of the frequencies which would be contained in the analytical calculations above. To correct for the discrete sampling, we need to introduce a correction factor, which I leave to you for exploration.</p>
 <p>The wavefunction we have to use is</p>
-<div class="math notranslate nohighlight">
-\[\Psi_{\rm mod}=\Psi(x_{n},t)\frac{dx}{\sqrt{2\pi}}e^{-ik_{0}x_{n}}\]</div>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\Psi_{\rm mod}=\Psi(x_{n},t)\frac{dx}{\sqrt{2\pi}}e^{-ik_{0}x_{n}}\]</div></div>
 <p>where <span class="math notranslate nohighlight">\(x_n = a + n \Delta x\)</span> and <span class="math notranslate nohighlight">\(k_{0}=-\pi/dx\)</span>, which is the Nyquist limit. Note that this <span class="math notranslate nohighlight">\(k_0\)</span> is not related to the <span class="math notranslate nohighlight">\(k_0\)</span> of the wavepacket above. Similarly we would need to create a correcting phase factor for the wavefunction in discrete Fourier space</p>
-<div class="math notranslate nohighlight">
-\[\tilde{\Psi}_{\rm mod}=\tilde{\Psi}(k_{m},t)e^{-im x_{0}\Delta k}\]</div>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\tilde{\Psi}_{\rm mod}=\tilde{\Psi}(k_{m},t)e^{-im x_{0}\Delta k}\]</div></div>
 <p>with <span class="math notranslate nohighlight">\(k_m = k_0 + m \Delta k\)</span>. Here we define the space for the Fourier transform.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[67]:
@@ -810,8 +877,8 @@ Update: Looks like the bug has been found and all is good now! That means, sorry
 <section id="Phase-Factor-per-Timestep">
 <h3>Phase Factor per Timestep<a class="headerlink" href="#Phase-Factor-per-Timestep" title="Permalink to this headline">¶</a></h3>
 <p>According to our calculations we first have evolve the wavepacket with a phase factor containing <span class="math notranslate nohighlight">\(\hat{N}\)</span> which contains the potential and later with <span class="math notranslate nohighlight">\(\hat{D}\)</span>.</p>
-<div class="math notranslate nohighlight">
-\[\Psi(x,t+dt)=F^{-1}\left [ e^{i\frac{\hbar k^2}{2m}dt} F\left [e^{-iV(x)dt/\hbar}\Psi(x,t) \right ]  \right]\]</div>
+<div class="math-wrapper"><div class="math notranslate nohighlight">
+\[\Psi(x,t+dt)=F^{-1}\left [ e^{i\frac{\hbar k^2}{2m}dt} F\left [e^{-iV(x)dt/\hbar}\Psi(x,t) \right ]  \right]\]</div></div>
 <p>Both are just phases factors, which stay the same for each timestep. We may thus calculate them one, and reuse them.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[69]:
@@ -832,14 +899,14 @@ Update: Looks like the bug has been found and all is good now! That means, sorry
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">100</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x-position&#39;</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$|\Psi(x,t)|^2$&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'x-position'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">'$|\Psi(x,t)|^2$'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">tight_layout</span><span class="p">()</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">V_x</span><span class="p">,</span><span class="s1">&#39;k&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">V_x</span><span class="p">,</span><span class="s1">'k'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">draw</span><span class="p">()</span>
 
 <span class="n">background</span> <span class="o">=</span> <span class="n">fig</span><span class="o">.</span><span class="n">canvas</span><span class="o">.</span><span class="n">copy_from_bbox</span><span class="p">(</span><span class="n">ax</span><span class="o">.</span><span class="n">bbox</span><span class="p">)</span>
-<span class="n">points</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">psi_modx</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;g&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">points</span><span class="o">=</span><span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">abs</span><span class="p">(</span><span class="n">psi_modx</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">,</span><span class="s1">'g'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="n">plt</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
 </pre></div>
@@ -898,11 +965,11 @@ Update: Looks like the bug has been found and all is good now! That means, sorry
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#&lt;img src=&quot;split_step_animation.mov&quot; width=&quot;600&quot;&gt;</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#&lt;img src="split_step_animation.mov" width="600"&gt;</span>
 </pre></div>
 </div>
 </div>
-<img alt="../../_images/split_step_animation.mov" src="../../_images/split_step_animation.mov" />
+<img alt="../../_images/split_step_animation.mov" src="../../_images/split_step_animation.mov"/>
 </section>
 </section>
 <section id="Where-to-go-from-here?">
@@ -915,34 +982,83 @@ Update: Looks like the bug has been found and all is good now! That means, sorry
 </script></section>
 </section>
 
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
 
-           </div>
+        <div class="related-information">
+              Copyright &#169; 2022, Frank Cichos |
+            Last updated on Apr 02, 2022. |
+            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+              and
+              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+              <a href="https://github.com/pradyunsg/furo">Furo theme</a>. |
+            <a class="muted-link" href="../../_sources/notebooks/L11/3_tunneling.ipynb.txt"
+               rel="nofollow">
+              Show Source
+            </a>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Tunneling through a barrier</a><ul>
+<li><a class="reference internal" href="#Schrödinger-equation-for-the-momentum">Schrödinger equation for the momentum</a></li>
+<li><a class="reference internal" href="#Crank-Nicolson-Solution">Crank Nicolson Solution</a><ul>
+<li><a class="reference internal" href="#Setup-Domain">Setup Domain</a></li>
+<li><a class="reference internal" href="#Initial-Conditions">Initial Conditions</a></li>
+<li><a class="reference internal" href="#Matrix-Setup">Matrix Setup</a></li>
+<li><a class="reference internal" href="#Propagation-Matrix">Propagation Matrix</a></li>
+<li><a class="reference internal" href="#Animation-setup">Animation setup</a></li>
+<li><a class="reference internal" href="#Animation">Animation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Split-Step-Method">Split Step Method</a><ul>
+<li><a class="reference internal" href="#id1">Setup Domain</a></li>
+<li><a class="reference internal" href="#Potential-energy-landscape">Potential energy landscape</a></li>
+<li><a class="reference internal" href="#Initial-wavepacket">Initial wavepacket</a></li>
+<li><a class="reference internal" href="#Fourier-Transform-Setup">Fourier Transform Setup</a></li>
+<li><a class="reference internal" href="#Phase-Factor-per-Timestep">Phase Factor per Timestep</a></li>
+<li><a class="reference internal" href="#id2">Animation setup</a></li>
+<li><a class="reference internal" href="#id3">Animation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Where-to-go-from-here?">Where to go from here?</a></li>
+</ul>
+</li>
+</ul>
+
           </div>
-          <footer>
-
-  <hr/>
-
-  <div role="contentinfo">
-    <p>&#169; Copyright 2022, Frank Cichos.
-      <span class="lastupdated">Last updated on Apr 02, 2022.
-      </span></p>
-  </div>
-
-  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
-    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
-    provided by <a href="https://readthedocs.org">Read the Docs</a>.
-   
-
-</footer>
         </div>
       </div>
-    </section>
+      
+      
+    </aside>
   </div>
-  <script>
-      jQuery(function () {
-          SphinxRtdTheme.Navigation.enable(true);
-      });
-  </script> 
-
-</body>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/scripts/main.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
 </html>

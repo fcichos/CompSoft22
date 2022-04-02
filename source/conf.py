@@ -23,7 +23,7 @@ author = 'Frank Cichos'
 master_doc = 'index'
 
 # The full version, including alpha/beta/rc tags
-release = '1'
+release = '22'
 
 
 # -- General configuration ---------------------------------------------------
@@ -52,13 +52,14 @@ mathjax_config = {
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-import sphinx_rtd_theme
+#import sphinx_rtd_theme
 
-html_theme = 'sphinx_rtd_theme'
-html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+#html_theme = 'sphinx_rtd_theme'
+#html_theme_path = [sphinx_rtd_theme.get_html_theme_path()]
+html_theme = 'furo'
 
-def setup(app):
-    app.add_stylesheet('theme_overrides.css')
+#def setup(app):
+#    app.add_stylesheet('theme_overrides.css')
 
 # html_logo = 'img/HY-logo-2017.png'
 
@@ -71,7 +72,7 @@ html_last_updated_fmt = ""
 #
 
 html_theme_options = {
-    "collapse_navigation" : False
+#    "collapse_navigation" : False
 }
 
 # Add any paths that contain custom static files (such as style sheets) here,
@@ -96,7 +97,7 @@ html_context = {
     # Set the following variables to generate the resulting github URL for each page.
     # Format Template: https://{{ github_host|default("github.com") }}/{{ github_user }}/{{ github_repo }}/blob/{{ github_version }}{{ conf_py_path }}{{ pagename }}{{ suffix }}
     'github_user': 'fcichos',
-    'github_repo': 'CompSoft21',
+    'github_repo': 'CompSoft22',
     'github_version': 'main/',
     'conf_py_path': '/source/'
 }
