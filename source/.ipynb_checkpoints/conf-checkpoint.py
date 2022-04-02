@@ -107,8 +107,8 @@ html_logo = 'img/mona_logo.png'
 # -- Extension configuration -------------------------------------------------
 # This is processed by Jinja2 and inserted before each notebook
 
-nbsphinx_prolog = """
-{% set docname = env.doc2path(env.docname, base='source') %}
+nbsphinx_prolog = r"""
+{% set docname = env.doc2path(env.docname, base=False) %}
 
 .. only:: html
 
