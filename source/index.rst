@@ -48,9 +48,9 @@ We will not present a comprehensive list of numerical simulation schemes, but us
    :caption: Jupyter Notebooks:
 
    lectures/Intro/overview.rst
-   notebooks/Intro/Introduction2Jupyter.ipynb
-   notebooks/Intro/NotebookEditor.ipynb
-   notebooks/Intro/EditCells.ipynb
+   notebooks/Intro/1_Introduction2Jupyter.ipynb
+   notebooks/Intro/2_NotebookEditor.ipynb
+   notebooks/Intro/3_EditCells.ipynb
 
 
 .. toctree::
