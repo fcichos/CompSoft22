@@ -489,19 +489,7 @@ from ipycanvas import MultiCanvas, hold_canvas,Canvas
 </ul>
 <p>The <code class="docutils literal notranslate"><span class="pre">threading</span></code> module is a module which allows you to specify how the processes in your notebook are executed.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">ipycanvas</span></code> module is the one which helps us to draw the objects of our simulation.</p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span><span class="p">,</span><span class="n">time</span>
-<span class="kn">from</span> <span class="nn">threading</span> <span class="kn">import</span> <span class="n">Thread</span>
-
-<span class="kn">from</span> <span class="nn">ipycanvas</span> <span class="kn">import</span> <span class="n">MultiCanvas</span><span class="p">,</span> <span class="n">hold_canvas</span><span class="p">,</span><span class="n">Canvas</span>
-</pre></div>
-</div>
-</div>
-<p>The following lines test if the notebook is running in google colab and enable ipycanvas there.</p>
+<p>The following lines test if the notebook is running in google colab and install/enable ipycanvas there.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
@@ -514,6 +502,18 @@ from ipycanvas import MultiCanvas, hold_canvas,Canvas
   <span class="n">IN_COLAB</span><span class="o">=</span><span class="kc">True</span>
 <span class="k">except</span><span class="p">:</span>
   <span class="n">IN_COLAB</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">time</span> <span class="kn">import</span> <span class="n">sleep</span><span class="p">,</span><span class="n">time</span>
+<span class="kn">from</span> <span class="nn">threading</span> <span class="kn">import</span> <span class="n">Thread</span>
+
+<span class="kn">from</span> <span class="nn">ipycanvas</span> <span class="kn">import</span> <span class="n">MultiCanvas</span><span class="p">,</span> <span class="n">hold_canvas</span><span class="p">,</span><span class="n">Canvas</span>
 </pre></div>
 </div>
 </div>
