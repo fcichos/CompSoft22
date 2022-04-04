@@ -13,7 +13,6 @@ Molecular Nanophotonics Group
 
  * `Molecular Nanophotonics Group Website <https://home.uni-leipzig.de/~physik/sites/mona/>`_
  * `Computer-based Physical Modeling Website @ MONA <https://home.uni-leipzig.de/~physik/sites/mona/teaching/periodic-lectures/introduction-to-computer-based-physical-modeling-ss-2021/>`_
- * `Discussion forum for this course <https://home.uni-leipzig.de/~physik/sites/mona/teaching/periodic-lectures/introduction-to-computer-based-physical-modeling-ss-2021/internal-introduction-to-computer-based-physical-modeling-ss-2021/forum/>`_
 
 
 Additional Advanced Courses 
@@ -37,3 +36,13 @@ Python Tutorials
  * `Nice MatPlotLib tutorial <https://github.com/rougier/matplotlib-tutorial>`_
  
  
+Julia Tutorial
+~~~~~~~~~~~~~~
+ 
+ * `Julia Programming Language <https://julialang.org>`_
+ 
+ 
+Pluto NoteBook
+~~~~~~~~~~~~~~
+
+* `Pluto GitHub Webpage <https://github.com/fonsp/Pluto.jl>`_
