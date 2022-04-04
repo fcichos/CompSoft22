@@ -490,7 +490,7 @@ from ipycanvas import MultiCanvas, hold_canvas,Canvas
 <p>The <code class="docutils literal notranslate"><span class="pre">threading</span></code> module is a module which allows you to specify how the processes in your notebook are executed.</p>
 <p>The <code class="docutils literal notranslate"><span class="pre">ipycanvas</span></code> module is the one which helps us to draw the objects of our simulation.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[407]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -501,12 +501,28 @@ from ipycanvas import MultiCanvas, hold_canvas,Canvas
 </pre></div>
 </div>
 </div>
+<p>The following lines test if the notebook is running in google colab and enable ipycanvas there.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+  <span class="kn">import</span> <span class="nn">google.colab</span>
+  <span class="o">!</span>pip install ipycanvas
+  <span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">output</span>
+  <span class="n">output</span><span class="o">.</span><span class="n">enable_custom_widget_manager</span><span class="p">()</span>
+  <span class="n">IN_COLAB</span><span class="o">=</span><span class="kc">True</span>
+<span class="k">except</span><span class="p">:</span>
+  <span class="n">IN_COLAB</span> <span class="o">=</span> <span class="kc">False</span>
+</pre></div>
+</div>
+</div>
 </section>
 <section id="Particle-class">
 <h2>Particle class<a class="headerlink" href="#Particle-class" title="Permalink to this headline">¶</a></h2>
 <p>We start by using out colloidal particle class, which we developed in the last section.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[404]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Class definition</span>
@@ -557,7 +573,7 @@ from ipycanvas import MultiCanvas, hold_canvas,Canvas
 <h2>Create a set of particles<a class="headerlink" href="#Create-a-set-of-particles" title="Permalink to this headline">¶</a></h2>
 <p>We want to animate the Brownian motion of many particles. The best is therefore to create a <code class="docutils literal notranslate"><span class="pre">list</span></code> which contains all the individual <code class="docutils literal notranslate"><span class="pre">Colloid</span></code> objects. We start by creating 200 colloids at the position <code class="docutils literal notranslate"><span class="pre">(0,0)</span></code> to see how the spread from the origin. They are stored in the list <code class="docutils literal notranslate"><span class="pre">p</span></code>.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[408]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># number of particles</span>
@@ -575,7 +591,7 @@ from ipycanvas import MultiCanvas, hold_canvas,Canvas
 <p>Next, we need a canvas, in which we draw our particles and we need the drawing function.</p>
 <p>The canvas is created by the <code class="docutils literal notranslate"><span class="pre">Canvas()</span></code> constructor if <code class="docutils literal notranslate"><span class="pre">ipycanvas</span></code>. The <code class="docutils literal notranslate"><span class="pre">display</span></code> command displays the canvas below the the cell.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[409]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">canvas</span> <span class="o">=</span> <span class="n">Canvas</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
@@ -587,13 +603,13 @@ from ipycanvas import MultiCanvas, hold_canvas,Canvas
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "fd4e1b3cee2d4acc9289463ee1ee391a", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "ac071fec1e95489b8ad66766ba277819", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <img alt="particles" src="../../_images/particles.png">
 <p>We realize the drawing in a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, which is first updating all particle positions and then drawing all the particles.</p>
 <p>The loop contains one interesting statement, which is the <code class="docutils literal notranslate"><span class="pre">with</span> <span class="pre">hold_canvas(canvas):</span></code>. Its useful to know that this statement halts the execution of all subsequent drawing comments in the following code block to create a “batch” of drawing commands send at one to the <code class="docutils literal notranslate"><span class="pre">ipycanvas</span></code> module. This will allow fast drawing of the whole scene. All the rest of the commands are shortly explained in the loop comments.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[400]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scale</span><span class="o">=</span><span class="mf">1e7</span> <span class="c1"># this is to scale up all from µm to pixels</span>
@@ -629,7 +645,7 @@ simulation.start()
 </div>
 <p>That’s all you need. So lets wrap all our drawing before into a draw function.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[379]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
@@ -649,7 +665,7 @@ simulation.start()
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[411]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">simulation</span> <span class="o">=</span> <span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">draw</span><span class="p">)</span>
@@ -658,7 +674,7 @@ simulation.start()
 </div>
 <p>We create a new canvas here, even though we could use the one on the top. It’s just nice to not have to scroll up.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[412]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">canvas</span> <span class="o">=</span> <span class="n">Canvas</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
@@ -670,11 +686,11 @@ simulation.start()
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "a17a81a8f2574af5a1c43a8218a635c6", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "19eb853ebce646e58a25ec10050bf69b", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <img alt="particles" src="../../_images/particles.png">
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[413]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># start the simulation</span>
@@ -684,7 +700,7 @@ simulation.start()
 </div>
 <p>One of the intruiging things of this type of threading is that all of the parameters of the Colloids may still be changed on the fly while the process is running. So lets just reset the particle positions to the origin and see what is happening in the canvas.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[393]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
