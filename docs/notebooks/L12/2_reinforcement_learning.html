@@ -465,7 +465,8 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p>This page was generated from <cite>notebooks/L12/2_reinforcement_learning.ipynb</cite>.
-<span class="raw-html"><br/><a href="https://colab.research.google.com/github/fcichos/CompSoft22/blob/main/build/doctrees/nbsphinx/notebooks/L12/2_reinforcement_learning.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
+<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/CompSoft22/main?urlpath=tree/source/notebooks/L12/2_reinforcement_learning.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-%20myBinder-red.svg" style="vertical-align:text-bottom"/></a></span>
+<span class="raw-html"><br/><a href="https://colab.research.google.com/github/fcichos/CompSoft22/blob/main/source/notebooks/L12/2_reinforcement_learning.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-%20colab-green.svg" style="vertical-align:text-bottom"/></a></span></p>
 </div>
 <section id="Machine-Learning-and-Neural-Networks">
 <h1>Machine Learning and Neural Networks<a class="headerlink" href="#Machine-Learning-and-Neural-Networks" title="Permalink to this headline">¶</a></h1>
@@ -523,7 +524,7 @@ learning. We will do that in a way that you calculate as much as possible in pur
 <p>Reinforcement learning is learning what to do—how to map situations to actions—so as to maximize a numerical reward signal. The learner or agent is not told which actions to take, as in most forms of machine learning, but instead must discover which actions yield the most reward by trying them. In the most interesting and challenging cases, actions may affect not only the immediate reward but also the next situation and, through that, all subsequent rewards. These two
 characteristics—trial-and-error search and delayed reward—are the two most important distinguishing features of reinforcement learning.</p>
 <p>It has been around since the 1950s but gained momentum only in 2013 with the demonstrations of DeepMind on how to learn play Atari games like pong. The graphic below shows some of its applications in the field of robotics and gaming.</p>
-<img alt="overview_rl" src="../../_images/overview_RL.png"/>
+<img alt="overview_rl" src="../../_images/overview_RL.png">
 <section id="Markov-Decision-Process">
 <h3>Markov Decision Process<a class="headerlink" href="#Markov-Decision-Process" title="Permalink to this headline">¶</a></h3>
 <p>The key element of reinforcement learning is the so-called Markov Decision Process. The Markov decision process (MDP) denotes a formalism of planning actions in the face of uncertainty. A MDP consist formally of</p>
@@ -566,7 +567,7 @@ characteristics—trial-and-error search and delayed reward—are the two most i
 we would like to explore in a small Python program, which is not too difficult.</p>
 </section>
 </section>
-</section>
+</img></section>
 <section id="Navigating-a-Grid-World">
 <h2>Navigating a Grid World<a class="headerlink" href="#Navigating-a-Grid-World" title="Permalink to this headline">¶</a></h2>
 <p>For our Python course we will have a look at the standard problem of reinforcement learning, which is the navigation in a grid world. Each of the grid cells below represents a state <span class="math notranslate nohighlight">\(s\)</span> in which an object could reside. In each of these states, the object can take several actions. If it may step to left, right, up or down, there are 4 actions, which we may call <span class="math notranslate nohighlight">\(a_{1},a_{2},a_{3}\)</span> and <span class="math notranslate nohighlight">\(a_{4}\)</span>.</p>

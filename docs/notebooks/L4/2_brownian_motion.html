@@ -465,7 +465,8 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p>This page was generated from <cite>notebooks/L4/2_brownian_motion.ipynb</cite>.
-<span class="raw-html"><br/><a href="https://colab.research.google.com/github/fcichos/CompSoft22/blob/main/build/doctrees/nbsphinx/notebooks/L4/2_brownian_motion.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
+<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/CompSoft22/main?urlpath=tree/source/notebooks/L4/2_brownian_motion.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-%20myBinder-red.svg" style="vertical-align:text-bottom"/></a></span>
+<span class="raw-html"><br/><a href="https://colab.research.google.com/github/fcichos/CompSoft22/blob/main/source/notebooks/L4/2_brownian_motion.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-%20colab-green.svg" style="vertical-align:text-bottom"/></a></span></p>
 </div>
 <section id="Brownian-Motion">
 <h1>Brownian Motion<a class="headerlink" href="#Brownian-Motion" title="Permalink to this headline">¶</a></h1>
@@ -687,7 +688,7 @@ I'm a particle with radius R=1.000e-06 at x=2.623e-06,y=-1.809e-06.
 v(n dt) = \frac{&lt;\sqrt{(x_{i+n}-x_{i})^2+(y_{i+n}-y_{i})^2}&gt;}{n\,dt}
 \end{equation}</span></p>
 <p>The angular brackets on the top take care of the fact that we can measure the distance traveled within a certain time <span class="math notranslate nohighlight">\(n\, dt\)</span> several times along a trajectory.</p>
-<img alt="msd" src="../../_images/msd.png"/>
+<img alt="msd" src="../../_images/msd.png">
 <p>These values can be used to calculate a mean speed. Note that there is not an equal amount of data pairs for all separations available. For <span class="math notranslate nohighlight">\(n=1\)</span> there are 5 distances available. For <span class="math notranslate nohighlight">\(n=5\)</span>, however, only 1. This changes the statistical accuracy of the mean.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[326]:
@@ -715,7 +716,7 @@ v(n dt) = \frac{&lt;\sqrt{(x_{i+n}-x_{i})^2+(y_{i+n}-y_{i})^2}&gt;}{n\,dt}
 </div>
 </div>
 <p>The result of this analysis shows, that each particle has an apparent speed which seems to increase with decreasing time of observation or which decreases with increasing time. This would mean that there is some friction at work, which slows down the particle in time, but this is apparently not true. Also an infinite speed at zero time appears to be unphysical. The correct answer is just that the speed is no good measure to characterize the motion of a Brownian particle.</p>
-</section>
+</img></section>
 <section id="Calculate-the-particle-mean-squared-displacement">
 <h3>Calculate the particle mean squared displacement<a class="headerlink" href="#Calculate-the-particle-mean-squared-displacement" title="Permalink to this headline">¶</a></h3>
 <p>A better way to characterize the motion of a Brownian particle is the mean squared displacement, as we have already mentioned it in previous lectures. We may compare our simulation now to the theoretical prediction, which is</p>

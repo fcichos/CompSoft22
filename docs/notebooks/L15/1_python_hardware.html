@@ -465,7 +465,8 @@ div.rendered_html tbody tr:hover {
 </style>
 <div class="admonition note">
 <p>This page was generated from <cite>notebooks/L15/1_python_hardware.ipynb</cite>.
-<span class="raw-html"><br/><a href="https://colab.research.google.com/github/fcichos/CompSoft22/blob/main/build/doctrees/nbsphinx/notebooks/L15/1_python_hardware.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"/></a></span></p>
+<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/CompSoft22/main?urlpath=tree/source/notebooks/L15/1_python_hardware.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-%20myBinder-red.svg" style="vertical-align:text-bottom"/></a></span>
+<span class="raw-html"><br/><a href="https://colab.research.google.com/github/fcichos/CompSoft22/blob/main/source/notebooks/L15/1_python_hardware.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-%20colab-green.svg" style="vertical-align:text-bottom"/></a></span></p>
 </div>
 <section id="Python-and-Hardware">
 <h1>Python and Hardware<a class="headerlink" href="#Python-and-Hardware" title="Permalink to this headline">¶</a></h1>
@@ -518,9 +519,9 @@ div.rendered_html tbody tr:hover {
 <h3>Setup your board<a class="headerlink" href="#Setup-your-board" title="Permalink to this headline">¶</a></h3>
 <p>To communicate in Python with your Arduino you need to prepare your board with a program, that is provided for free with the Arduino programming environment. By the way, the programs for the Arduinos are called <code class="docutils literal notranslate"><span class="pre">Sketch</span></code>, because they are more like a sketch. The sketch that allows the interaction of the Arduino with Python is called <code class="docutils literal notranslate"><span class="pre">Firmata</span></code>.</p>
 <p>Before we upload the <code class="docutils literal notranslate"><span class="pre">Firmata</span></code> sketch to the Arduino, we need to setup the connection of your computer to the Arduino. To do so, you need to connect your Arduino via USB to your computer and then setup the connection in the <code class="docutils literal notranslate"><span class="pre">Tools</span></code> menu of your Arduino software. On my MacBook, this looks like that</p>
-<img alt="connection" src="../../_images/connection.png"/>
+<img alt="connection" src="../../_images/connection.png">
 <p>You see that the select board is “Arduino Nano” and the USB port is <code class="docutils literal notranslate"><span class="pre">/dev/cu.usbserial-141220</span></code>. I selected the processor which works with my board. That could be sometimes a bit tedious. When you further click on the <code class="docutils literal notranslate"><span class="pre">Serial</span> <span class="pre">Monitor</span></code> menu above, a window will open, where you can select the speed of your seriaal connection with the board, which you should adjust to 57600 baud.</p>
-</section>
+</img></section>
 <section id="Select-Firmata-Sketch">
 <h3>Select Firmata Sketch<a class="headerlink" href="#Select-Firmata-Sketch" title="Permalink to this headline">¶</a></h3>
 <p>Next you have to select the firmata sketch. That is available from the examples menu, which should look like below</p>
