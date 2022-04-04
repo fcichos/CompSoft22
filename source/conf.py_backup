@@ -116,8 +116,9 @@ nbsphinx_prolog = r"""
         :format: html
 
     .. nbinfo::
-        This page was generated from `{{ docname }}`.        
-        :raw-html:`<br/><a href="https://colab.research.google.com/github/fcichos/CompSoft22/blob/main/build/doctrees/nbsphinx/{{ docname }}"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"></a>`
+        This page was generated from `{{ docname }}`.
+        https://colab.research.google.com/github/fcichos/CompSoft22/blob/main/build/doctrees/nbsphinx/
+        :raw-html:`<br/><a href="https://mybinder.org/v2/gh/fcichos/CompSoft22/main?urlpath=tree/source/{{ docname }}"><img alt="Binder badge" src="https://img.shields.io/badge/launch-full%20binder-red.svg" style="vertical-align:text-bottom"></a>`
 
 .. only:: latex
 

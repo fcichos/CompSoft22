@@ -12,10 +12,27 @@
    ]
   },
   {
+   "cell_type": "code",
+   "execution_count": 4,
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "command_mode.png  edit_mode.png  notebook.png  particle.png\r\n"
+     ]
+    }
+   ],
+   "source": [
+    "ls"
+   ]
+  },
+  {
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "![alt_text](img/notebook.png)"
+    "![notebook](img/notebook.png)"
    ]
   },
   {
