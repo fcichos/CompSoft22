@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Lecture Contents" href="../../lectures/L4/overview_4.html" /><link rel="prev" title="Notebook editor" href="2_NotebookEditor.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Lecture Contents" href="../../lectures/L1/overview_1.html" /><link rel="prev" title="Notebook editor" href="2_NotebookEditor.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2021.09.08"/>
         <title>Entering code - Introduction to Computer-based Physical Modeling 22 documentation</title>
@@ -174,21 +174,13 @@
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Entering code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="#Entering-Markdown">Entering Markdown</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Example Lecture 1:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Lecture 1:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../lectures/L4/overview_4.html">Lecture Contents</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L4/1_classes.html">Classes and Objects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L4/2_brownian_motion.html">Brownian Motion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L4/3_animations.html">Animations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../lectures/L4/assignment_4.html">Exercise 4</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Example Lecture 2:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../lectures/L10/overview_10.html">Lecture Contents</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L10/1_quantum_mechanics.html">Quantum Mechanics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L10/2_particle_in_a_box.html">Particle in a box</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L10/3_harmonic_oscillator.html">Harmonic Oscillator</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L10/4_periodic_potential.html">Periodic Potential</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/L1/overview_1.html">Lecture Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L1/1_variables.html">Variables and types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L1/2_operators.html">Operators and comparisons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L1/3_datatypes.html">Data Types in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L1/4_modules.html">Modules and namespaces</a></li>
 </ul>
 
 </div>
@@ -480,7 +472,7 @@ div.rendered_html tbody tr:hover {
 </li>
 </ul>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># typical function</span>
@@ -498,7 +490,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">function</span><span class="p">)</span>
@@ -560,8 +552,11 @@ function(x)
 <ol class="arabic simple">
 <li><p>Here we go</p>
 <ol class="arabic simple">
+<li><p>Sublist</p>
+<ol class="arabic simple" start="2">
 <li><p>Sublist</p></li>
-<li><p>Sublist</p></li>
+</ol>
+</li>
 </ol>
 </li>
 <li><p>There we go</p></li>
@@ -582,6 +577,7 @@ Although that way may not be obvious at first unless you’re Dutch. Now is bett
 # Heading 2
 ## Heading 2.1
 ## Heading 2.2
+### Heading 2.2.1
 </pre></div>
 </div>
 </section>
@@ -624,6 +620,29 @@ Although that way may not be obvious at first unless you’re Dutch. Now is bett
 </div>
 <p>for example</p>
 <img alt="alternative text" src="../../_images/particle.png">
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">'img/particle.png'</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/notebooks_Intro_3_EditCells_23_0.png" src="../../_images/notebooks_Intro_3_EditCells_23_0.png">
+</img></div>
+</div>
 </img></section>
 <section id="Videos">
 <h2>Videos<a class="headerlink" href="#Videos" title="Permalink to this headline">¶</a></h2>
@@ -657,7 +676,7 @@ Although that way may not be obvious at first unless you’re Dutch. Now is bett
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../../lectures/L4/overview_4.html">
+          <a class="next-page" href="../../lectures/L1/overview_1.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
@@ -681,7 +700,7 @@ Although that way may not be obvious at first unless you’re Dutch. Now is bett
 
         <div class="related-information">
               Copyright &#169; 2022, Frank Cichos |
-            Last updated on Apr 04, 2022. |
+            Last updated on Apr 11, 2022. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s

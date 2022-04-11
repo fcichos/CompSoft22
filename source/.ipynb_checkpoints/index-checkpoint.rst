@@ -55,24 +55,14 @@ We will not present a comprehensive list of numerical simulation schemes, but us
 
 .. toctree::
    :maxdepth: 2
-   :caption: Example Lecture 1:
+   :caption: Lecture 1:
 
-   lectures/L4/overview_4.rst
-   notebooks/L4/1_classes.ipynb
-   notebooks/L4/2_brownian_motion.ipynb   
-   notebooks/L4/3_animations.ipynb  
-   lectures/L4/assignment_4.rst
-
+   lectures/L1/overview_1.rst
+   notebooks/L1/1_variables.ipynb
+   notebooks/L1/2_operators.ipynb
+   notebooks/L1/3_datatypes.ipynb
+   notebooks/L1/4_modules.ipynb
    
-.. toctree::
-   :maxdepth: 2
-   :caption: Example Lecture 2:
-
-   lectures/L10/overview_10.rst
-   notebooks/L10/1_quantum_mechanics.ipynb
-   notebooks/L10/2_particle_in_a_box.ipynb
-   notebooks/L10/3_harmonic_oscillator.ipynb
-   notebooks/L10/4_periodic_potential.ipynb
    
    
 Indices and tables

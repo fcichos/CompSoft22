@@ -174,21 +174,13 @@
 <li class="toctree-l1"><a class="reference internal" href="3_EditCells.html">Entering code</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3_EditCells.html#Entering-Markdown">Entering Markdown</a></li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">Example Lecture 1:</span></p>
+<p class="caption" role="heading"><span class="caption-text">Lecture 1:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../../lectures/L4/overview_4.html">Lecture Contents</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L4/1_classes.html">Classes and Objects</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L4/2_brownian_motion.html">Brownian Motion</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L4/3_animations.html">Animations</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../lectures/L4/assignment_4.html">Exercise 4</a></li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Example Lecture 2:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="../../lectures/L10/overview_10.html">Lecture Contents</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L10/1_quantum_mechanics.html">Quantum Mechanics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L10/2_particle_in_a_box.html">Particle in a box</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L10/3_harmonic_oscillator.html">Harmonic Oscillator</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../L10/4_periodic_potential.html">Periodic Potential</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/L1/overview_1.html">Lecture Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L1/1_variables.html">Variables and types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L1/2_operators.html">Operators and comparisons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L1/3_datatypes.html">Data Types in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L1/4_modules.html">Modules and namespaces</a></li>
 </ul>
 
 </div>
@@ -469,11 +461,19 @@ div.rendered_html tbody tr:hover {
 </div>
 <section id="Notebook-editor">
 <h1>Notebook editor<a class="headerlink" href="#Notebook-editor" title="Permalink to this headline">¶</a></h1>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ls</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">Image</span><span class="p">,</span> <span class="n">display</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">'img/notebook.png'</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -481,11 +481,9 @@ div.rendered_html tbody tr:hover {
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<div class="highlight"><pre>
-command_mode.png  edit_mode.png  notebook.png  particle.png
-</pre></div></div>
+<img alt="../../_images/notebooks_Intro_2_NotebookEditor_2_0.png" src="../../_images/notebooks_Intro_2_NotebookEditor_2_0.png">
+</img></div>
 </div>
-<img alt="notebook" src="../../_images/notebook.png">
 <p>A Jupyter Notebook provides an interface with essentially two modes</p>
 <ul class="simple">
 <li><p><strong>edit mode</strong> the mode where you edit a cells content.</p></li>
@@ -495,13 +493,34 @@ command_mode.png  edit_mode.png  notebook.png  particle.png
 <section id="Edit-mode">
 <h2>Edit mode<a class="headerlink" href="#Edit-mode" title="Permalink to this headline">¶</a></h2>
 <p>Edit mode is indicated by a blue cell border and a prompt showing in the editor area:</p>
-<img alt="edit_mode" src="../../_images/edit_mode.png">
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">'img/edit_mode.png'</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/notebooks_Intro_2_NotebookEditor_6_0.png" src="../../_images/notebooks_Intro_2_NotebookEditor_6_0.png">
+</img></div>
+</div>
 <p>When a cell is in edit mode, you can type into the cell, like a normal text editor.</p>
-</img></section>
+</section>
 <section id="Command-mode">
 <h2>Command mode<a class="headerlink" href="#Command-mode" title="Permalink to this headline">¶</a></h2>
 <p>Command mode is indicated by a grey cell border:</p>
-<img alt="command_mode" src="../../_images/command_mode.png"/>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">display</span><span class="p">(</span><span class="n">Image</span><span class="p">(</span><span class="n">filename</span><span class="o">=</span><span class="s1">'img/command_mode.png'</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
 </section>
 <section id="Keyboard-navigation">
 <h2>Keyboard navigation<a class="headerlink" href="#Keyboard-navigation" title="Permalink to this headline">¶</a></h2>
@@ -518,8 +537,8 @@ command_mode.png  edit_mode.png  notebook.png  particle.png
 <li><p>Kernel operations: <code class="docutils literal notranslate"><span class="pre">i</span></code> to <strong>interrupt</strong> and <code class="docutils literal notranslate"><span class="pre">0</span></code> to <strong>restart</strong></p></li>
 </ol>
 </section>
-<section id="Running-code">
-<h2>Running code<a class="headerlink" href="#Running-code" title="Permalink to this headline">¶</a></h2>
+<section id="Running-code-in-your-notebook">
+<h2>Running code in your notebook<a class="headerlink" href="#Running-code-in-your-notebook" title="Permalink to this headline">¶</a></h2>
 <p>Code cells allow you to enter and run code. Run a code cell by pressing the <code class="docutils literal notranslate"><span class="pre">▶︎</span></code> button in the bottom-right panel, or <code class="docutils literal notranslate"><span class="pre">Control</span></code>+<code class="docutils literal notranslate"><span class="pre">Enter</span></code> on your hardware keyboard.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
@@ -530,7 +549,7 @@ command_mode.png  edit_mode.png  notebook.png  particle.png
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
@@ -542,7 +561,7 @@ command_mode.png  edit_mode.png  notebook.png  particle.png
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-100
+10
 </pre></div></div>
 </div>
 <p>There are a couple of keyboard shortcuts for running code:</p>
@@ -557,7 +576,7 @@ command_mode.png  edit_mode.png  notebook.png  particle.png
 <p>Code is run in a separate process called the <strong>kernel</strong>, which can be interrupted or restarted. You can see kernel indicator in the top-right corner reporting current kernel state: <code class="docutils literal notranslate"><span class="pre">⚪︎</span></code> means kernel is <strong>ready</strong> to execute code, and <code class="docutils literal notranslate"><span class="pre">⚫︎</span></code> means kernel is currently <strong>busy</strong>. Tapping kernel indicator will open <strong>kernel menu</strong>, where you can reconnect, interrupt or restart kernel.</p>
 <p>Try running the following cell — kernel indicator will switch from <code class="docutils literal notranslate"><span class="pre">⚪︎</span></code> to <code class="docutils literal notranslate"><span class="pre">⚫︎</span></code>, i.e. reporting kernel as “busy”. This means that you won’t be able to run any new cells until current execution finishes, or until kernel is interrupted. You can then go to kernel menu by tapping the kernel indicator and select “Interrupt”.</p>
 </section>
-</img></section>
+</section>
 
         </article>
       </div>
@@ -588,7 +607,7 @@ command_mode.png  edit_mode.png  notebook.png  particle.png
 
         <div class="related-information">
               Copyright &#169; 2022, Frank Cichos |
-            Last updated on Apr 04, 2022. |
+            Last updated on Apr 11, 2022. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
@@ -617,7 +636,7 @@ command_mode.png  edit_mode.png  notebook.png  particle.png
 <li><a class="reference internal" href="#Edit-mode">Edit mode</a></li>
 <li><a class="reference internal" href="#Command-mode">Command mode</a></li>
 <li><a class="reference internal" href="#Keyboard-navigation">Keyboard navigation</a></li>
-<li><a class="reference internal" href="#Running-code">Running code</a></li>
+<li><a class="reference internal" href="#Running-code-in-your-notebook">Running code in your notebook</a></li>
 <li><a class="reference internal" href="#Managing-the-kernel">Managing the kernel</a></li>
 </ul>
 </li>
