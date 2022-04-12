@@ -1,7 +1,8 @@
 Exercise 1
 ==========
 
-As a first exercise login to our JupyterHub Server. We provided you with an IP address as well as login and password. Make yourself familiar with the Jupyter Interface there. It corresponds to the classic Jupyter interface, without any tabs. The first exercise is on
+As a first exercise login to our JupyterHub Server. We provided you with an IP address as well as login and password. Make yourself familiar with the Jupyter Interface there. It corresponds to the JupyterLab interface. To get to the assignment you need to change the **URL** in the browsers address line. 
+Please change the word **lab** to the word **tree** in the URL. This should change to the classic notbook mode. The first exercise is on
 
 1. Markdown
 2. LaTeX and markdown
