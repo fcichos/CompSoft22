@@ -183,6 +183,13 @@
 <li class="toctree-l1"><a class="reference internal" href="4_modules.html">Modules and namespaces</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../lectures/L1/assignment_1.html">Exercise 1</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 2:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/L2/overview_2.html">Lecture Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L2/1_numpy.html">NumPy arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L2/2_plotting.html">Plotting data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L2/3_randomnumbers.html">Random numbers</a></li>
+</ul>
 
 </div>
 </div>
@@ -491,7 +498,7 @@ pass, print, raise, return, try, while, with, yield
 <p>The assignment operator in Python is <code class="docutils literal notranslate"><span class="pre">=</span></code>. Python is a dynamically typed language, so we do not need to specify the type of a variable when we create one.</p>
 <p>Assigning a value to a new variable creates the variable:</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>  <span class="c1"># variable assignments</span>
@@ -502,7 +509,7 @@ pass, print, raise, return, try, while, with, yield
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -570,7 +577,7 @@ int
 <div class="highlight"><pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">/tmp/ipykernel_289144/1056546137.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">/tmp/ipykernel_3023283/1056546137.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>print<span class="ansi-blue-fg">(</span>y<span class="ansi-blue-fg">)</span>
 
 <span class="ansi-red-fg">NameError</span>: name 'y' is not defined
@@ -584,7 +591,7 @@ int
 <h3>Integers<a class="headerlink" href="#Integers" title="Permalink to this headline">¶</a></h3>
 <p>Python treats numbers without a decimal point automatically as an integer. In Python 2 there has been a maximum integer possible, which does not exist in Python 3 anymore.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># integer number</span>
@@ -594,7 +601,7 @@ int
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -607,7 +614,7 @@ int
 <h3>Floating Point<a class="headerlink" href="#Floating-Point" title="Permalink to this headline">¶</a></h3>
 <p>Floating point values are values with a decimal point. There is a maximum float in Python 3, which is 1.7976931348623157e+308. If you multiply this maximum by 2 for example, Python will threat the number as <em>infinity</em>.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># float variable</span>
@@ -616,7 +623,24 @@ int
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+float
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">1.7976931348623157e+308</span><span class="o">*</span><span class="mi">2</span>
@@ -624,7 +648,7 @@ int
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -635,27 +659,35 @@ inf
 </section>
 <section id="Complex-Numbers">
 <h3>Complex Numbers<a class="headerlink" href="#Complex-Numbers" title="Permalink to this headline">¶</a></h3>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">=</span><span class="mi">2</span><span class="o">+</span><span class="mi">4</span><span class="n">j</span>
-<span class="nb">type</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">j</span><span class="o">=</span><span class="mi">5</span>
+<span class="n">c</span><span class="o">=</span><span class="mi">2</span><span class="o">+</span><span class="mi">4</span><span class="n">j</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">.</span><span class="n">imag</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-complex
+4.0
 </pre></div></div>
 </div>
 <p>Complex numbers have built in <em>accessors</em>. These accessors give for example access to the <em>real</em> and <em>imaginary</em> part of the complex number.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">r</span><span class="o">=</span><span class="n">c</span><span class="o">.</span><span class="n">real</span>
@@ -672,7 +704,7 @@ complex
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">i</span><span class="o">=</span><span class="n">c</span><span class="o">.</span><span class="n">imag</span>
@@ -690,10 +722,10 @@ complex
 </div>
 <p>On the other side, one my also evaluate the complex conjugate of a complex number by one of those accessors. Note that this is provided by a function here, while the above real and imaginary part are values. The are some basic functions available, which act on complex numbers. More complex calculations are possible with functions built in to modules such as <em>cmath</em> or <em>numpy</em>.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">=</span><span class="p">(</span><span class="mi">2</span><span class="o">+</span><span class="mi">4</span><span class="n">j</span><span class="p">)</span><span class="o">.</span><span class="n">conjugate</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span><span class="o">=</span><span class="n">c</span><span class="o">.</span><span class="n">conjugate</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -703,17 +735,17 @@ complex
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
--4.0
+4.0
 </pre></div></div>
 </div>
 </section>
 <section id="Type-casting">
 <h3>Type casting<a class="headerlink" href="#Type-casting" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">1.5</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">5</span><span class="o">/</span><span class="mi">2</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
 </pre></div>
@@ -724,11 +756,11 @@ complex
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-1.5 &lt;class 'float'&gt;
+2.5 &lt;class 'float'&gt;
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -742,11 +774,11 @@ complex
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-1 &lt;class 'int'&gt;
+5 &lt;class 'int'&gt;
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="nb">complex</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
@@ -760,28 +792,24 @@ complex
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-(1+0j) &lt;class 'complex'&gt;
+(2+0j) &lt;class 'complex'&gt;
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">z</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt empty docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+</pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
-<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">&lt;ipython-input-7-19c840f40bd8&gt;</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
-<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>x <span class="ansi-blue-fg">=</span> float<span class="ansi-blue-fg">(</span>z<span class="ansi-blue-fg">)</span>
-
-<span class="ansi-red-fg">TypeError</span>: can't convert complex to float
+float
 </pre></div></div>
 </div>
 <p>Complex variables cannot be cast to floats or integers. We need to use <code class="docutils literal notranslate"><span class="pre">z.real</span></code> or <code class="docutils literal notranslate"><span class="pre">z.imag</span></code> to extract the part of the complex number we want:</p>
@@ -841,7 +869,7 @@ complex
 
         <div class="related-information">
               Copyright &#169; 2022, Frank Cichos |
-            Last updated on Apr 12, 2022. |
+            Last updated on Apr 18, 2022. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
