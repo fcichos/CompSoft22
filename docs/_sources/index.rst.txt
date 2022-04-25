@@ -76,6 +76,15 @@ We will not present a comprehensive list of numerical simulation schemes, but us
    lectures/L2/assignment_2.rst    
    
    
+.. toctree::
+   :maxdepth: 2
+   :caption: Lecture 3:
+
+   lectures/L3/overview_3.rst
+   notebooks/L3/1_input_output.ipynb
+   notebooks/L3/2_flowcontrol.ipynb   
+   notebooks/L3/3_functions.ipynb  
+   notebooks/L3/4_exceptions.ipynb   
    
 Indices and tables
 ==================

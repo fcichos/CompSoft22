@@ -191,6 +191,14 @@
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Random numbers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../lectures/L2/assignment_2.html">Exercise 2</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 3:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/L3/overview_3.html">Lecture Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L3/1_input_output.html">Input and output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L3/2_flowcontrol.html">Flow Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L3/3_functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L3/4_exceptions.html">Exceptions</a></li>
+</ul>
 
 </div>
 </div>
@@ -468,7 +476,13 @@ div.rendered_html tbody tr:hover {
 <p>This page was generated from <cite>notebooks/L2/3_randomnumbers.ipynb</cite>.
 <span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/CompSoft22/main?urlpath=tree/source/notebooks/L2/3_randomnumbers.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-%20myBinder-red.svg" style="vertical-align:text-bottom"/></a></span> <span class="raw-html"><br/><a href="https://colab.research.google.com/github/fcichos/CompSoft22/blob/main/source/notebooks/L2/3_randomnumbers.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-%20colab-green.svg" style="vertical-align:text-bottom"/></a></span></p>
 </div>
-<section id="Random-numbers">
+<h1><p>Table of Contents</p>
+</h1><div class="toc"><ul class="toc-item"><li><p>1  Random numbers</p>
+<ul class="toc-item"><li><p>1.1  Uniformly distributed random numbers</p>
+</li><li><p>1.2  Normally distributed random numbers</p>
+</li><li><p>1.3  Exponentially distributed numbers</p>
+</li><li><p>1.4  Random distribution of integers</p>
+</li></ul></li></ul></div><section id="Random-numbers">
 <h1>Random numbers<a class="headerlink" href="#Random-numbers" title="Permalink to this headline">¶</a></h1>
 <p>Random numbers are widely used in science and engineering computations. They can be used to simulate noisy data, or to model physical phenomena like the distribution of velocities of molecules in a gas, or to act like the roll of dice in a game. Monte Carlo simulation techniques, which will be part of a later theory lecture rely heavily and random number. Processes like single photon emission or Brownian motion are stochastic processes, with an intrisic randomness as well. But there are even
 methods for numerically evaluating multi-dimensional integrals using random numbers.</p>
@@ -574,7 +588,7 @@ array([[0.9323968 , 0.20114768],
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/notebooks_L2_3_randomnumbers_9_0.png" class="no-scaled-link" src="../../_images/notebooks_L2_3_randomnumbers_9_0.png" style="width: 388px; height: 254px;">
+<img alt="../../_images/notebooks_L2_3_randomnumbers_10_0.png" class="no-scaled-link" src="../../_images/notebooks_L2_3_randomnumbers_10_0.png" style="width: 388px; height: 254px;">
 </img></div>
 </div>
 </section>
@@ -599,7 +613,7 @@ p(x)dx=\frac{1}{\sqrt{2\pi}\sigma}e^{-\frac{(x-\mu)^2}{2\sigma^2}}dx
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/notebooks_L2_3_randomnumbers_12_0.png" class="no-scaled-link" src="../../_images/notebooks_L2_3_randomnumbers_12_0.png" style="width: 378px; height: 250px;">
+<img alt="../../_images/notebooks_L2_3_randomnumbers_13_0.png" class="no-scaled-link" src="../../_images/notebooks_L2_3_randomnumbers_13_0.png" style="width: 378px; height: 250px;">
 </img></div>
 </div>
 <p>If you want to create a normal distribution with different standard deviation and mean value, you have to multiply by the new standard deviation and add the mean.</p>
@@ -666,7 +680,7 @@ y(N)=\sum_{i=1}^{N}\Delta y_{i}
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/notebooks_L2_3_randomnumbers_20_0.png" class="no-scaled-link" src="../../_images/notebooks_L2_3_randomnumbers_20_0.png" style="width: 427px; height: 390px;"/>
+<img alt="../../_images/notebooks_L2_3_randomnumbers_21_0.png" class="no-scaled-link" src="../../_images/notebooks_L2_3_randomnumbers_21_0.png" style="width: 427px; height: 390px;"/>
 </div>
 </div>
 </section>
@@ -738,7 +752,7 @@ array([0.89196938, 0.92497306, 0.12805347, ..., 4.39709775, 1.56870637,
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/notebooks_L2_3_randomnumbers_27_0.png" class="no-scaled-link" src="../../_images/notebooks_L2_3_randomnumbers_27_0.png" style="width: 378px; height: 250px;"/>
+<img alt="../../_images/notebooks_L2_3_randomnumbers_28_0.png" class="no-scaled-link" src="../../_images/notebooks_L2_3_randomnumbers_28_0.png" style="width: 378px; height: 250px;"/>
 </div>
 </div>
 </section>
@@ -816,7 +830,7 @@ array([ 4,  1, 19, 12,  3, 16, 14, 19,  5,  2])
 
         <div class="related-information">
               Copyright &#169; 2022, Frank Cichos |
-            Last updated on Apr 19, 2022. |
+            Last updated on Apr 25, 2022. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
