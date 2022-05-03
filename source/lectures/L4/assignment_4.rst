@@ -1,7 +1,7 @@
 Exercise 4
 ==========
 
-The fourth assignment will be about the topic which is bothering us at the moment - COVID19! You will apply your knowledge about 
+The fourth assignment will be about the topic which is still bothering - COVID19! You will apply your knowledge about 
 
 1. Classes and objects
 2. Flow Control
