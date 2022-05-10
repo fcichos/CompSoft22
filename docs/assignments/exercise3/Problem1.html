@@ -1,0 +1,903 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
+
+    <meta name="generator" content="sphinx-4.4.0, furo 2021.09.08"/>
+        <title>Problemset 1 - Introduction to Computer-based Physical Modeling 22 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=c7c65a82b42f6b978e58466c1e9ef2509836d916" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=16fb25fabf47304eee183a5e9af80b1ba98259b1" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  body[data-theme="dark"] {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
+  @media (prefers-color-scheme: dark) {
+    body:not([data-theme="light"]) {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+  }
+</style></head>
+  <body>
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" />
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">Introduction to Computer-based Physical Modeling 22 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/mona_logo.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">Introduction to Computer-based Physical Modeling 22 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Course Information:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../course-info/website.html">This Website</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../course-info/schedule.html">Course Schedule</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../course-info/assignments.html">Assignments</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../course-info/exam.html">Exams</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../course-info/resources.html">Resources</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../course-info/instructor.html">Instructor</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Jupyter Notebooks:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/Intro/overview.html">Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks/Intro/1_Introduction2Jupyter.html">Introduction to Jupyter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks/Intro/2_NotebookEditor.html">Notebook editor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks/Intro/3_EditCells.html">Entering code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks/Intro/3_EditCells.html#Entering-Markdown">Entering Markdown</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 1:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/L1/overview_1.html">Lecture Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks/L1/1_variables.html">Variables and types</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks/L1/2_operators.html">Operators and comparisons</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks/L1/3_datatypes.html">Data Types in Python</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks/L1/4_modules.html">Modules and namespaces</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/L1/assignment_1.html">Exercise 1</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 2:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/L2/overview_2.html">Lecture Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks/L2/1_numpy.html">NumPy arrays</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks/L2/2_plotting.html">Plotting data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks/L2/3_randomnumbers.html">Random numbers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/L2/assignment_2.html">Exercise 2</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 3:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/L3/overview_3.html">Lecture Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks/L3/1_input_output.html">Input and output</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks/L3/2_flowcontrol.html">Flow Control</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks/L3/3_functions.html">Functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks/L3/4_exceptions.html">Exceptions</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lectures/L3/assignment_3.html">Exercise 3</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 4:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/L4/overview_4.html">Lecture Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks/L4/1_classes.html">Classes and Objects</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks/L4/2_brownian_motion.html">Brownian Motion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks/L4/3_animations.html">Animations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/L4/assignment_4.html">Exercise 4</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 5:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/L5/overview_5.html">Lecture Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks/L5/1_differentiation.html">Numerical Differentiation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks/L5/2_integration.html">Numerical Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks/L5/3_solving_ODEs.html">Solving ODEs</a></li>
+</ul>
+
+</div>
+</div>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          
+<style>
+/* CSS for nbsphinx extension */
+
+/* remove conflicting styling from Sphinx themes */
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt *,
+div.nbinput.container div.input_area pre,
+div.nboutput.container div.output_area pre,
+div.nbinput.container div.input_area .highlight,
+div.nboutput.container div.output_area .highlight {
+    border: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+div.nbinput.container > div[class*=highlight],
+div.nboutput.container > div[class*=highlight] {
+    margin: 0;
+}
+
+div.nbinput.container div.prompt *,
+div.nboutput.container div.prompt * {
+    background: none;
+}
+
+div.nboutput.container div.output_area .highlight,
+div.nboutput.container div.output_area pre {
+    background: unset;
+}
+
+div.nboutput.container div.output_area div.highlight {
+    color: unset;  /* override Pygments text color */
+}
+
+/* avoid gaps between output lines */
+div.nboutput.container div[class*=highlight] pre {
+    line-height: normal;
+}
+
+/* input/output containers */
+div.nbinput.container,
+div.nboutput.container {
+    display: -webkit-flex;
+    display: flex;
+    align-items: flex-start;
+    margin: 0;
+    width: 100%;
+}
+@media (max-width: 540px) {
+    div.nbinput.container,
+    div.nboutput.container {
+        flex-direction: column;
+    }
+}
+
+/* input container */
+div.nbinput.container {
+    padding-top: 5px;
+}
+
+/* last container */
+div.nblast.container {
+    padding-bottom: 5px;
+}
+
+/* input prompt */
+div.nbinput.container div.prompt pre {
+    color: #307FC1;
+}
+
+/* output prompt */
+div.nboutput.container div.prompt pre {
+    color: #BF5B3D;
+}
+
+/* all prompts */
+div.nbinput.container div.prompt,
+div.nboutput.container div.prompt {
+    width: 4.5ex;
+    padding-top: 5px;
+    position: relative;
+    user-select: none;
+}
+
+div.nbinput.container div.prompt > div,
+div.nboutput.container div.prompt > div {
+    position: absolute;
+    right: 0;
+    margin-right: 0.3ex;
+}
+
+@media (max-width: 540px) {
+    div.nbinput.container div.prompt,
+    div.nboutput.container div.prompt {
+        width: unset;
+        text-align: left;
+        padding: 0.4em;
+    }
+    div.nboutput.container div.prompt.empty {
+        padding: 0;
+    }
+
+    div.nbinput.container div.prompt > div,
+    div.nboutput.container div.prompt > div {
+        position: unset;
+    }
+}
+
+/* disable scrollbars on prompts */
+div.nbinput.container div.prompt pre,
+div.nboutput.container div.prompt pre {
+    overflow: hidden;
+}
+
+/* input/output area */
+div.nbinput.container div.input_area,
+div.nboutput.container div.output_area {
+    -webkit-flex: 1;
+    flex: 1;
+    overflow: auto;
+}
+@media (max-width: 540px) {
+    div.nbinput.container div.input_area,
+    div.nboutput.container div.output_area {
+        width: 100%;
+    }
+}
+
+/* input area */
+div.nbinput.container div.input_area {
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    /*background: #f5f5f5;*/
+}
+
+/* override MathJax center alignment in output cells */
+div.nboutput.container div[class*=MathJax] {
+    text-align: left !important;
+}
+
+/* override sphinx.ext.imgmath center alignment in output cells */
+div.nboutput.container div.math p {
+    text-align: left;
+}
+
+/* standard error */
+div.nboutput.container div.output_area.stderr {
+    background: #fdd;
+}
+
+/* ANSI colors */
+.ansi-black-fg { color: #3E424D; }
+.ansi-black-bg { background-color: #3E424D; }
+.ansi-black-intense-fg { color: #282C36; }
+.ansi-black-intense-bg { background-color: #282C36; }
+.ansi-red-fg { color: #E75C58; }
+.ansi-red-bg { background-color: #E75C58; }
+.ansi-red-intense-fg { color: #B22B31; }
+.ansi-red-intense-bg { background-color: #B22B31; }
+.ansi-green-fg { color: #00A250; }
+.ansi-green-bg { background-color: #00A250; }
+.ansi-green-intense-fg { color: #007427; }
+.ansi-green-intense-bg { background-color: #007427; }
+.ansi-yellow-fg { color: #DDB62B; }
+.ansi-yellow-bg { background-color: #DDB62B; }
+.ansi-yellow-intense-fg { color: #B27D12; }
+.ansi-yellow-intense-bg { background-color: #B27D12; }
+.ansi-blue-fg { color: #208FFB; }
+.ansi-blue-bg { background-color: #208FFB; }
+.ansi-blue-intense-fg { color: #0065CA; }
+.ansi-blue-intense-bg { background-color: #0065CA; }
+.ansi-magenta-fg { color: #D160C4; }
+.ansi-magenta-bg { background-color: #D160C4; }
+.ansi-magenta-intense-fg { color: #A03196; }
+.ansi-magenta-intense-bg { background-color: #A03196; }
+.ansi-cyan-fg { color: #60C6C8; }
+.ansi-cyan-bg { background-color: #60C6C8; }
+.ansi-cyan-intense-fg { color: #258F8F; }
+.ansi-cyan-intense-bg { background-color: #258F8F; }
+.ansi-white-fg { color: #C5C1B4; }
+.ansi-white-bg { background-color: #C5C1B4; }
+.ansi-white-intense-fg { color: #A1A6B2; }
+.ansi-white-intense-bg { background-color: #A1A6B2; }
+
+.ansi-default-inverse-fg { color: #FFFFFF; }
+.ansi-default-inverse-bg { background-color: #000000; }
+
+.ansi-bold { font-weight: bold; }
+.ansi-underline { text-decoration: underline; }
+
+
+div.nbinput.container div.input_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight] > pre,
+div.nboutput.container div.output_area div[class*=highlight].math,
+div.nboutput.container div.output_area.rendered_html,
+div.nboutput.container div.output_area > div.output_javascript,
+div.nboutput.container div.output_area:not(.rendered_html) > img{
+    padding: 5px;
+    margin: 0;
+}
+
+/* fix copybtn overflow problem in chromium (needed for 'sphinx_copybutton') */
+div.nbinput.container div.input_area > div[class^='highlight'],
+div.nboutput.container div.output_area > div[class^='highlight']{
+    overflow-y: hidden;
+}
+
+/* hide copybtn icon on prompts (needed for 'sphinx_copybutton') */
+.prompt .copybtn {
+    display: none;
+}
+
+/* Some additional styling taken form the Jupyter notebook CSS */
+div.rendered_html table {
+  border: none;
+  border-collapse: collapse;
+  border-spacing: 0;
+  color: black;
+  font-size: 12px;
+  table-layout: fixed;
+}
+div.rendered_html thead {
+  border-bottom: 1px solid black;
+  vertical-align: bottom;
+}
+div.rendered_html tr,
+div.rendered_html th,
+div.rendered_html td {
+  text-align: right;
+  vertical-align: middle;
+  padding: 0.5em 0.5em;
+  line-height: normal;
+  white-space: normal;
+  max-width: none;
+  border: none;
+}
+div.rendered_html th {
+  font-weight: bold;
+}
+div.rendered_html tbody tr:nth-child(odd) {
+  background: #f5f5f5;
+}
+div.rendered_html tbody tr:hover {
+  background: rgba(66, 165, 245, 0.2);
+}
+</style>
+<div class="admonition note">
+<p>This page was generated from <cite>assignments/exercise3/Problem1.ipynb</cite>.
+<span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/CompSoft22/main?urlpath=tree/source/assignments/exercise3/Problem1.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-%20myBinder-red.svg" style="vertical-align:text-bottom"/></a></span> <span class="raw-html"><br/><a href="https://colab.research.google.com/github/fcichos/CompSoft22/blob/main/source/assignments/exercise3/Problem1.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-%20colab-green.svg" style="vertical-align:text-bottom"/></a></span></p>
+</div>
+<section id="Problemset-1">
+<h1>Problemset 1<a class="headerlink" href="#Problemset-1" title="Permalink to this headline">¶</a></h1>
+<p>Our todays problemset will contain exercises from the data <strong>input and output</strong> section, the <strong>flow control</strong> as well as from the function sections of the 3. lecture.I hope you all did read the self-study part on <strong>exceptions</strong>.</p>
+<p>Just do our usual importing.</p>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">time</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = 'retina'
+
+<span class="n">plt</span><span class="o">.</span><span class="n">rcParams</span><span class="o">.</span><span class="n">update</span><span class="p">({</span><span class="s1">'font.size'</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span>
+                     <span class="s1">'axes.titlesize'</span><span class="p">:</span> <span class="mi">20</span><span class="p">,</span>
+                     <span class="s1">'axes.labelsize'</span><span class="p">:</span> <span class="mi">18</span><span class="p">,</span>
+                     <span class="s1">'axes.labelpad'</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+                     <span class="s1">'lines.linewidth'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+                     <span class="s1">'lines.markersize'</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+                     <span class="s1">'xtick.labelsize'</span> <span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+                     <span class="s1">'ytick.labelsize'</span> <span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+                     <span class="s1">'xtick.top'</span> <span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                     <span class="s1">'xtick.direction'</span> <span class="p">:</span> <span class="s1">'in'</span><span class="p">,</span>
+                     <span class="s1">'ytick.right'</span> <span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                     <span class="s1">'ytick.direction'</span> <span class="p">:</span> <span class="s1">'in'</span><span class="p">,})</span>
+</pre></div>
+</div>
+</div>
+<section id="Input-&amp;-Output">
+<h2>Input &amp; Output<a class="headerlink" href="#Input-&amp;-Output" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p><strong>Read data from a file</strong></p></li>
+</ol>
+<ul class="simple">
+<li><p>Read the data from the csv file <code class="docutils literal notranslate"><span class="pre">2018-04-12_sds011_sensor_12253.csv</span></code> contained in the directory “data” with the help of the <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> module.</p></li>
+<li><p>Use only the last two data columns containing data (hint: some of the last columns are empty, seelct the right ones)</p></li>
+<li><p>skip the first row</p></li>
+<li><p>assign the tow columns to the NumPy arrays P1 and P2</p></li>
+</ul>
+<p>Here are the first three lines of the text file that you can judge the file structure.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sensor_id;sensor_type;location;lat;lon;timestamp;P1;durP1;ratioP1;P2;durP2;ratioP2
+12253;SDS011;6189;52.527;13.390;2018-04-12T00:00:58;31.10;;;26.03;;
+12253;SDS011;6189;52.527;13.390;2018-04-12T00:03:24;35.07;;;27.60;;
+</pre></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">P1</span><span class="p">,</span><span class="n">P2</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">'data/2018-04-12_sds011_sensor_12253.csv'</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">';'</span><span class="p">,</span><span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">usecols</span><span class="o">=</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">9</span><span class="p">),</span><span class="n">unpack</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Plot how the value of P1 depends on the value of P2 in a scatter plot. Use axis labels.</strong></p></li>
+</ol>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">P2</span><span class="p">,</span><span class="n">P1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'P2'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'P1'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/assignments_exercise3_Problem1_8_0.png" class="no-scaled-link" src="../../_images/assignments_exercise3_Problem1_8_0.png" style="width: 406px; height: 283px;">
+</img></div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p><strong>Write a text file called ``P1_P2.txt`` to the data directory with the data contained in the arrays P1 and P2 as columns.</strong></p></li>
+</ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Save text file</span>
+
+<span class="c1">### BEGIN SOLUTION</span>
+<span class="n">np</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span><span class="s1">'data/P1_P2.txt'</span><span class="p">,</span><span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">P1</span><span class="p">,</span><span class="n">P2</span><span class="p">)))</span>
+<span class="c1">### END SOLUTION</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p><strong>Load the same csv file with the help of ``pandas.read_csv``. Load the column 5,6 and 9 only into one dataframe df.</strong></p></li>
+</ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read with pandas</span>
+
+<span class="c1">### BEGIN SOLUTION</span>
+<span class="n">df</span><span class="o">=</span><span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">'data/2018-04-12_sds011_sensor_12253.csv'</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">';'</span><span class="p">,</span><span class="n">usecols</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">,</span><span class="mi">9</span><span class="p">))</span>
+<span class="c1">### END SOLUTION</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="Flow-Control">
+<h2>Flow Control<a class="headerlink" href="#Flow-Control" title="Permalink to this headline">¶</a></h2>
+<section id="Loops">
+<h3>Loops<a class="headerlink" href="#Loops" title="Permalink to this headline">¶</a></h3>
+<p><strong>while-loop</strong></p>
+<p>Write a program to calculate the factorial of a positive integer input by the user. Recall that the factorial function is given by x! = x(x − 1)(x − 2)…(2)(1) so that 1! = 1, 2! = 2, 3! = 6, 4! = 24, …</p>
+<p>Write the factorial function using a Python while loop by defining before the function the value of <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### BEGIN SOLUTION</span>
+<span class="n">x</span><span class="o">=</span><span class="mi">4</span>
+<span class="n">i</span><span class="o">=</span><span class="mi">1</span>
+<span class="n">fac</span><span class="o">=</span><span class="mi">1</span>
+<span class="k">while</span> <span class="n">i</span><span class="o">&lt;=</span><span class="n">x</span><span class="p">:</span>
+    <span class="n">fac</span><span class="o">=</span><span class="n">fac</span><span class="o">*</span><span class="n">i</span>
+    <span class="n">i</span><span class="o">=</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fac</span><span class="p">)</span>
+<span class="c1">### END SOLUTION</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+24
+</pre></div></div>
+</div>
+<p><strong>for-loop</strong></p>
+<p>Write the factorial function using a Python for loop.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### BEGIN SOLUTION</span>
+<span class="n">x</span><span class="o">=</span><span class="mi">4</span>
+<span class="n">fac</span><span class="o">=</span><span class="mi">1</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">fac</span><span class="o">=</span><span class="n">fac</span><span class="o">*</span><span class="n">i</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">fac</span><span class="p">)</span>
+<span class="c1">### END SOLUTION</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+24
+</pre></div></div>
+</div>
+</section>
+</section>
+<section id="Functions">
+<h2>Functions<a class="headerlink" href="#Functions" title="Permalink to this headline">¶</a></h2>
+<section id="User-defined-functions">
+<h3>User defined functions<a class="headerlink" href="#User-defined-functions" title="Permalink to this headline">¶</a></h3>
+<p>Within lecture 3, we have provided a simple way of calculating first and second deraivatives of a function by another function.</p>
+<p>The <em>n</em>-th derivative can be approximately calculated by</p>
+<dl class="simple">
+<dt>:nbsphinx-math:<a href="#id1"><span class="problematic" id="id2">`</span></a>begin{equation}</dt><dd><p>frac{d^{n}f(x)}{dx^{n}}approx frac{1}{h^{n}}sum_{i=0}^{n}(-1)^{i}
+begin{pmatrix}
+n\
+i
+end{pmatrix}
+f(x+(n-i)h)</p>
+</dd>
+</dl>
+<p>end{equation}`</p>
+<p>where</p>
+<p>is the binomial coefficient which is available from the scipy module by</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>from scipy.special import binom
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p><strong>Write a function that delivers the n-th derivative of a function f using the above formula. To calculate the derivative provide the stepping parameter ``h=1e-2`` and the order ``n=1`` as a default value.</strong></p></li>
+</ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### BEGIN SOLUTION</span>
+<span class="kn">from</span> <span class="nn">scipy.special</span> <span class="kn">import</span> <span class="n">binom</span>
+
+<span class="k">def</span> <span class="nf">deriv</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">h</span><span class="o">=</span><span class="mf">1e-3</span><span class="p">,</span><span class="o">*</span><span class="n">params</span><span class="p">):</span>
+    <span class="n">tmp</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">**</span><span class="n">i</span><span class="o">*</span><span class="n">binom</span><span class="p">(</span><span class="n">n</span><span class="p">,</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="n">i</span><span class="p">)</span><span class="o">*</span><span class="n">h</span><span class="p">,</span><span class="o">*</span><span class="n">params</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">)])</span><span class="o">/</span><span class="n">h</span><span class="o">**</span><span class="n">n</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">tmp</span><span class="p">,</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+<span class="c1">### END SOLUTION</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Write a simple function ``f0(x,a)`` that returns :math:`acdot x^{5}`.</strong></p></li>
+</ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### BEGIN SOLUTION</span>
+<span class="k">def</span> <span class="nf">f0</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">a</span><span class="p">):</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="o">**</span><span class="mi">5</span><span class="p">)</span>
+<span class="c1">### END SOLUTION</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p><strong>Plot the 4th derivative of that function.</strong></p></li>
+</ol>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### BEGIN SOLUTION</span>
+<span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">d4f</span><span class="o">=</span><span class="n">deriv</span><span class="p">(</span><span class="n">f0</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mf">1e-2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">d4f</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1">### END SOLUTION</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/assignments_exercise3_Problem1_27_0.png" class="no-scaled-link" src="../../_images/assignments_exercise3_Problem1_27_0.png" style="width: 420px; height: 250px;">
+</img></div>
+</div>
+</section>
+<section id="Lambda-function">
+<h3>Lambda function<a class="headerlink" href="#Lambda-function" title="Permalink to this headline">¶</a></h3>
+<p>The text file we have loaded at the beginning has a column with a timestamp, which is useful to see when the sensor data has been recorded. We want to read that timestamp and convert the time into seconds. There are multiple ways to do that but we will use the <code class="docutils literal notranslate"><span class="pre">converters</span></code> and a <code class="docutils literal notranslate"><span class="pre">lambda</span></code> function, just to practive that</p>
+<p>NumPy can handle timestamps with the function np.datetime64(‘2018-04-12T00:00:58’), which converts a string into the type <code class="docutils literal notranslate"><span class="pre">datetime64</span></code>. This allows you to subtract times or also to extract the hour, minute or second for example by</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>second=np.datetime64('2018-04-12T00:00:58').item().second
+minute=np.datetime64('2018-04-12T00:00:58').item().minute
+hour=np.datetime64('2018-04-12T00:00:58').item().hour
+</pre></div>
+</div>
+<ol class="arabic simple">
+<li><p><strong>Create a lambda function which converts a string into a np.datetime64 variable and returns the seconds in that string. Assign the lambda function to a variable ``seconds``.</strong></p></li>
+</ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### BEGIN SOLUTION</span>
+<span class="n">seconds</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="o">.</span><span class="n">second</span>
+<span class="c1">### END SOLUTION</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="2">
+<li><p><strong>Create equivalent lambda function for extracting the minutes and the hours and assign them to ``minutes`` and ``hours``.</strong></p></li>
+</ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### BEGIN SOLUTION</span>
+<span class="n">minutes</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="o">.</span><span class="n">minute</span>
+<span class="n">hours</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">datetime64</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">.</span><span class="n">item</span><span class="p">()</span><span class="o">.</span><span class="n">hour</span>
+<span class="c1">### END SOLUTION</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="3">
+<li><p><strong>Finally write a lambda function that calculates the total seconds of the day with the help of the previously defined lambda functions. Assign the lambda function to ``total_seconds``.</strong></p></li>
+</ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### BEGIN SOLUTION</span>
+<span class="n">total_seconds</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">hours</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="mi">3600</span><span class="o">+</span><span class="n">minutes</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="o">*</span><span class="mi">60</span><span class="o">+</span><span class="n">seconds</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+<span class="c1">### END SOLUTION</span>
+</pre></div>
+</div>
+</div>
+<p>You may use converters to directly convert the strings loaded by the <code class="docutils literal notranslate"><span class="pre">loadtxt</span></code> function during loading. The way to include that is to provide the <code class="docutils literal notranslate"><span class="pre">converters</span></code> statement of the <code class="docutils literal notranslate"><span class="pre">loadttxt</span></code> with a dictionary, which contains as a key the column number and as the value for that key the function name, i.e. our lambda function. You can apply a different conversion to each column.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>data=np.loadtxt(...,converters={5:function},...)
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p><strong>Use the ``total_seconds`` lambda function as a converter in the ``numpy.loadtxt`` function to convert the timstamp directly into seconds. Import only the timestamp and store the total seconds in the array ``tot_seconds``.</strong></p></li>
+</ol>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### BEGIN SOLUTION</span>
+<span class="n">tot_seconds</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s2">"data/2018-04-12_sds011_sensor_12253.csv"</span><span class="p">,</span> <span class="n">skiprows</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s2">";"</span><span class="p">,</span>
+                       <span class="n">usecols</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span><span class="n">converters</span><span class="o">=</span><span class="p">{</span><span class="mi">5</span><span class="p">:</span><span class="n">total_seconds</span><span class="p">})</span>
+<span class="c1">### END SOLUTION</span>
+</pre></div>
+</div>
+</div>
+<ol class="arabic simple" start="5">
+<li><p><strong>Plot the value of P1 and P2 as a function of the hour of the day. Provide a axis labels, legend and labels!</strong></p></li>
+</ol>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### BEGIN SOLUTION</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tot_seconds</span><span class="o">/</span><span class="mi">3600</span><span class="p">,</span><span class="n">P1</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">'P1'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tot_seconds</span><span class="o">/</span><span class="mi">3600</span><span class="p">,</span><span class="n">P2</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">'P2'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'hour'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'P1,P2'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="c1">### END SOLUTION</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<img alt="../../_images/assignments_exercise3_Problem1_39_0.png" class="no-scaled-link" src="../../_images/assignments_exercise3_Problem1_39_0.png" style="width: 412px; height: 283px;"/>
+</div>
+</div>
+<script type="application/vnd.jupyter.widget-state+json">
+{"state": {}, "version_major": 2, "version_minor": 0}
+</script></section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          
+        </div>
+
+        <div class="related-information">
+              Copyright &#169; 2022, Frank Cichos |
+            Last updated on May 10, 2022. |
+            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+              and
+              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+              <a href="https://github.com/pradyunsg/furo">Furo theme</a>. |
+            <a class="muted-link" href="../../_sources/assignments/exercise3/Problem1.ipynb.txt"
+               rel="nofollow">
+              Show Source
+            </a>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Problemset 1</a><ul>
+<li><a class="reference internal" href="#Input-&amp;-Output">Input &amp; Output</a></li>
+<li><a class="reference internal" href="#Flow-Control">Flow Control</a><ul>
+<li><a class="reference internal" href="#Loops">Loops</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#Functions">Functions</a><ul>
+<li><a class="reference internal" href="#User-defined-functions">User defined functions</a></li>
+<li><a class="reference internal" href="#Lambda-function">Lambda function</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/scripts/main.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.20.0/dist/embed-amd.js"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"TeX": {"equationNumbers": {"autoNumber": "AMS", "useLabelIds": true}}, "tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "tex2jax_ignore|mathjax_ignore|document", "processClass": "tex2jax_process|mathjax_process|math|output_area"}})</script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    </body>
+</html>
