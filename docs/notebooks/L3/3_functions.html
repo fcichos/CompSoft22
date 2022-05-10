@@ -206,6 +206,14 @@
 <li class="toctree-l1"><a class="reference internal" href="../L4/1_classes.html">Classes and Objects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L4/2_brownian_motion.html">Brownian Motion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L4/3_animations.html">Animations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/L4/assignment_4.html">Exercise 4</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 5:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/L5/overview_5.html">Lecture Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L5/1_differentiation.html">Numerical Differentiation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L5/2_integration.html">Numerical Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L5/3_solving_ODEs.html">Solving ODEs</a></li>
 </ul>
 
 </div>
@@ -484,7 +492,17 @@ div.rendered_html tbody tr:hover {
 <p>This page was generated from <cite>notebooks/L3/3_functions.ipynb</cite>.
 <span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/CompSoft22/main?urlpath=tree/source/notebooks/L3/3_functions.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-%20myBinder-red.svg" style="vertical-align:text-bottom"/></a></span> <span class="raw-html"><br/><a href="https://colab.research.google.com/github/fcichos/CompSoft22/blob/main/source/notebooks/L3/3_functions.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-%20colab-green.svg" style="vertical-align:text-bottom"/></a></span></p>
 </div>
-<section id="Functions">
+<h1><p>Table of Contents</p>
+</h1><div class="toc"><ul class="toc-item"><li><p>1  Functions</p>
+<ul class="toc-item"><li><p>1.1  Function definition</p>
+</li><li><p>1.2  Variables in functions</p>
+</li><li><p>1.3  Functions with more than one input or output</p>
+<ul class="toc-item"><li><p>1.3.1  Positional and keyword arguments</p>
+</li><li><p>1.3.2  Functions with variable number of arguments</p>
+</li></ul></li><li><p>1.4  Unnamed functions (lambda function)</p>
+</li><li><p>1.5  Functions as arguments of functions</p>
+</li><li><p>1.6  First-Class Objects, Inner Functions and Decorators</p>
+</li></ul></li></ul></div><section id="Functions">
 <h1>Functions<a class="headerlink" href="#Functions" title="Permalink to this headline">¶</a></h1>
 <p>Python allows to define functions. Functions collect code that you would use repeatedly in your program.</p>
 <div class="nbinput nblast docutils container">
@@ -614,7 +632,7 @@ array([        nan,  0.95885108,  0.84147098,  0.66499666,  0.45464871,
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/notebooks_L3_3_functions_12_0.png" class="no-scaled-link" src="../../_images/notebooks_L3_3_functions_12_0.png" style="width: 401px; height: 250px;">
+<img alt="../../_images/notebooks_L3_3_functions_13_0.png" class="no-scaled-link" src="../../_images/notebooks_L3_3_functions_13_0.png" style="width: 401px; height: 250px;">
 </img></div>
 </div>
 <p>Loops are in general slowly executed and there is a faster way of checking the elements of an array by the <code class="docutils literal notranslate"><span class="pre">np.where</span></code> function of the NumPy library. There where function has the form</p>
@@ -737,7 +755,7 @@ This is a changed global : 15
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/notebooks_L3_3_functions_29_0.png" class="no-scaled-link" src="../../_images/notebooks_L3_3_functions_29_0.png" style="width: 208px; height: 196px;">
+<img alt="../../_images/notebooks_L3_3_functions_30_0.png" class="no-scaled-link" src="../../_images/notebooks_L3_3_functions_30_0.png" style="width: 208px; height: 196px;">
 </img></div>
 </div>
 </section>
@@ -971,7 +989,7 @@ f^{\prime}(x_{i})\approx\frac{f(x+\delta x)-f(x)}{\delta x}=\frac{f(x_{i+1})-f(x
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/notebooks_L3_3_functions_55_0.png" class="no-scaled-link" src="../../_images/notebooks_L3_3_functions_55_0.png" style="width: 415px; height: 280px;"/>
+<img alt="../../_images/notebooks_L3_3_functions_56_0.png" class="no-scaled-link" src="../../_images/notebooks_L3_3_functions_56_0.png" style="width: 415px; height: 280px;"/>
 </div>
 </div>
 <p>We may similarly also define a second derivative</p>
@@ -1015,15 +1033,13 @@ f^{\prime\prime}(x_{i})\approx\frac{f(x+2\delta x)-2f(x+\delta x)+f(x)}{\delta x
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/notebooks_L3_3_functions_59_0.png" class="no-scaled-link" src="../../_images/notebooks_L3_3_functions_59_0.png" style="width: 415px; height: 280px;"/>
+<img alt="../../_images/notebooks_L3_3_functions_60_0.png" class="no-scaled-link" src="../../_images/notebooks_L3_3_functions_60_0.png" style="width: 415px; height: 280px;"/>
 </div>
 </div>
-</section>
-<section id="First-Class-Objects,-Inner-Functions-and-Decorators">
-<h2>First-Class Objects, Inner Functions and Decorators<a class="headerlink" href="#First-Class-Objects,-Inner-Functions-and-Decorators" title="Permalink to this headline">¶</a></h2>
+<p>## First-Class Objects, Inner Functions and Decorators</p>
 <p>So far we have had a short look at so-called functions as <strong>First-Class objects</strong>, which means, that they can be passed around as arguments like any other variable. The example below defines two greeter functions that are used in a third function to greet.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">hello</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
@@ -1038,7 +1054,7 @@ f^{\prime\prime}(x_{i})\approx\frac{f(x+2\delta x)-2f(x+\delta x)+f(x)}{\delta x
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">greet_bob</span><span class="p">(</span><span class="n">hello</span><span class="p">)</span>
@@ -1046,7 +1062,28 @@ f^{\prime\prime}(x_{i})\approx\frac{f(x+2\delta x)-2f(x+\delta x)+f(x)}{\delta x
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+<span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
+<span class="ansi-green-fg">/tmp/ipykernel_3086055/4072327919.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>greet_bob<span class="ansi-blue-fg">(</span>hello<span class="ansi-blue-fg">)</span>
+
+<span class="ansi-red-fg">NameError</span>: name 'greet_bob' is not defined
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">greet</span><span class="p">(</span><span class="n">hello</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1054,27 +1091,10 @@ f^{\prime\prime}(x_{i})\approx\frac{f(x+2\delta x)-2f(x+\delta x)+f(x)}{\delta x
 'Hello Dude'
 </pre></div></div>
 </div>
-<div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">greet</span><span class="p">(</span><span class="n">howdy</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
-</pre></div>
-</div>
-<div class="output_area docutils container">
-<div class="highlight"><pre>
-"Yo Dude, what's up!"
-</pre></div></div>
-</div>
 <p>The greeter function <code class="docutils literal notranslate"><span class="pre">hello</span></code> or <code class="docutils literal notranslate"><span class="pre">howdy</span></code> are passed to the greet as function arguments and then called with the same argument.</p>
 <p>Functions can, however, be also defined inside of other function like in the example below.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">parent</span><span class="p">():</span>
@@ -1093,7 +1113,7 @@ f^{\prime\prime}(x_{i})\approx\frac{f(x+2\delta x)-2f(x+\delta x)+f(x)}{\delta x
 </div>
 <p>Here the functions <code class="docutils literal notranslate"><span class="pre">first_child</span></code> and <code class="docutils literal notranslate"><span class="pre">second_child</span></code> are local functions inside the <code class="docutils literal notranslate"><span class="pre">parent</span></code>function and only known inside this function. They are therefore called <strong>inner functions</strong>. Look at the corresponding output of the parent function</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parent</span><span class="p">()</span>
@@ -1112,7 +1132,7 @@ Printing from the first_child() function
 </div>
 <p>and try to call the <code class="docutils literal notranslate"><span class="pre">first_child</span></code> function</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first_child</span><span class="p">()</span>
@@ -1126,7 +1146,7 @@ Printing from the first_child() function
 <div class="highlight"><pre>
 <span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">NameError</span>                                 Traceback (most recent call last)
-<span class="ansi-green-fg">/tmp/ipykernel_1507498/2276402280.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
+<span class="ansi-green-fg">/tmp/ipykernel_3086055/2276402280.py</span> in <span class="ansi-cyan-fg">&lt;module&gt;</span>
 <span class="ansi-green-fg">----&gt; 1</span><span class="ansi-red-fg"> </span>first_child<span class="ansi-blue-fg">(</span><span class="ansi-blue-fg">)</span>
 
 <span class="ansi-red-fg">NameError</span>: name 'first_child' is not defined
@@ -1135,7 +1155,7 @@ Printing from the first_child() function
 <p>This function is not known outside the <code class="docutils literal notranslate"><span class="pre">parent</span></code> function.</p>
 <p>Now in addition to that we can also return functions from a function like in the following example:</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">parent</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
@@ -1154,16 +1174,16 @@ Printing from the first_child() function
 </div>
 <p>This means that we can assign the function <code class="docutils literal notranslate"><span class="pre">first_child</span></code> to a variable first</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first</span><span class="o">=</span><span class="n">parent</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first</span><span class="o">=</span><span class="n">parent</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <p>such that this variable is now of type <code class="docutils literal notranslate"><span class="pre">function</span></code>.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">first</span><span class="p">)</span>
@@ -1171,7 +1191,7 @@ Printing from the first_child() function
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -1180,7 +1200,7 @@ function
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">first</span><span class="p">()</span>
@@ -1188,36 +1208,36 @@ function
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[29]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-'Hi, I am Emma'
+'Call me Liam'
 </pre></div></div>
 </div>
 <p>We have now all elements collected to introduce some new magic, which you probably have to digest with the help of some external sources. The new magic is called <strong>decorators</strong>.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
-    <span class="k">def</span> <span class="nf">wrapper</span><span class="p">():</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"I can do something before the function."</span><span class="p">)</span>
-        <span class="n">func</span><span class="p">()</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">"And I can do something after the function."</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">wrapper</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">#def my_decorator(func):</span>
+<span class="c1">#    def wrapper():</span>
+<span class="c1">#        print("I can do something before the function.")</span>
+<span class="c1">#        func()</span>
+<span class="c1">#        print("And I can do something after the function.")</span>
+<span class="c1">#    return wrapper</span>
 
 <span class="k">def</span> <span class="nf">do_something</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">"Then I execute the original function!"</span><span class="p">)</span>
 
-<span class="n">do_something</span> <span class="o">=</span> <span class="n">my_decorator</span><span class="p">(</span><span class="n">do_something</span><span class="p">)</span>
+<span class="c1">#do_something = my_decorator(do_something)</span>
 </pre></div>
 </div>
 </div>
 <p>If you execute the function <code class="docutils literal notranslate"><span class="pre">do_something</span></code> you will probably recognize the magic.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">do_something</span><span class="p">()</span>
@@ -1229,9 +1249,7 @@ function
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-I can do something before the function.
 Then I execute the original function!
-And I can do something after the function.
 </pre></div></div>
 </div>
 <p>To explain the details shortly, we first define a function <code class="docutils literal notranslate"><span class="pre">my_decorator</span></code> which is intended to use an function as an argument. In this function we define an inner function <code class="docutils literal notranslate"><span class="pre">wrapper</span></code>, which calls the function <code class="docutils literal notranslate"><span class="pre">func</span></code> inbetween two print statements. After this definition is done, the function <code class="docutils literal notranslate"><span class="pre">my_decorator</span></code> returns this wrapper function.</p>
@@ -1239,7 +1257,7 @@ And I can do something after the function.
 <p>The original function call is now <em>wrapped</em> inside other function calls but has still the same name. <strong>So what?</strong></p>
 <p>Well this type of decorators is useful, when you want to modify the behavior of existing functions without changing their name and completely redefining their functionality. I will give some example below. Before, we just have a look at some mroe syntax magic, which actually makes more sense, as the statement <strong>@my_decorator</strong> now decorates the original function <code class="docutils literal notranslate"><span class="pre">do_something</span></code>.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">my_decorator</span><span class="p">(</span><span class="n">func</span><span class="p">):</span>
@@ -1290,7 +1308,7 @@ And I can do something after the function.
 
         <div class="related-information">
               Copyright &#169; 2022, Frank Cichos |
-            Last updated on May 03, 2022. |
+            Last updated on May 10, 2022. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
@@ -1325,7 +1343,6 @@ And I can do something after the function.
 </li>
 <li><a class="reference internal" href="#Unnamed-functions-(lambda-function)">Unnamed functions (lambda function)</a></li>
 <li><a class="reference internal" href="#Functions-as-arguments-of-functions">Functions as arguments of functions</a></li>
-<li><a class="reference internal" href="#First-Class-Objects,-Inner-Functions-and-Decorators">First-Class Objects, Inner Functions and Decorators</a></li>
 </ul>
 </li>
 </ul>

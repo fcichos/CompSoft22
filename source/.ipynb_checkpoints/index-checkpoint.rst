@@ -98,6 +98,15 @@ We will not present a comprehensive list of numerical simulation schemes, but us
    notebooks/L4/3_animations.ipynb  
    lectures/L4/assignment_4.rst
    
+.. toctree::
+   :maxdepth: 2
+   :caption: Lecture 5:
+
+   lectures/L5/overview_5.rst
+   notebooks/L5/1_differentiation.ipynb
+   notebooks/L5/2_integration.ipynb   
+   notebooks/L5/3_solving_ODEs.ipynb    
+   
 Indices and tables
 ==================
 

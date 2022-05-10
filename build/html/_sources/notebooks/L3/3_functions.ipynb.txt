@@ -3,6 +3,16 @@
   {
    "cell_type": "markdown",
    "metadata": {
+    "toc": true
+   },
+   "source": [
+    "<h1>Table of Contents<span class=\"tocSkip\"></span></h1>\n",
+    "<div class=\"toc\"><ul class=\"toc-item\"><li><span><a href=\"#Functions\" data-toc-modified-id=\"Functions-1\"><span class=\"toc-item-num\">1&nbsp;&nbsp;</span>Functions</a></span><ul class=\"toc-item\"><li><span><a href=\"#Function-definition\" data-toc-modified-id=\"Function-definition-1.1\"><span class=\"toc-item-num\">1.1&nbsp;&nbsp;</span>Function definition</a></span></li><li><span><a href=\"#Variables-in-functions\" data-toc-modified-id=\"Variables-in-functions-1.2\"><span class=\"toc-item-num\">1.2&nbsp;&nbsp;</span>Variables in functions</a></span></li><li><span><a href=\"#Functions-with-more-than-one-input-or-output\" data-toc-modified-id=\"Functions-with-more-than-one-input-or-output-1.3\"><span class=\"toc-item-num\">1.3&nbsp;&nbsp;</span>Functions with more than one input or output</a></span><ul class=\"toc-item\"><li><span><a href=\"#Positional-and-keyword-arguments\" data-toc-modified-id=\"Positional-and-keyword-arguments-1.3.1\"><span class=\"toc-item-num\">1.3.1&nbsp;&nbsp;</span>Positional and keyword arguments</a></span></li><li><span><a href=\"#Functions-with-variable-number-of-arguments\" data-toc-modified-id=\"Functions-with-variable-number-of-arguments-1.3.2\"><span class=\"toc-item-num\">1.3.2&nbsp;&nbsp;</span>Functions with variable number of arguments</a></span></li></ul></li><li><span><a href=\"#Unnamed-functions-(lambda-function)\" data-toc-modified-id=\"Unnamed-functions-(lambda-function)-1.4\"><span class=\"toc-item-num\">1.4&nbsp;&nbsp;</span>Unnamed functions (lambda function)</a></span></li><li><span><a href=\"#Functions-as-arguments-of-functions\" data-toc-modified-id=\"Functions-as-arguments-of-functions-1.5\"><span class=\"toc-item-num\">1.5&nbsp;&nbsp;</span>Functions as arguments of functions</a></span></li><li><span><a href=\"#First-Class-Objects,-Inner-Functions-and-Decorators\" data-toc-modified-id=\"First-Class-Objects,-Inner-Functions-and-Decorators-1.6\"><span class=\"toc-item-num\">1.6&nbsp;&nbsp;</span>First-Class Objects, Inner Functions and Decorators</a></span></li></ul></li></ul></div>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {
     "slideshow": {
      "slide_type": "slide"
     }
@@ -1113,22 +1123,34 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
    "source": [
-    "## First-Class Objects, Inner Functions and Decorators"
+    " ## First-Class Objects, Inner Functions and Decorators"
    ]
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "slideshow": {
+     "slide_type": "fragment"
+    }
+   },
    "source": [
     "So far we have had a short look at so-called functions as **First-Class objects**, which means, that they can be passed around as arguments like any other variable. The example below defines two greeter functions that are used in a third function to greet."
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 9,
-   "metadata": {},
+   "execution_count": 3,
+   "metadata": {
+    "slideshow": {
+     "slide_type": "subslide"
+    }
+   },
    "outputs": [],
    "source": [
     "def hello(name):\n",
@@ -1143,18 +1165,23 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 10,
-   "metadata": {},
+   "execution_count": 4,
+   "metadata": {
+    "slideshow": {
+     "slide_type": "subslide"
+    }
+   },
    "outputs": [
     {
-     "data": {
-      "text/plain": [
-       "'Hello Dude'"
-      ]
-     },
-     "execution_count": 10,
-     "metadata": {},
-     "output_type": "execute_result"
+     "ename": "NameError",
+     "evalue": "name 'greet_bob' is not defined",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
+      "\u001b[0;31mNameError\u001b[0m                                 Traceback (most recent call last)",
+      "\u001b[0;32m/tmp/ipykernel_3086055/4072327919.py\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mgreet_bob\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0mhello\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+      "\u001b[0;31mNameError\u001b[0m: name 'greet_bob' is not defined"
+     ]
     }
    ],
    "source": [
@@ -1163,44 +1190,59 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 11,
+   "execution_count": 6,
    "metadata": {
+    "slideshow": {
+     "slide_type": "fragment"
+    },
     "tags": []
    },
    "outputs": [
     {
      "data": {
       "text/plain": [
-       "\"Yo Dude, what's up!\""
+       "'Hello Dude'"
       ]
      },
-     "execution_count": 11,
+     "execution_count": 6,
      "metadata": {},
      "output_type": "execute_result"
     }
    ],
    "source": [
-    "greet(howdy)"
+    "greet(hello)"
    ]
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "slideshow": {
+     "slide_type": "fragment"
+    }
+   },
    "source": [
     "The greeter function `hello` or `howdy` are passed to the greet as function arguments and then called with the same argument."
    ]
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "slideshow": {
+     "slide_type": "slide"
+    }
+   },
    "source": [
     "Functions can, however, be also defined inside of other function like in the example below."
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 12,
-   "metadata": {},
+   "execution_count": 7,
+   "metadata": {
+    "slideshow": {
+     "slide_type": "fragment"
+    }
+   },
    "outputs": [],
    "source": [
     "def parent():\n",
@@ -1218,15 +1260,23 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "slideshow": {
+     "slide_type": "subslide"
+    }
+   },
    "source": [
     "Here the functions `first_child` and `second_child` are local functions inside the `parent`function and only known inside this function. They are therefore called **inner functions**. Look at the corresponding output of the parent function"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 15,
-   "metadata": {},
+   "execution_count": 8,
+   "metadata": {
+    "slideshow": {
+     "slide_type": "fragment"
+    }
+   },
    "outputs": [
     {
      "name": "stdout",
@@ -1244,15 +1294,23 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "slideshow": {
+     "slide_type": "fragment"
+    }
+   },
    "source": [
     "and try to call the `first_child` function"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 16,
-   "metadata": {},
+   "execution_count": 9,
+   "metadata": {
+    "slideshow": {
+     "slide_type": "fragment"
+    }
+   },
    "outputs": [
     {
      "ename": "NameError",
@@ -1261,7 +1319,7 @@
      "traceback": [
       "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m",
       "\u001b[0;31mNameError\u001b[0m                                 Traceback (most recent call last)",
-      "\u001b[0;32m/tmp/ipykernel_1507498/2276402280.py\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mfirst_child\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
+      "\u001b[0;32m/tmp/ipykernel_3086055/2276402280.py\u001b[0m in \u001b[0;36m<module>\u001b[0;34m\u001b[0m\n\u001b[0;32m----> 1\u001b[0;31m \u001b[0mfirst_child\u001b[0m\u001b[0;34m(\u001b[0m\u001b[0;34m)\u001b[0m\u001b[0;34m\u001b[0m\u001b[0;34m\u001b[0m\u001b[0m\n\u001b[0m",
       "\u001b[0;31mNameError\u001b[0m: name 'first_child' is not defined"
      ]
     }
@@ -1272,22 +1330,34 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "slideshow": {
+     "slide_type": "fragment"
+    }
+   },
    "source": [
     "This function is not known outside the `parent` function. "
    ]
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "slideshow": {
+     "slide_type": "subslide"
+    }
+   },
    "source": [
     "Now in addition to that we can also return functions from a function like in the following example:"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 19,
-   "metadata": {},
+   "execution_count": 10,
+   "metadata": {
+    "slideshow": {
+     "slide_type": "fragment"
+    }
+   },
    "outputs": [],
    "source": [
     "def parent(num):\n",
@@ -1305,31 +1375,47 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "slideshow": {
+     "slide_type": "fragment"
+    }
+   },
    "source": [
     "This means that we can assign the function `first_child` to a variable first"
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 24,
-   "metadata": {},
+   "execution_count": 14,
+   "metadata": {
+    "slideshow": {
+     "slide_type": "fragment"
+    }
+   },
    "outputs": [],
    "source": [
-    "first=parent(1)"
+    "first=parent(2)"
    ]
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "slideshow": {
+     "slide_type": "fragment"
+    }
+   },
    "source": [
     "such that this variable is now of type `function`."
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 28,
-   "metadata": {},
+   "execution_count": 15,
+   "metadata": {
+    "slideshow": {
+     "slide_type": "fragment"
+    }
+   },
    "outputs": [
     {
      "data": {
@@ -1337,7 +1423,7 @@
        "function"
       ]
      },
-     "execution_count": 28,
+     "execution_count": 15,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -1348,16 +1434,20 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 29,
-   "metadata": {},
+   "execution_count": 16,
+   "metadata": {
+    "slideshow": {
+     "slide_type": "fragment"
+    }
+   },
    "outputs": [
     {
      "data": {
       "text/plain": [
-       "'Hi, I am Emma'"
+       "'Call me Liam'"
       ]
      },
-     "execution_count": 29,
+     "execution_count": 16,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -1368,49 +1458,63 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "slideshow": {
+     "slide_type": "subslide"
+    }
+   },
    "source": [
     "We have now all elements collected to introduce some new magic, which you probably have to digest with the help of some external sources. The new magic is called **decorators**."
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 30,
-   "metadata": {},
+   "execution_count": 20,
+   "metadata": {
+    "slideshow": {
+     "slide_type": "fragment"
+    }
+   },
    "outputs": [],
    "source": [
-    "def my_decorator(func):\n",
-    "    def wrapper():\n",
-    "        print(\"I can do something before the function.\")\n",
-    "        func()\n",
-    "        print(\"And I can do something after the function.\")\n",
-    "    return wrapper\n",
+    "#def my_decorator(func):\n",
+    "#    def wrapper():\n",
+    "#        print(\"I can do something before the function.\")\n",
+    "#        func()\n",
+    "#        print(\"And I can do something after the function.\")\n",
+    "#    return wrapper\n",
     "\n",
     "def do_something():\n",
     "    print(\"Then I execute the original function!\")\n",
     "\n",
-    "do_something = my_decorator(do_something)"
+    "#do_something = my_decorator(do_something)"
    ]
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "slideshow": {
+     "slide_type": "fragment"
+    }
+   },
    "source": [
     "If you execute the function `do_something` you will probably recognize the magic. "
    ]
   },
   {
    "cell_type": "code",
-   "execution_count": 31,
-   "metadata": {},
+   "execution_count": 21,
+   "metadata": {
+    "slideshow": {
+     "slide_type": "subslide"
+    }
+   },
    "outputs": [
     {
      "name": "stdout",
      "output_type": "stream",
      "text": [
-      "I can do something before the function.\n",
-      "Then I execute the original function!\n",
-      "And I can do something after the function.\n"
+      "Then I execute the original function!\n"
      ]
     }
    ],
@@ -1420,7 +1524,11 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "slideshow": {
+     "slide_type": "fragment"
+    }
+   },
    "source": [
     "To explain the details shortly, we first define a function `my_decorator` which is intended to use an function as an argument. In this function we define an inner function `wrapper`, which calls the function `func` inbetween two print statements. After this definition is done, the function `my_decorator` returns this wrapper function. \n",
     "\n",
@@ -1429,14 +1537,22 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "slideshow": {
+     "slide_type": "fragment"
+    }
+   },
    "source": [
     "The original function call is now *wrapped* inside other function calls but has still the same name. **So what?**"
    ]
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "slideshow": {
+     "slide_type": "subslide"
+    }
+   },
    "source": [
     "Well this type of decorators is useful, when you want to modify the behavior of existing functions without changing their name and completely redefining their functionality. I will give some example below. Before, we just have a look at some mroe syntax magic, which actually makes more sense, as the statement **@my_decorator** now decorates the original function \n",
     "`do_something`."
@@ -1444,8 +1560,12 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 32,
-   "metadata": {},
+   "execution_count": 22,
+   "metadata": {
+    "slideshow": {
+     "slide_type": "fragment"
+    }
+   },
    "outputs": [],
    "source": [
     "def my_decorator(func):\n",
@@ -1462,7 +1582,11 @@
   },
   {
    "cell_type": "markdown",
-   "metadata": {},
+   "metadata": {
+    "slideshow": {
+     "slide_type": "fragment"
+    }
+   },
    "source": [
     "We can therefore save the last line of the previous definition. This is the common way decorators are used."
    ]
@@ -1508,24 +1632,20 @@
    "user_envs_cfg": false
   },
   "toc": {
-   "colors": {
-    "hover_highlight": "#DAA520",
-    "running_highlight": "#FF0000",
-    "selected_highlight": "#FFD700"
-   },
-   "moveMenuLeft": true,
+   "base_numbering": 1,
    "nav_menu": {
     "height": "12px",
     "width": "252px"
    },
-   "navigate_menu": true,
    "number_sections": true,
    "sideBar": true,
-   "threshold": 4,
+   "skip_h1_title": false,
+   "title_cell": "Table of Contents",
+   "title_sidebar": "Contents",
    "toc_cell": true,
+   "toc_position": {},
    "toc_section_display": "block",
-   "toc_window_display": false,
-   "widenNotebook": false
+   "toc_window_display": false
   },
   "varInspector": {
    "cols": {

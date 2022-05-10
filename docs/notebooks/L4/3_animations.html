@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="prev" title="Brownian Motion" href="2_brownian_motion.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Exercise 4" href="../../lectures/L4/assignment_4.html" /><link rel="prev" title="Brownian Motion" href="2_brownian_motion.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2021.09.08"/>
         <title>Animations - Introduction to Computer-based Physical Modeling 22 documentation</title>
@@ -206,6 +206,14 @@
 <li class="toctree-l1"><a class="reference internal" href="1_classes.html">Classes and Objects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2_brownian_motion.html">Brownian Motion</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Animations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/L4/assignment_4.html">Exercise 4</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 5:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/L5/overview_5.html">Lecture Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L5/1_differentiation.html">Numerical Differentiation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L5/2_integration.html">Numerical Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L5/3_solving_ODEs.html">Solving ODEs</a></li>
 </ul>
 
 </div>
@@ -508,7 +516,7 @@ from ipycanvas import MultiCanvas, hold_canvas,Canvas
 <p>The <code class="docutils literal notranslate"><span class="pre">ipycanvas</span></code> module is the one which helps us to draw the objects of our simulation.</p>
 <p>The following lines test if the notebook is running in google colab and install/enable ipycanvas there.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
@@ -523,7 +531,7 @@ from ipycanvas import MultiCanvas, hold_canvas,Canvas
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -539,7 +547,7 @@ from ipycanvas import MultiCanvas, hold_canvas,Canvas
 <h2>Particle class<a class="headerlink" href="#Particle-class" title="Permalink to this headline">¶</a></h2>
 <p>We start by using out colloidal particle class, which we developed in the last section.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Class definition</span>
@@ -590,7 +598,7 @@ from ipycanvas import MultiCanvas, hold_canvas,Canvas
 <h2>Create a set of particles<a class="headerlink" href="#Create-a-set-of-particles" title="Permalink to this headline">¶</a></h2>
 <p>We want to animate the Brownian motion of many particles. The best is therefore to create a <code class="docutils literal notranslate"><span class="pre">list</span></code> which contains all the individual <code class="docutils literal notranslate"><span class="pre">Colloid</span></code> objects. We start by creating 200 colloids at the position <code class="docutils literal notranslate"><span class="pre">(0,0)</span></code> to see how the spread from the origin. They are stored in the list <code class="docutils literal notranslate"><span class="pre">p</span></code>.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># number of particles</span>
@@ -608,7 +616,7 @@ from ipycanvas import MultiCanvas, hold_canvas,Canvas
 <p>Next, we need a canvas, in which we draw our particles and we need the drawing function.</p>
 <p>The canvas is created by the <code class="docutils literal notranslate"><span class="pre">Canvas()</span></code> constructor if <code class="docutils literal notranslate"><span class="pre">ipycanvas</span></code>. The <code class="docutils literal notranslate"><span class="pre">display</span></code> command displays the canvas below the the cell.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">canvas</span> <span class="o">=</span> <span class="n">Canvas</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
@@ -620,13 +628,13 @@ from ipycanvas import MultiCanvas, hold_canvas,Canvas
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "ac071fec1e95489b8ad66766ba277819", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "32bffc23d13c4d9f8afd4ad71d7ae613", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <img alt="particles" src="../../_images/particles.png">
 <p>We realize the drawing in a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop, which is first updating all particle positions and then drawing all the particles.</p>
 <p>The loop contains one interesting statement, which is the <code class="docutils literal notranslate"><span class="pre">with</span> <span class="pre">hold_canvas(canvas):</span></code>. Its useful to know that this statement halts the execution of all subsequent drawing comments in the following code block to create a “batch” of drawing commands send at one to the <code class="docutils literal notranslate"><span class="pre">ipycanvas</span></code> module. This will allow fast drawing of the whole scene. All the rest of the commands are shortly explained in the loop comments.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">scale</span><span class="o">=</span><span class="mf">1e7</span> <span class="c1"># this is to scale up all from µm to pixels</span>
@@ -645,6 +653,7 @@ from ipycanvas import MultiCanvas, hold_canvas,Canvas
 </pre></div>
 </div>
 </div>
+<p><strong>Talk about the with statement next time</strong></p>
 </img></section>
 <section id="Threading-for-animation">
 <h2>Threading for animation<a class="headerlink" href="#Threading-for-animation" title="Permalink to this headline">¶</a></h2>
@@ -662,7 +671,7 @@ simulation.start()
 </div>
 <p>That’s all you need. So lets wrap all our drawing before into a draw function.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">draw</span><span class="p">():</span>
@@ -682,7 +691,7 @@ simulation.start()
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">simulation</span> <span class="o">=</span> <span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">draw</span><span class="p">)</span>
@@ -691,7 +700,7 @@ simulation.start()
 </div>
 <p>We create a new canvas here, even though we could use the one on the top. It’s just nice to not have to scroll up.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">canvas</span> <span class="o">=</span> <span class="n">Canvas</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">)</span>
@@ -703,11 +712,11 @@ simulation.start()
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "19eb853ebce646e58a25ec10050bf69b", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "27f41077812541e981661031740acd65", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <img alt="particles" src="../../_images/particles.png">
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># start the simulation</span>
@@ -717,7 +726,7 @@ simulation.start()
 </div>
 <p>One of the intruiging things of this type of threading is that all of the parameters of the Colloids may still be changed on the fly while the process is running. So lets just reset the particle positions to the origin and see what is happening in the canvas.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="p">):</span>
@@ -742,7 +751,15 @@ simulation.start()
       <footer>
         
         <div class="related-pages">
-          
+          <a class="next-page" href="../../lectures/L4/assignment_4.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Exercise 4</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
           <a class="prev-page" href="2_brownian_motion.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
@@ -758,7 +775,7 @@ simulation.start()
 
         <div class="related-information">
               Copyright &#169; 2022, Frank Cichos |
-            Last updated on May 03, 2022. |
+            Last updated on May 10, 2022. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s

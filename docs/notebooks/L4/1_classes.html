@@ -206,6 +206,14 @@
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Classes and Objects</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2_brownian_motion.html">Brownian Motion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3_animations.html">Animations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/L4/assignment_4.html">Exercise 4</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 5:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/L5/overview_5.html">Lecture Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L5/1_differentiation.html">Numerical Differentiation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L5/2_integration.html">Numerical Integration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L5/3_solving_ODEs.html">Solving ODEs</a></li>
 </ul>
 
 </div>
@@ -484,7 +492,14 @@ div.rendered_html tbody tr:hover {
 <p>This page was generated from <cite>notebooks/L4/1_classes.ipynb</cite>.
 <span class="raw-html"><br/><a href="https://mybinder.org/v2/gh/fcichos/CompSoft22/main?urlpath=tree/source/notebooks/L4/1_classes.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-%20myBinder-red.svg" style="vertical-align:text-bottom"/></a></span> <span class="raw-html"><br/><a href="https://colab.research.google.com/github/fcichos/CompSoft22/blob/main/source/notebooks/L4/1_classes.ipynb"><img alt="Binder badge" src="https://img.shields.io/badge/launch-%20colab-green.svg" style="vertical-align:text-bottom"/></a></span></p>
 </div>
-<section id="Classes-and-Objects">
+<h1><p>Table of Contents</p>
+</h1><div class="toc"><ul class="toc-item"><li><p>1  Classes and Objects</p>
+<ul class="toc-item"><li><p>1.1  Definition of Classes</p>
+</li><li><p>1.2  Class Methods</p>
+<ul class="toc-item"><li><p>1.2.1  The <strong>init</strong> method</p>
+</li><li><p>1.2.2  The <strong>str</strong> method</p>
+</li></ul></li><li><p>1.3  Class and object variables</p>
+</li></ul></li></ul></div><section id="Classes-and-Objects">
 <h1>Classes and Objects<a class="headerlink" href="#Classes-and-Objects" title="Permalink to this headline">¶</a></h1>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
@@ -528,7 +543,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <p>In the following example, we have an empty block which is indicated using the pass statement.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Colloid</span><span class="p">:</span>
@@ -538,7 +553,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <p>You can then create a new object of the class Colloid by The print command will just inform you about the memory address at which the object is stored.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">=</span> <span class="n">Colloid</span><span class="p">()</span>
@@ -551,7 +566,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-&lt;__main__.Colloid object at 0x10de073d0&gt;
+&lt;__main__.Colloid object at 0x7f6c24da9be0&gt;
 </pre></div></div>
 </div>
 </section>
@@ -568,7 +583,7 @@ div.rendered_html tbody tr:hover {
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Colloid</span><span class="p">:</span>
@@ -596,7 +611,7 @@ I am a plastic colloid
 <h3>The <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method<a class="headerlink" href="#The-__init__-method" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">__init__</span></code> method is run as soon as an object of a class is instantiated (i.e. created). The method is useful to do any initialization (i.e. passing initial values to your object) you want to do with your object. Notice the double underscores both at the beginning and at the end of the name.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Colloid</span><span class="p">:</span>
@@ -610,7 +625,7 @@ I am a plastic colloid
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="o">=</span><span class="n">Colloid</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
@@ -619,10 +634,10 @@ I am a plastic colloid
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[30]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'Colloid radius is </span><span class="si">{}</span><span class="s1"> µm '</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="n">get_size</span><span class="p">())))</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">'Colloid radius is </span><span class="si">{}</span><span class="s1"> µm '</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">get_size</span><span class="p">())))</span>
 </pre></div>
 </div>
 </div>
@@ -631,7 +646,7 @@ I am a plastic colloid
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-Colloid radius is 5 µm
+Colloid radius is 2 µm
 </pre></div></div>
 </div>
 <p>Besides the <code class="docutils literal notranslate"><span class="pre">__init__</span></code>method, which is commonly called <code class="docutils literal notranslate"><span class="pre">constructor</span></code>, there is also the <code class="docutils literal notranslate"><span class="pre">__del__</span></code> method, which is called b´when an object is deleted. We will use that further down.</p>
@@ -640,7 +655,7 @@ Colloid radius is 5 µm
 <h3>The <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method<a class="headerlink" href="#The-__str__-method" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">__str__</span></code> method that is invoked when a simple string representation of the class is needed, as for example when printed.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[31]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Colloid</span><span class="p">:</span>
@@ -657,7 +672,7 @@ Colloid radius is 5 µm
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="o">=</span><span class="n">Colloid</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
@@ -665,7 +680,7 @@ Colloid radius is 5 µm
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
@@ -710,22 +725,22 @@ I am a plastic colloid of radius 5.0
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[38]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[43]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a particle with radius 4</span>
-<span class="n">p1</span><span class="o">=</span><span class="n">Colloid</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">p1</span><span class="o">=</span><span class="n">Colloid</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 
 <span class="c1"># create a second particle with radius 10</span>
-<span class="n">p2</span><span class="o">=</span><span class="n">Colloid</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">p2</span><span class="o">=</span><span class="n">Colloid</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
 <br/></pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[39]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[44]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">,</span><span class="c1"># print the radius of both particles</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># print the radius of both particles</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">R</span><span class="p">,</span><span class="n">p2</span><span class="o">.</span><span class="n">R</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -735,11 +750,11 @@ I am a plastic colloid of radius 5.0
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-4 10
+3 12
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[40]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[45]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># print the particle number</span>
@@ -752,11 +767,11 @@ I am a plastic colloid of radius 5.0
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-2 2
+1 1
 </pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[41]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[46]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># delete one particle object and print the</span>
@@ -765,7 +780,7 @@ I am a plastic colloid of radius 5.0
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[42]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[47]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">number</span><span class="p">)</span>
@@ -777,7 +792,7 @@ I am a plastic colloid of radius 5.0
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-1
+0
 </pre></div></div>
 </div>
 <script type="application/vnd.jupyter.widget-state+json">
@@ -814,7 +829,7 @@ I am a plastic colloid of radius 5.0
 
         <div class="related-information">
               Copyright &#169; 2022, Frank Cichos |
-            Last updated on May 03, 2022. |
+            Last updated on May 10, 2022. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
