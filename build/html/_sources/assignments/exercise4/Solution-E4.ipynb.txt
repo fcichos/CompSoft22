@@ -4,6 +4,13 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
+    "# Solution Exercise 4\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
     "Before you turn this problem in, make sure everything runs as expected. First, **restart the kernel** (in the menubar, select Kernel$\\rightarrow$Restart) and then **run all cells** (in the menubar, select Cell$\\rightarrow$Run All).\n",
     "\n",
     "Make sure you fill in any place that says `YOUR CODE HERE` or \"YOUR ANSWER HERE\", as well as your name and collaborators below:"
@@ -24,13 +31,6 @@
    "metadata": {},
    "source": [
     "---"
-   ]
-  },
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "# Problemset 4\n"
    ]
   },
   {
@@ -600,134 +600,7 @@
   },
   "widgets": {
    "application/vnd.jupyter.widget-state+json": {
-    "state": {
-     "0cfcbac6fe894ebd993d160aea79a2f5": {
-      "model_module": "ipycanvas",
-      "model_module_version": "^0.10.2",
-      "model_name": "CanvasModel",
-      "state": {
-       "_model_module_version": "^0.10.2",
-       "_view_module_version": "^0.10.2",
-       "height": 400,
-       "layout": "IPY_MODEL_1006e1bc4fb645da88107ca4e56f0c85",
-       "width": 400
-      }
-     },
-     "0dcaadaca954496d8fea1cdf85cda304": {
-      "model_module": "ipycanvas",
-      "model_module_version": "^0.10.2",
-      "model_name": "CanvasModel",
-      "state": {
-       "_model_module_version": "^0.10.2",
-       "_view_module_version": "^0.10.2",
-       "height": 400,
-       "layout": "IPY_MODEL_44f69417decf4f96ab59ea41f100dabe",
-       "width": 400
-      }
-     },
-     "1006e1bc4fb645da88107ca4e56f0c85": {
-      "model_module": "@jupyter-widgets/base",
-      "model_module_version": "1.2.0",
-      "model_name": "LayoutModel",
-      "state": {}
-     },
-     "1b579ff1fa6d41c69cd0c7436e5746e8": {
-      "model_module": "ipycanvas",
-      "model_module_version": "^0.10.2",
-      "model_name": "CanvasModel",
-      "state": {
-       "_model_module_version": "^0.10.2",
-       "_view_module_version": "^0.10.2",
-       "height": 400,
-       "layout": "IPY_MODEL_3ef9e512002c4836aaadd61c38c514de",
-       "width": 400
-      }
-     },
-     "22c90e1ad2e74ab888818751546b26c4": {
-      "model_module": "ipycanvas",
-      "model_module_version": "^0.10.2",
-      "model_name": "CanvasModel",
-      "state": {
-       "_model_module_version": "^0.10.2",
-       "_view_module_version": "^0.10.2",
-       "height": 400,
-       "layout": "IPY_MODEL_7e98b7edf2a24db9b8b4a314bf342fa1",
-       "width": 400
-      }
-     },
-     "248ed3fad0ab4be3b35cc7556cb97abc": {
-      "model_module": "@jupyter-widgets/base",
-      "model_module_version": "1.2.0",
-      "model_name": "LayoutModel",
-      "state": {}
-     },
-     "3ef9e512002c4836aaadd61c38c514de": {
-      "model_module": "@jupyter-widgets/base",
-      "model_module_version": "1.2.0",
-      "model_name": "LayoutModel",
-      "state": {}
-     },
-     "43ae628c3b7e446db89519250fb2da48": {
-      "model_module": "ipycanvas",
-      "model_module_version": "^0.10.2",
-      "model_name": "CanvasModel",
-      "state": {
-       "_model_module_version": "^0.10.2",
-       "_view_module_version": "^0.10.2",
-       "height": 400,
-       "layout": "IPY_MODEL_8649ac4ef23f460ba288493c145b842f",
-       "width": 400
-      }
-     },
-     "44f69417decf4f96ab59ea41f100dabe": {
-      "model_module": "@jupyter-widgets/base",
-      "model_module_version": "1.2.0",
-      "model_name": "LayoutModel",
-      "state": {}
-     },
-     "6a6c829344d34f9ca5dda21000386f59": {
-      "model_module": "ipycanvas",
-      "model_module_version": "^0.10.2",
-      "model_name": "CanvasModel",
-      "state": {
-       "_model_module_version": "^0.10.2",
-       "_view_module_version": "^0.10.2",
-       "height": 400,
-       "layout": "IPY_MODEL_afca75cd4dd1480081f759f7912e840a",
-       "width": 400
-      }
-     },
-     "7e98b7edf2a24db9b8b4a314bf342fa1": {
-      "model_module": "@jupyter-widgets/base",
-      "model_module_version": "1.2.0",
-      "model_name": "LayoutModel",
-      "state": {}
-     },
-     "8649ac4ef23f460ba288493c145b842f": {
-      "model_module": "@jupyter-widgets/base",
-      "model_module_version": "1.2.0",
-      "model_name": "LayoutModel",
-      "state": {}
-     },
-     "afca75cd4dd1480081f759f7912e840a": {
-      "model_module": "@jupyter-widgets/base",
-      "model_module_version": "1.2.0",
-      "model_name": "LayoutModel",
-      "state": {}
-     },
-     "da2ddc7237a94769b96a0e9c3e6b5b4b": {
-      "model_module": "ipycanvas",
-      "model_module_version": "^0.10.2",
-      "model_name": "CanvasModel",
-      "state": {
-       "_model_module_version": "^0.10.2",
-       "_view_module_version": "^0.10.2",
-       "height": 400,
-       "layout": "IPY_MODEL_248ed3fad0ab4be3b35cc7556cb97abc",
-       "width": 400
-      }
-     }
-    },
+    "state": {},
     "version_major": 2,
     "version_minor": 0
    }
