@@ -87,7 +87,7 @@ We will not present a comprehensive list of numerical simulation schemes, but us
    notebooks/L3/3_functions.ipynb  
    notebooks/L3/4_exceptions.ipynb
    lectures/L3/assignment_3.rst
-   assignments/exercise3/Solution-E3.ipynb
+   assignments/exercise3/SolutionE3.ipynb
    
 .. toctree::
    :maxdepth: 2
@@ -98,7 +98,7 @@ We will not present a comprehensive list of numerical simulation schemes, but us
    notebooks/L4/2_brownian_motion.ipynb   
    notebooks/L4/3_animations.ipynb  
    lectures/L4/assignment_4.rst
-   assignments/exercise4/Solution-E4.ipynb
+   assignments/exercise4/SolutionE4.ipynb
    
 .. toctree::
    :maxdepth: 2
