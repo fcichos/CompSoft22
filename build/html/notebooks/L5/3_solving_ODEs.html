@@ -198,7 +198,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../L3/2_flowcontrol.html">Flow Control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L3/3_functions.html">Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L3/4_exceptions.html">Exceptions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../lectures/L3/assignment_3.html">Exercise 3</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lectures/L3/assignment_3.html">Exercise 3</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 4:</span></p>
 <ul>
@@ -589,7 +591,7 @@ v_{0}\delta t\\
 <h3>Solution<a class="headerlink" href="#Solution" title="Permalink to this headline">¶</a></h3>
 <p>This is the final system of coupled equations which we can supply to any matrix solver. We will use a solver from the <code class="docutils literal notranslate"><span class="pre">scipy.linalg</span></code> module. Lets have a look at the details below.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -605,8 +607,8 @@ v_{0}\delta t\\
 <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">L</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span> <span class="c1"># time axis</span>
 
 <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="c1"># initial conditions vector</span>
-<span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span> <span class="c1"># initial elongation</span>
-<span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span> <span class="c1"># initial velocity</span>
+<span class="n">b</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">=</span><span class="mi">1</span> <span class="c1"># initial elongation</span>
+<span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">=</span><span class="mi">0</span> <span class="c1"># initial velocity</span>
 
 <span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">N</span><span class="p">)</span> <span class="c1"># solution vector</span>
 <span class="n">dt</span> <span class="o">=</span> <span class="n">t</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">t</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># time intervall of each step</span>
@@ -625,7 +627,7 @@ v_{0}\delta t\\
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
@@ -640,7 +642,7 @@ v_{0}\delta t\\
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/notebooks_L5_3_solving_ODEs_18_0.png" class="no-scaled-link" src="../../_images/notebooks_L5_3_solving_ODEs_18_0.png" style="width: 527px; height: 389px;">
+<img alt="../../_images/notebooks_L5_3_solving_ODEs_18_0.png" src="../../_images/notebooks_L5_3_solving_ODEs_18_0.png">
 </img></div>
 </div>
 </section>
@@ -846,13 +848,13 @@ x(t+\Delta t) = x(t) + \frac{\dot{x}(t+\Delta t)+\dot{x}(t)}{2} \Delta t
 method and the <em>Runge Kutta</em> method (which we have not really addressed).</p>
 <p>Play around with the time period, the number of steps and the initial conditions to observe the changes in the output, or possible errors of the solvers!</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">2000</span>  <span class="c1"># number of steps</span>
 <span class="n">xo</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="c1"># initial position</span>
 <span class="n">vo</span> <span class="o">=</span> <span class="mf">0.0</span> <span class="c1"># initial velocity</span>
-<span class="n">tau</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="c1"># time period</span>
+<span class="n">tau</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="c1"># time period</span>
 
 <span class="n">k</span> <span class="o">=</span> <span class="mf">3.5</span>
 <span class="n">m</span> <span class="o">=</span> <span class="mf">0.2</span>
@@ -873,7 +875,7 @@ method and the <em>Runge Kutta</em> method (which we have not really addressed).
 
 <span class="k">def</span> <span class="nf">SHO</span><span class="p">(</span><span class="n">state</span><span class="p">,</span> <span class="n">time</span><span class="p">):</span>
     <span class="n">g0</span> <span class="o">=</span> <span class="n">state</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">g1</span> <span class="o">=</span> <span class="o">-</span><span class="n">k</span><span class="o">/</span><span class="n">m</span> <span class="o">*</span> <span class="n">state</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+    <span class="n">g1</span> <span class="o">=</span> <span class="o">-</span><span class="n">k</span><span class="o">/</span><span class="n">m</span> <span class="o">*</span> <span class="n">state</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
     <span class="k">return</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">g0</span><span class="p">,</span> <span class="n">g1</span><span class="p">]))</span>
 
 <span class="c1">##  solving the problem with euler</span>
@@ -891,7 +893,7 @@ method and the <em>Runge Kutta</em> method (which we have not really addressed).
 
 <span class="c1">##  loop through the timesteps</span>
 <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">N</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">y</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">euler</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">time</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">dt</span><span class="p">,</span> <span class="n">SHO</span><span class="p">)</span>
+    <span class="n">y</span><span class="p">[</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">runge_kutta2</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">time</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">dt</span><span class="p">,</span> <span class="n">SHO</span><span class="p">)</span>
 
 
 <span class="c1">##  do the plotting</span>
@@ -923,7 +925,7 @@ method and the <em>Runge Kutta</em> method (which we have not really addressed).
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/notebooks_L5_3_solving_ODEs_36_0.png" class="no-scaled-link" src="../../_images/notebooks_L5_3_solving_ODEs_36_0.png" style="width: 709px; height: 348px;"/>
+<img alt="../../_images/notebooks_L5_3_solving_ODEs_36_0.png" src="../../_images/notebooks_L5_3_solving_ODEs_36_0.png"/>
 </div>
 </div>
 </section>
@@ -941,13 +943,21 @@ method and the <em>Runge Kutta</em> method (which we have not really addressed).
 <section id="Setup">
 <h3>Setup<a class="headerlink" href="#Setup" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.integrate</span> <span class="kn">import</span> <span class="n">odeint</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">1000</span>  <span class="c1"># number of steps</span>
 <span class="n">xo</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="c1"># initial position</span>
 <span class="n">vo</span> <span class="o">=</span> <span class="mf">0.0</span> <span class="c1"># initial velocity</span>
-<span class="n">tau</span> <span class="o">=</span> <span class="mf">3.0</span> <span class="c1"># time period</span>
+<span class="n">tau</span> <span class="o">=</span> <span class="mi">4</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span> <span class="c1"># time period</span>
 
 <span class="n">k</span> <span class="o">=</span> <span class="mf">3.5</span>
 <span class="n">m</span> <span class="o">=</span> <span class="mf">0.2</span>
@@ -965,7 +975,7 @@ method and the <em>Runge Kutta</em> method (which we have not really addressed).
 <section id="Definition">
 <h3>Definition<a class="headerlink" href="#Definition" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">##  defining the problem</span>
@@ -980,7 +990,7 @@ method and the <em>Runge Kutta</em> method (which we have not really addressed).
 <section id="id1">
 <h3>Solution<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">answer</span> <span class="o">=</span> <span class="n">odeint</span><span class="p">(</span> <span class="n">SHO</span><span class="p">,</span> <span class="n">y</span> <span class="p">,</span> <span class="n">time</span> <span class="p">)</span>
@@ -991,7 +1001,7 @@ method and the <em>Runge Kutta</em> method (which we have not really addressed).
 <section id="Plotting">
 <h3>Plotting<a class="headerlink" href="#Plotting" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span> <span class="p">)</span>
@@ -1017,7 +1027,7 @@ method and the <em>Runge Kutta</em> method (which we have not really addressed).
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/notebooks_L5_3_solving_ODEs_46_0.png" class="no-scaled-link" src="../../_images/notebooks_L5_3_solving_ODEs_46_0.png" style="width: 709px; height: 348px;"/>
+<img alt="../../_images/notebooks_L5_3_solving_ODEs_47_0.png" src="../../_images/notebooks_L5_3_solving_ODEs_47_0.png"/>
 </div>
 </div>
 </section>
@@ -1032,7 +1042,7 @@ method and the <em>Runge Kutta</em> method (which we have not really addressed).
 <section id="id2">
 <h3>Setup<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span> <span class="o">=</span> <span class="mi">10000</span>  <span class="c1"># number of steps</span>
@@ -1041,9 +1051,9 @@ method and the <em>Runge Kutta</em> method (which we have not really addressed).
 <span class="n">tau</span> <span class="o">=</span> <span class="mf">100.0</span> <span class="c1"># time period</span>
 
 <span class="n">length</span><span class="o">=</span><span class="mf">10.0</span>
-<span class="n">b</span><span class="o">=</span><span class="mf">0.2</span>
+<span class="n">b</span><span class="o">=</span><span class="mi">2</span>
 <span class="n">beta</span><span class="o">=</span><span class="mf">0.1</span>
-<span class="n">omega</span><span class="o">=</span><span class="mf">0.2</span>
+<span class="n">omega</span><span class="o">=</span><span class="mi">2</span>
 <span class="n">gravity</span> <span class="o">=</span> <span class="mf">9.8</span>
 
 <span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">tau</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
@@ -1058,7 +1068,7 @@ method and the <em>Runge Kutta</em> method (which we have not really addressed).
 <section id="id3">
 <h3>Definition<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pendulum_def</span><span class="p">(</span><span class="n">state</span> <span class="p">,</span> <span class="n">time</span><span class="p">):</span>
@@ -1072,7 +1082,7 @@ method and the <em>Runge Kutta</em> method (which we have not really addressed).
 <section id="id4">
 <h3>Solution<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">answer</span> <span class="o">=</span> <span class="n">odeint</span><span class="p">(</span> <span class="n">pendulum_def</span><span class="p">,</span> <span class="n">y</span> <span class="p">,</span> <span class="n">time</span> <span class="p">)</span>
@@ -1083,7 +1093,7 @@ method and the <em>Runge Kutta</em> method (which we have not really addressed).
 <section id="id5">
 <h3>Plotting<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span><span class="o">=</span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">figsize</span> <span class="o">=</span> <span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span> <span class="p">)</span>
@@ -1100,7 +1110,15 @@ method and the <em>Runge Kutta</em> method (which we have not really addressed).
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<img alt="../../_images/notebooks_L5_3_solving_ODEs_56_0.png" class="no-scaled-link" src="../../_images/notebooks_L5_3_solving_ODEs_56_0.png" style="width: 527px; height: 387px;"/>
+<img alt="../../_images/notebooks_L5_3_solving_ODEs_57_0.png" src="../../_images/notebooks_L5_3_solving_ODEs_57_0.png"/>
+</div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
 </div>
 </div>
 <script type="application/vnd.jupyter.widget-state+json">
@@ -1130,7 +1148,7 @@ method and the <em>Runge Kutta</em> method (which we have not really addressed).
 
         <div class="related-information">
               Copyright &#169; 2022, Frank Cichos |
-            Last updated on May 10, 2022. |
+            Last updated on May 14, 2022. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s

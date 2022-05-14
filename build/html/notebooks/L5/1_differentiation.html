@@ -198,7 +198,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../L3/2_flowcontrol.html">Flow Control</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L3/3_functions.html">Functions</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L3/4_exceptions.html">Exceptions</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../../lectures/L3/assignment_3.html">Exercise 3</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../lectures/L3/assignment_3.html">Exercise 3</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="simple">
+</ul>
+</li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Lecture 4:</span></p>
 <ul>
@@ -496,7 +498,7 @@ div.rendered_html tbody tr:hover {
 <h1>Numerical Differentiation<a class="headerlink" href="#Numerical-Differentiation" title="Permalink to this headline">¶</a></h1>
 <p>We did already have a look at the numerical differentiation in Lecture 3. We therefore don’t have to extend that to much here. Yet we want to formalize the numerical differentiation a bit.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[65]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -553,7 +555,7 @@ f^{\prime}_{i}\approx \frac{f_{i+1}-f_{i-1}}{2\Delta x}
 \end{equation}</span></p>
 <p>This is similar to the formula we obtained from the definition of the derivative. Here, however, we use the function value to the left and the right of the position <span class="math notranslate nohighlight">\(i\)</span> and twice the interval, which actually improves accuracy.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[66]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">D</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">h</span><span class="o">=</span><span class="mf">1.e-9</span><span class="p">,</span> <span class="o">*</span><span class="n">params</span><span class="p">):</span>
@@ -599,7 +601,7 @@ f^{\prime\prime}_{i}\approx\frac{f_{i+2}-2f_{i+1}+f_{i}}{\Delta x^2}
 </div>
 <p>This will calculate the n<span class="math notranslate nohighlight">\(th\)</span> derivative of the function <span class="math notranslate nohighlight">\(f\)</span> at the position <span class="math notranslate nohighlight">\(x\)</span> with a intervall <span class="math notranslate nohighlight">\(dx=1.0\)</span> (default value).</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[68]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## the derivative method is hidden in the `misc` sub-module of `SciPy`.</span>
@@ -608,27 +610,27 @@ f^{\prime\prime}_{i}\approx\frac{f_{i+2}-2f_{i+1}+f_{i}}{\Delta x^2}
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[71]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">derivative</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="n">dx</span><span class="o">=</span><span class="mf">0.00001</span><span class="p">,</span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span><span class="n">order</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">derivative</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span><span class="n">dx</span><span class="o">=</span><span class="mf">0.000001</span><span class="p">,</span><span class="n">n</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">order</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[71]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
--0.9999999999898844
+-1.7089939196257686e-09
 </pre></div></div>
 </div>
 <section id="Matrix-version">
 <h3>Matrix version<a class="headerlink" href="#Matrix-version" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">SciPy</span></code> module also allows us to construct the matrices as mentioned above. We will need the <code class="docutils literal notranslate"><span class="pre">diags</span></code> method from the <code class="docutils literal notranslate"><span class="pre">SciPy</span></code> module for that purpose.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[72]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.sparse</span> <span class="kn">import</span> <span class="n">diags</span>
@@ -637,7 +639,7 @@ f^{\prime\prime}_{i}\approx\frac{f_{i+2}-2f_{i+1}+f_{i}}{\Delta x^2}
 </div>
 <p>Lets assume, we want to calculate the derivative of the <code class="docutils literal notranslate"><span class="pre">sin</span></code> function at certain positions.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[73]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">N</span><span class="o">=</span><span class="mi">100</span>
@@ -648,15 +650,15 @@ f^{\prime\prime}_{i}\approx\frac{f_{i+2}-2f_{i+1}+f_{i}}{\Delta x^2}
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">diags</span></code> function uses a set of numbers, that shoud be distributed along the diagonal of the matrix. If you supply a list like in the example below, the numbers are distributed using the offsets as defined in the second list. The <code class="docutils literal notranslate"><span class="pre">shape</span></code> keyword defines the shape of the matrix. Try the example in the over next cell with the <code class="docutils literal notranslate"><span class="pre">.todense()</span></code> suffix. This converts the otherwise unreadable sparse output to a readable matrix form.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[78]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diags</span><span class="p">([</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span><span class="o">.</span><span class="n">todense</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diags</span><span class="p">([</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span><span class="o">.</span><span class="n">todense</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="nboutput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[78]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
 <div class="output_area docutils container">
@@ -675,7 +677,7 @@ matrix([[-1.,  1.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.],
 </div>
 <p>To comply with out previous definition of N=100 data point and the intervall <span class="math notranslate nohighlight">\(dx\)</span>, we define</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[79]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="o">=</span><span class="n">diags</span><span class="p">([</span><span class="o">-</span><span class="mf">1.</span><span class="p">,</span> <span class="mf">0.</span><span class="p">,</span> <span class="mf">1.</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span><span class="n">shape</span><span class="o">=</span><span class="p">(</span><span class="n">N</span><span class="p">,</span><span class="n">N</span><span class="p">))</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">-</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
@@ -684,7 +686,7 @@ matrix([[-1.,  1.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.],
 </div>
 <p>The derivative is then only a simple elementwise matrix multiplication.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[58]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">diff</span><span class="o">=</span><span class="n">m</span><span class="o">*</span><span class="n">y</span>
@@ -692,12 +694,12 @@ matrix([[-1.,  1.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.],
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[80]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">[:],</span><span class="n">diff</span><span class="p">[:],</span><span class="n">label</span><span class="o">=</span><span class="s1">'$f^{\prime}$'</span><span class="p">)</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">'$f(x)=x^</span><span class="si">{2}</span><span class="s1">$'</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">label</span><span class="o">=</span><span class="s1">'$f(x)=\cos(x)$'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">'x'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">'$f$, $f^{\prime}$'</span><span class="p">)</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
@@ -754,7 +756,7 @@ matrix([[-1.,  1.,  0.,  0.,  0.,  0.,  0.,  0.,  0.,  0.],
 
         <div class="related-information">
               Copyright &#169; 2022, Frank Cichos |
-            Last updated on May 10, 2022. |
+            Last updated on May 14, 2022. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
