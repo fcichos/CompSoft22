@@ -7,10 +7,10 @@
 Welcome to the Introduction to Computer-based Physical Modeling Course!
 ========================================================================
 
-The Python programming language is useful for all kinds of scientific and engineering tasks. You can use it to analyze and plot data. You can also use it to numerically solve scientific problems that are difficult or even impossible to solve analytically. Python is freely available and has been, due to its modular structure, extended with a nearly infinite number of different purpose modules.  
+The Python programming language is useful for all kinds of scientific and engineering tasks. You can use it to analyze and plot data. You can also use it to numerically solve scientific problems that are difficult or even impossible to solve analytically. Python is freely available and has been, due to its modular structure, extended with a nearly infinite number of different purpose modules.
 
 This course intends to introduce you into the programming with Python. It is aimed more to the beginner but we hope that more advanced users find it interesting as well.
-We will start the course with and introduction to the Jupyter Notebook environment which we will be using throughout the course. Starting from there we will provide some introduction into Python and then show you some basic functionalities, like plotting and analyzing data by curve fitting, reading and writing of files which are some of the tasks you will encounter during your physics studies. We will also show you some more advanced topics of animating inside Jupyter and simulating physical processes in
+We will start the course with and introduction to the Jupyter Notebook environment, which we will be using throughout the course. Starting from there we will provide some introduction into Python and then show you some basic functionalities, like plotting and analyzing data by curve fitting, reading and writing of files which are some of the tasks you will encounter during your physics studies. We will also show you some more advanced topics of animating inside Jupyter and simulating physical processes in
 
 * mechanics
 * electrostatics
@@ -32,27 +32,25 @@ We will not present a comprehensive list of numerical simulation schemes, but us
 |
 |
 
-
 .. toctree::
    :maxdepth: 2
    :caption: Course Information:
-   
+
    course-info/website.rst
    course-info/schedule.rst
    course-info/assignments.rst
    course-info/exam.rst
-   course-info/resources.rst   
+   course-info/resources.rst
    course-info/instructor.rst
-   
+
 .. toctree::
    :maxdepth: 2
    :caption: Jupyter Notebooks:
-   
+
    lectures/Intro/overview.rst
    notebooks/Intro/Introduction2Jupyter.ipynb
    notebooks/Intro/NotebookEditor.ipynb
    notebooks/Intro/EditCells.ipynb
-
 
 .. toctree::
    :maxdepth: 2
@@ -65,8 +63,6 @@ We will not present a comprehensive list of numerical simulation schemes, but us
    notebooks/L1/4_modules.ipynb
    lectures/L1/assignment_1.rst
 
-
-
 .. toctree::
    :maxdepth: 2
    :caption: Lecture 2:
@@ -75,8 +71,7 @@ We will not present a comprehensive list of numerical simulation schemes, but us
    notebooks/L2/1_numpy.ipynb   
    notebooks/L2/2_plotting.ipynb
    notebooks/L2/3_randomnumbers.ipynb
-   lectures/L2/assignment_2.rst   
-   
+   lectures/L2/assignment_2.rst 
    
 .. toctree::
    :maxdepth: 2
@@ -89,7 +84,6 @@ We will not present a comprehensive list of numerical simulation schemes, but us
    notebooks/L3/4_exceptions.ipynb
    lectures/L3/assignment_3.rst
 
-
 .. toctree::
    :maxdepth: 2
    :caption: Lecture 4:
@@ -99,8 +93,7 @@ We will not present a comprehensive list of numerical simulation schemes, but us
    notebooks/L4/2_brownian_motion.ipynb   
    notebooks/L4/3_animations.ipynb  
    lectures/L4/assignment_4.rst
-  
-  
+      
 .. toctree::
    :maxdepth: 2
    :caption: Lecture 5:
@@ -118,7 +111,7 @@ We will not present a comprehensive list of numerical simulation schemes, but us
    lectures/L6/overview_6.rst
    notebooks/L6/1_covid19.ipynb
    notebooks/L6/2_coupled_pendula.ipynb   
-   notebooks/L6/3_fourier_analysis.ipynb  
+   notebooks/L6/3_fourier_analysis.ipynb     
 
 
 .. toctree::
@@ -131,7 +124,6 @@ We will not present a comprehensive list of numerical simulation schemes, but us
    notebooks/L7/3_diffusion_equation.ipynb  
    lectures/L7/assignment_7.rst
 
-
 .. toctree::
    :maxdepth: 2
    :caption: Lecture 8:
@@ -139,7 +131,7 @@ We will not present a comprehensive list of numerical simulation schemes, but us
    lectures/L8/overview_8.rst
    notebooks/L8/1_curve_fitting.ipynb
    
-
+   
 .. toctree::
    :maxdepth: 2
    :caption: Lecture 9:
@@ -150,7 +142,7 @@ We will not present a comprehensive list of numerical simulation schemes, but us
    notebooks/L9/3_huygens_principle.ipynb
    notebooks/L9/4_gaussian_beams.ipynb
    lectures/L9/assignment_9.rst
-
+   
 
 .. toctree::
    :maxdepth: 2
@@ -171,15 +163,15 @@ We will not present a comprehensive list of numerical simulation schemes, but us
    notebooks/L11/1_quantum_dynamics.ipynb
    notebooks/L11/2_particle_in_a_box.ipynb
    notebooks/L11/3_tunneling.ipynb
-
+   
 .. toctree::
    :maxdepth: 2
    :caption: Lecture 12:
 
    lectures/L12/overview_12.rst
    notebooks/L12/1_hydrodynamics.ipynb
-   notebooks/L12/2_reinforcement_learning.ipynb
-
+   notebooks/L12/2_reinforcement_learning.ipynb   
+   
 .. toctree::
    :maxdepth: 2
    :caption: Lecture 13:
@@ -188,6 +180,27 @@ We will not present a comprehensive list of numerical simulation schemes, but us
    notebooks/L13/1_deep_learning.ipynb
    notebooks/L13/2_deep_learning_keras.ipynb
 
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Lecture 14:
+
+   lectures/L14/overview_14.rst
+   notebooks/L14/1_CNN.ipynb
+   notebooks/L14/2_AutoEncoder.ipynb
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Lecture 15:
+
+   lectures/L15/overview_15.rst
+   notebooks/L15/1_python_hardware.ipynb
+   notebooks/L15/2_project_template.ipynb
+
+
+   
+   
 Indices and tables
 ==================
 
