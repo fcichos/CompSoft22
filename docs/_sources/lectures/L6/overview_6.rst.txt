@@ -7,15 +7,6 @@ In this 6th lecture we will have a look at
 2. Coupled Pendula
 3. Fourier Analysis 
 
-There will be no assignment for Lecture 5. I still have to prepare an assignment for Lecture 6. 
-For those of you who are interested in the numbers of submitted exercises:
-
-- exercise 1: 46
-- exercise 2: 39
-- exercise 3: 25
-- exercise 4: 19
-
-I think 50% submitted exercises qualify for the final project.
 
 .. raw:: html
 
