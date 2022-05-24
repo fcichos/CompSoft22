@@ -1,4 +1,4 @@
-Exercise 7
+Exercise 5
 ==========
 
 The seventh assignment will be about the solution of ordinary differential equations! You will apply your knowledge about 
@@ -10,7 +10,7 @@ to study the solution of a more biologically focused problem.
 
 Have fun!
 
-    .. image:: img/assignment_7.png
+    .. image:: img/assignment_5.png
        :width: 600px
        :alt: forum screen
        :align: center
