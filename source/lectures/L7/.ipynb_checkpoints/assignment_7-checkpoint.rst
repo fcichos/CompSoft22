@@ -1,4 +1,4 @@
-Exercise 5
+Exercise 7
 ==========
 
 The seventh assignment will be about the solution of ordinary differential equations! You will apply your knowledge about 
