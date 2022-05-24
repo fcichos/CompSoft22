@@ -1,7 +1,7 @@
 Exercise 5
 ==========
 
-The seventh assignment will be about the solution of ordinary differential equations! You will apply your knowledge about 
+The fifth assignment will be about the solution of ordinary differential equations! You will apply your knowledge about 
 
 1. solving a system of ordinary differential euqations
 2. using the fast fourier transform for frequency analysis
