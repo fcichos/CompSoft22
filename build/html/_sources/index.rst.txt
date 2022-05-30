@@ -130,7 +130,12 @@ We will not present a comprehensive list of numerical simulation schemes, but us
    notebooks/L7/2_planetary_motion.ipynb   
    notebooks/L7/3_diffusion_equation.ipynb  
  
+.. toctree::
+   :maxdepth: 2
+   :caption: Lecture 8:
 
+   lectures/L8/overview_8.rst
+   notebooks/L8/1_curve_fitting.ipynb
 
 Indices and tables
 ==================

@@ -29,7 +29,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 13,
+   "execution_count": 1,
    "metadata": {
     "execution": {
      "iopub.execute_input": "2020-05-25T18:11:26.211Z",
@@ -55,7 +55,7 @@
        "<IPython.core.display.HTML object>"
       ]
      },
-     "execution_count": 13,
+     "execution_count": 1,
      "metadata": {},
      "output_type": "execute_result"
     }
@@ -116,6 +116,7 @@
    ]
   },
   {
+   "attachments": {},
    "cell_type": "markdown",
    "metadata": {},
    "source": [
@@ -124,6 +125,8 @@
     "The image below depicts the sitution we would like to cover in our first project. These are two pendula, which have the length $L_{1}$ and $L_{2}$. Both are coupled with a spring of spring constant $k$, which is relaxed, when both pendula are at rest. You may want to include a generalized version where the spring is mounted at a distance $c$ from the turning points of the pendula.\n",
     "\n",
     "If you develop the equation of motion, write down as a sum of torques. Use one equation of motion for each pendulum. The result will be two coupled differential equations for the angular coordinates. They are solved by the scipy odeint function without any friction.\n",
+    "\n",
+    "\n",
     "\n",
     "![Figure 1](img/pendulum.png)"
    ]
@@ -1149,7 +1152,7 @@
  ],
  "metadata": {
   "kernelspec": {
-   "display_name": "Python 3",
+   "display_name": "Python 3 (ipykernel)",
    "language": "python",
    "name": "python3"
   },
@@ -1163,10 +1166,23 @@
    "name": "python",
    "nbconvert_exporter": "python",
    "pygments_lexer": "ipython3",
-   "version": "3.7.6"
+   "version": "3.8.12"
   },
   "nteract": {
    "version": "0.23.1"
+  },
+  "toc": {
+   "base_numbering": 1,
+   "nav_menu": {},
+   "number_sections": true,
+   "sideBar": true,
+   "skip_h1_title": false,
+   "title_cell": "Table of Contents",
+   "title_sidebar": "Contents",
+   "toc_cell": false,
+   "toc_position": {},
+   "toc_section_display": true,
+   "toc_window_display": false
   },
   "widgets": {
    "application/vnd.jupyter.widget-state+json": {

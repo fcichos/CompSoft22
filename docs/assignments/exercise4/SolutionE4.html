@@ -234,6 +234,11 @@
 <li class="toctree-l1"><a class="reference internal" href="../../notebooks/L7/2_planetary_motion.html">Planetary Motion</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../notebooks/L7/3_diffusion_equation.html">Diffusion equation</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 8:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/L8/overview_8.html">Lecture Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../notebooks/L8/1_curve_fitting.html">Curve fitting</a></li>
+</ul>
 
 </div>
 </div>
@@ -527,7 +532,7 @@ div.rendered_html tbody tr:hover {
 <hr class="docutils"/>
 <p>This exercise is about classes and animations. You will also need some skills from the other lectures. The task is to create a simulation of the COVID-19 spreading. Take your time to solve the problem. We will discuss that in more detail later.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[10]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -609,7 +614,7 @@ class Person:
 
 
         return()<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[32]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
@@ -630,7 +635,7 @@ class Person:
         <span class="k">for</span> <span class="n">particle</span> <span class="ow">in</span> <span class="n">p</span><span class="p">:</span>
             <span class="n">d</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">((</span><span class="bp">self</span><span class="o">.</span><span class="n">p</span><span class="o">-</span><span class="n">particle</span><span class="o">.</span><span class="n">p</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
 
-            <span class="k">if</span> <span class="n">d</span><span class="o">&lt;=</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">R</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="ow">and</span> <span class="n">d</span><span class="o">&gt;</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">particle</span><span class="o">.</span><span class="n">infected</span><span class="o">==</span><span class="kc">True</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">recovered</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">d</span><span class="o">&lt;=</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">R</span><span class="o">+</span><span class="n">particle</span><span class="o">.</span><span class="n">R</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span> <span class="ow">and</span> <span class="n">d</span><span class="o">&gt;</span><span class="mi">0</span> <span class="ow">and</span> <span class="n">particle</span><span class="o">.</span><span class="n">infected</span><span class="o">==</span><span class="kc">True</span> <span class="ow">and</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">recovered</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">infected</span><span class="o">=</span><span class="kc">True</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">infected</span><span class="p">:</span>
@@ -678,14 +683,14 @@ class Person:
 <li><p>Store the persons in the list p</p></li>
 </ul>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[34]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">p</span><span class="o">=</span><span class="p">[]</span>
 <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">100</span><span class="p">):</span>
     <span class="n">position</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">390</span><span class="p">),</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">390</span><span class="p">)])</span>
     <span class="n">box</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">400</span><span class="p">,</span><span class="mi">400</span><span class="p">]</span>
-    <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Person</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="n">position</span><span class="p">,</span><span class="mf">10.0</span><span class="p">,</span><span class="n">box</span><span class="p">,</span><span class="kc">False</span><span class="p">))</span>
+    <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">Person</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="n">position</span><span class="p">,</span><span class="mf">10.0</span><span class="p">,</span><span class="n">box</span><span class="p">,</span><span class="kc">False</span><span class="p">))</span>
 <span class="n">p</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">infected</span><span class="o">=</span><span class="kc">True</span>
 </pre></div>
 </div>
@@ -695,7 +700,7 @@ class Person:
 <h2>Simulation Canvas<a class="headerlink" href="#Simulation-Canvas" title="Permalink to this headline">¶</a></h2>
 <p>Create and display a simulation canvas of a width and height of 400 pixels.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[35]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">canvas</span> <span class="o">=</span> <span class="n">Canvas</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">400</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">400</span><span class="p">)</span>
@@ -707,7 +712,7 @@ class Person:
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "da2ddc7237a94769b96a0e9c3e6b5b4b", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "050d7507b576450993d3555acebe3a18", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 </section>
 <section id="Run-the-Simulation">
@@ -715,7 +720,7 @@ class Person:
 <p>Run the simulation with a timestep of dt=1 for 1000 steps. Update the position of each person in a loop and check in the same loop the total number of sick persons. Store the number of sick persons for each timestep in a list <code class="docutils literal notranslate"><span class="pre">sick</span></code>.</p>
 <p>Draw current state of each step in an animation loop as we did that for the Brownian particles. If a person is sick, draw it in red. If the person is healthy, draw that in blue.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[36]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">infected</span><span class="o">=</span><span class="p">[]</span>
@@ -762,7 +767,7 @@ class Person:
 <h2>Analysis<a class="headerlink" href="#Analysis" title="Permalink to this headline">¶</a></h2>
 <p>Plot the number of sick persons over the timestep. Don’t forget the proper axes.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
@@ -833,7 +838,7 @@ class Person:
 </pre></div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[15]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
@@ -859,10 +864,35 @@ class Person:
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[16]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">point</span><span class="o">=</span><span class="n">Point</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">point</span><span class="o">*</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[17]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+x:4, y:6
+</pre></div></div>
+</div>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -900,7 +930,7 @@ class Person:
 
         <div class="related-information">
               Copyright &#169; 2022, Frank Cichos |
-            Last updated on May 24, 2022. |
+            Last updated on May 30, 2022. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
