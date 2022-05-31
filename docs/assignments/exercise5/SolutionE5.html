@@ -134,7 +134,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -259,7 +259,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -546,8 +546,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 </div>
-<section id="Lotka-Volterra-Equation">
-<h2>Lotka-Volterra Equation<a class="headerlink" href="#Lotka-Volterra-Equation" title="Permalink to this headline">¶</a></h2>
+<p><strong>Lotka-Volterra Equation</strong></p>
 <p>Since we did already solve quiete some differential equations for mechanics problems during the lectures, we will use the Lotka-Volterra equations to do something new. These equations characterize the dynamics of biological systems in which a predator <span class="math notranslate nohighlight">\(y\)</span> population and a prey <span class="math notranslate nohighlight">\(x\)</span> population interact.</p>
 <p>The prey population is described by</p>
 <p><span class="math">\begin{equation}
@@ -559,9 +558,7 @@ div.rendered_html tbody tr:hover {
 \dot{y}=-y(\gamma-\sigma x)
 \end{equation}</span></p>
 <p>where the predators die naturally with a rate <span class="math notranslate nohighlight">\(\gamma\)</span> and grow with a rate <span class="math notranslate nohighlight">\(\sigma\)</span> if there is enough prey <span class="math notranslate nohighlight">\(x\)</span>.</p>
-</section>
-<section id="Problem-1">
-<h2>Problem 1<a class="headerlink" href="#Problem-1" title="Permalink to this headline">¶</a></h2>
+<p><strong>Problem 1</strong></p>
 <p>Write a Python function that can be used with the <code class="docutils literal notranslate"><span class="pre">odeint</span></code> method of the <code class="docutils literal notranslate"><span class="pre">scipy</span></code> module.</p>
 <div class="nbinput nblast docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
@@ -627,8 +624,7 @@ div.rendered_html tbody tr:hover {
 <img alt="../../_images/assignments_exercise5_SolutionE5_14_0.png" class="no-scaled-link" src="../../_images/assignments_exercise5_SolutionE5_14_0.png" style="width: 519px; height: 392px;">
 </img></div>
 </div>
-<section id="Lotka-Volterra-phase-space-plot">
-<h3>Lotka-Volterra phase-space plot<a class="headerlink" href="#Lotka-Volterra-phase-space-plot" title="Permalink to this headline">¶</a></h3>
+<p><strong>Lotka-Volterra phase-space plot</strong></p>
 <p>The phase space plot is containing the variation of the number of predators with the number of prey. Plot the phase space.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
@@ -679,10 +675,7 @@ div.rendered_html tbody tr:hover {
 <img alt="../../_images/assignments_exercise5_SolutionE5_19_0.png" class="no-scaled-link" src="../../_images/assignments_exercise5_SolutionE5_19_0.png" style="width: 393px; height: 281px;"/>
 </div>
 </div>
-</section>
-</section>
-<section id="Problem-2">
-<h2>Problem 2<a class="headerlink" href="#Problem-2" title="Permalink to this headline">¶</a></h2>
+<p><strong>Problem 2</strong></p>
 <p>The next problem requires some exploration by yourself. You should explore the functions for calculating the Fast Fourier Transform of a time series as provided by the <code class="docutils literal notranslate"><span class="pre">numpy</span></code> module. Explore especially the meaning of the return values of the numpy.fft.fft function!</p>
 <p>Using the fast fourier transform method as described at the end of lecture 6, measure the frequency of oscillation of the population at various prey growth rates. Check again the functions</p>
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>np.fft.fft
@@ -726,7 +719,6 @@ np.fft.fftshift
 <script type="application/vnd.jupyter.widget-state+json">
 {"state": {}, "version_major": 2, "version_minor": 0}
 </script></section>
-</section>
 
         </article>
       </div>
@@ -770,32 +762,8 @@ np.fft.fftshift
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            Contents
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">Exercise 5 Solution</a><ul>
-<li><a class="reference internal" href="#Lotka-Volterra-Equation">Lotka-Volterra Equation</a></li>
-<li><a class="reference internal" href="#Problem-1">Problem 1</a><ul>
-<li><a class="reference internal" href="#Lotka-Volterra-phase-space-plot">Lotka-Volterra phase-space plot</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#Problem-2">Problem 2</a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>

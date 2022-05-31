@@ -50,7 +50,7 @@
     "tags": []
    },
    "source": [
-    "## Lotka-Volterra Equation"
+    "**Lotka-Volterra Equation**"
    ]
   },
   {
@@ -85,7 +85,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "## Problem 1"
+    "**Problem 1**"
    ]
   },
   {
@@ -235,7 +235,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "### Lotka-Volterra phase-space plot"
+    "**Lotka-Volterra phase-space plot**"
    ]
   },
   {
@@ -347,7 +347,7 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "## Problem 2"
+    "**Problem 2**"
    ]
   },
   {
