@@ -1,4 +1,4 @@
-Exercise 6
+Exercise 7
 ==========
 
 The sixth assignment will be about linear regression. You will ...

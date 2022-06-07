@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Spherical waves" href="2_spherical_waves.html" /><link rel="prev" title="Lecture Contents" href="../../lectures/L9/overview_9.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2021.09.08"/>
         <title>Plane Waves - Introduction to Computer-based Physical Modeling 22 documentation</title>
@@ -239,6 +239,15 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../lectures/L8/overview_8.html">Lecture Contents</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../L8/1_curve_fitting.html">Curve fitting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/L8/assignment_6.html">Exercise 6</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 9:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/L9/overview_9.html">Lecture Contents</a></li>
+<li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Plane Waves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_spherical_waves.html">Spherical waves</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_huygens_principle.html">Huygens principle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_gaussian_beams.html">Gaussian Beam</a></li>
 </ul>
 
 </div>
@@ -1349,7 +1358,7 @@ k_{0z,t}=\pm \frac{1}{n_{1}}\sqrt{n_2^2 k_{0z,in}^2 -(n_{1}^2-n_{2}^2)k_{0x}^{2}
 </div>
 </div>
 <script type="application/vnd.jupyter.widget-state+json">
-{"state": {"04bb0efa2c484049ba4fb78ccad78914": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}, "1d1b669d89e5486b8530719b68a54e32": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}, "4a58358b376b408c828ac27f5e0b5e76": {"model_module": "ipycanvas", "model_module_version": "^0.4.3", "model_name": "CanvasModel", "state": {"_model_module_version": "^0.4.3", "_view_module_version": "^0.4.3", "height": 300, "layout": "IPY_MODEL_1d1b669d89e5486b8530719b68a54e32", "sync_image_data": true, "width": 300}}, "8c9bfba5d94a447684757a71be4f99ef": {"buffers": [{"data": "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", "encoding": "base64", "path": ["image_data"]}], "model_module": "ipycanvas", "model_module_version": "^0.4.3", "model_name": "CanvasModel", "state": {"_model_module_version": "^0.4.3", "_view_module_version": "^0.4.3", "height": 300, "image_data": {}, "layout": "IPY_MODEL_04bb0efa2c484049ba4fb78ccad78914", "sync_image_data": true, "width": 300}}}, "version_major": 2, "version_minor": 0}
+{"state": {}, "version_major": 2, "version_minor": 0}
 </script></section>
 </section>
 
@@ -1358,13 +1367,31 @@ k_{0z,t}=\pm \frac{1}{n_{1}}\sqrt{n_2^2 k_{0z,in}^2 -(n_{1}^2-n_{2}^2)k_{0x}^{2}
       <footer>
         
         <div class="related-pages">
-          
-          
+          <a class="next-page" href="2_spherical_waves.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Spherical waves</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../../lectures/L9/overview_9.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Lecture Contents</div>
+                
+              </div>
+            </a>
         </div>
 
         <div class="related-information">
               Copyright &#169; 2022, Frank Cichos |
-            Last updated on May 31, 2022. |
+            Last updated on Jun 07, 2022. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
