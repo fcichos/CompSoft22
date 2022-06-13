@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="prev" title="Huygens principle" href="3_huygens_principle.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Lecture Contents" href="../../lectures/L10/overview_10.html" /><link rel="prev" title="Huygens principle" href="3_huygens_principle.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2021.09.08"/>
         <title>Gaussian Beam - Introduction to Computer-based Physical Modeling 22 documentation</title>
@@ -248,6 +248,14 @@
 <li class="toctree-l1"><a class="reference internal" href="2_spherical_waves.html">Spherical waves</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3_huygens_principle.html">Huygens principle</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Gaussian Beam</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 10:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/L10/overview_10.html">Lecture Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L10/1_quantum_mechanics.html">Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L10/2_particle_in_a_box.html">Particle in a box</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L10/3_harmonic_oscillator.html">Harmonic Oscillator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L10/4_periodic_potential.html">Periodic Potential</a></li>
 </ul>
 
 </div>
@@ -574,7 +582,7 @@ E(\rho,z)=E_{0}\frac{w_0}{w(z)}e^{-\frac{\rho^2}{w(z)^2}}e^{i\left [ kz+k\frac{\
 <p>Here <span class="math notranslate nohighlight">\(\rho=\sqrt(x^2+y^2)\)</span> is the distance from the propgation direction (z-axis). <span class="math notranslate nohighlight">\(w=w_0\sqrt{1+(z/z_r)^2}\)</span> is the beam radius and <span class="math notranslate nohighlight">\(w_0\)</span> is the beam waist, which is related to the Rayleigh length <span class="math notranslate nohighlight">\(z_r=\pi w_{0}^2/\lambda\)</span>. <span class="math notranslate nohighlight">\(R=z(1+(z_r/z)^2)\)</span> denotes the curvature of the wavefronts.</p>
 <p>With the help of these parameters, we may now write a function which calculates the electric field of a Gaussian beam.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gaussian_beam</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">omega</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span><span class="n">w0</span><span class="p">,</span><span class="n">t</span><span class="p">):</span>
@@ -592,7 +600,7 @@ E(\rho,z)=E_{0}\frac{w_0}{w(z)}e^{-\frac{\rho^2}{w(z)^2}}e^{i\left [ kz+k\frac{\
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mf">6e-6</span><span class="p">,</span><span class="mf">6e-6</span><span class="p">,</span><span class="mi">300</span><span class="p">)</span>
@@ -609,7 +617,7 @@ E(\rho,z)=E_{0}\frac{w_0}{w(z)}e^{-\frac{\rho^2}{w(z)^2}}e^{i\left [ kz+k\frac{\
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">8</span><span class="p">))</span>
@@ -770,7 +778,15 @@ E(\rho,z)=E_{0}\frac{w_0}{w(z)}e^{-\frac{\rho^2}{w(z)^2}}e^{i\left [ kz+k\frac{\
       <footer>
         
         <div class="related-pages">
-          
+          <a class="next-page" href="../../lectures/L10/overview_10.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Lecture Contents</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
           <a class="prev-page" href="3_huygens_principle.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
@@ -786,7 +802,7 @@ E(\rho,z)=E_{0}\frac{w_0}{w(z)}e^{-\frac{\rho^2}{w(z)^2}}e^{i\left [ kz+k\frac{\
 
         <div class="related-information">
               Copyright &#169; 2022, Frank Cichos |
-            Last updated on Jun 07, 2022. |
+            Last updated on Jun 13, 2022. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s

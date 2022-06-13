@@ -249,6 +249,14 @@
 <li class="toctree-l1"><a class="reference internal" href="3_huygens_principle.html">Huygens principle</a></li>
 <li class="toctree-l1"><a class="reference internal" href="4_gaussian_beams.html">Gaussian Beam</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 10:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/L10/overview_10.html">Lecture Contents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L10/1_quantum_mechanics.html">Quantum Mechanics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L10/2_particle_in_a_box.html">Particle in a box</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L10/3_harmonic_oscillator.html">Harmonic Oscillator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../L10/4_periodic_potential.html">Periodic Potential</a></li>
+</ul>
 
 </div>
 </div>
@@ -584,7 +592,7 @@ E=\frac{E_{0}}{|\vec{r}-\vec{r}_{0}|}e^{i k|\vec{r}-\vec{r}_{0}|} e^{-i\omega t}
 <h2>Electric field<a class="headerlink" href="#Electric-field" title="Permalink to this headline">¶</a></h2>
 <p>Lets have a look at the electric field of the spherical wave. Below is some code plotting the electric field is space. The source is at the origin and the plot nicely shows, that the amplitude decays with the distance.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[18]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
@@ -623,7 +631,7 @@ E=\frac{E_{0}}{|\vec{r}-\vec{r}_{0}|}e^{i k|\vec{r}-\vec{r}_{0}|} e^{-i\omega t}
 </div>
 <p>The line plots below show that the field amplitude rapidly decays and the intensity follows a <span class="math notranslate nohighlight">\(1/r^2\)</span> law as expected. The slight deiviation at small distances is an artifact from our discretization. We used the image above to extract the line plot and therefore never exactly hit <span class="math notranslate nohighlight">\(r=0\)</span>.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[19]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
@@ -657,7 +665,7 @@ E=\frac{E_{0}}{|\vec{r}-\vec{r}_{0}|}e^{i k|\vec{r}-\vec{r}_{0}|} e^{-i\omega t}
 <h2>Animation<a class="headerlink" href="#Animation" title="Permalink to this headline">¶</a></h2>
 <p>We can also visualize the animation our spherical wave to check for the direction of the wave propagation.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">norm</span> <span class="o">=</span> <span class="n">mpl</span><span class="o">.</span><span class="n">colors</span><span class="o">.</span><span class="n">Normalize</span><span class="p">(</span><span class="n">vmin</span><span class="o">=-</span><span class="mf">5e6</span><span class="p">,</span> <span class="n">vmax</span><span class="o">=</span><span class="mf">5e6</span><span class="p">)</span>
@@ -667,7 +675,7 @@ E=\frac{E_{0}}{|\vec{r}-\vec{r}_{0}|}e^{i k|\vec{r}-\vec{r}_{0}|} e^{-i\omega t}
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[21]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">canvas</span> <span class="o">=</span> <span class="n">Canvas</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span> <span class="n">height</span><span class="o">=</span><span class="mi">300</span><span class="p">,</span><span class="n">sync_image_data</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -679,10 +687,10 @@ E=\frac{E_{0}}{|\vec{r}-\vec{r}_{0}|}e^{i k|\vec{r}-\vec{r}_{0}|} e^{-i\omega t}
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "9101afb627b34bdab235150e8d13f5dd", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "5de0fae433c84612969cc56e98dafd8e", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[22]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">animate</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">time</span><span class="p">):</span>
@@ -698,7 +706,7 @@ E=\frac{E_{0}}{|\vec{r}-\vec{r}_{0}|}e^{i k|\vec{r}-\vec{r}_{0}|} e^{-i\omega t}
 </div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">time</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">1e-14</span><span class="p">,</span><span class="mi">200</span><span class="p">)</span>
@@ -711,7 +719,7 @@ E=\frac{E_{0}}{|\vec{r}-\vec{r}_{0}|}e^{i k|\vec{r}-\vec{r}_{0}|} e^{-i\omega t}
 <h2>Plot the intensity in an image plane<a class="headerlink" href="#Plot-the-intensity-in-an-image-plane" title="Permalink to this headline">¶</a></h2>
 <p>As we have now the electric field in space, wqe may also chose an arbitrary plane in space to record the intensity of that wave in space. Here we want to know the intensity in a plane at 10 µm distance from the source, which is again at the origin. The intensity cross section at the screen is a Lorentzian function.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[24]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
@@ -753,7 +761,7 @@ E=\frac{E_{0}}{|\vec{r}-\vec{r}_{0}|}e^{i k|\vec{r}-\vec{r}_{0}|} e^{-i\omega t}
 <p>In the section on plane waves, we had a look at the interference pattern of plane waves in space. We now have a look at the interference of a plane wave and a spherical wave. The plane wave thereby probes the distortion of the spherical wavefronts and the interference pattern stores this information on the shape of the spherical wavefronts. This is exactly what is done in holography. Taking this interference pattern as a “diffraction grating” will allow you to restore information on the
 spherical wavefonts.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[25]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">plane_wave</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="n">omega</span><span class="p">,</span><span class="n">r</span><span class="p">,</span><span class="n">t</span><span class="p">):</span>
@@ -762,7 +770,7 @@ spherical wavefonts.</p>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[14]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[26]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
@@ -833,7 +841,7 @@ spherical wavefonts.</p>
 
         <div class="related-information">
               Copyright &#169; 2022, Frank Cichos |
-            Last updated on Jun 07, 2022. |
+            Last updated on Jun 13, 2022. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s

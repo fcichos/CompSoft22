@@ -131,7 +131,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 4,
+   "execution_count": 18,
    "metadata": {
     "slideshow": {
      "slide_type": "subslide"
@@ -195,7 +195,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 5,
+   "execution_count": 19,
    "metadata": {
     "slideshow": {
      "slide_type": "subslide"
@@ -262,7 +262,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 6,
+   "execution_count": 20,
    "metadata": {
     "slideshow": {
      "slide_type": "fragment"
@@ -277,7 +277,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 7,
+   "execution_count": 21,
    "metadata": {
     "slideshow": {
      "slide_type": "subslide"
@@ -287,7 +287,7 @@
     {
      "data": {
       "application/vnd.jupyter.widget-view+json": {
-       "model_id": "9101afb627b34bdab235150e8d13f5dd",
+       "model_id": "5de0fae433c84612969cc56e98dafd8e",
        "version_major": 2,
        "version_minor": 0
       },
@@ -306,7 +306,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 8,
+   "execution_count": 22,
    "metadata": {
     "slideshow": {
      "slide_type": "subslide"
@@ -327,7 +327,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 9,
+   "execution_count": 23,
    "metadata": {
     "slideshow": {
      "slide_type": "fragment"
@@ -354,7 +354,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 11,
+   "execution_count": 24,
    "metadata": {
     "slideshow": {
      "slide_type": "subslide"
@@ -428,7 +428,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 12,
+   "execution_count": 25,
    "metadata": {
     "slideshow": {
      "slide_type": "fragment"
@@ -442,7 +442,7 @@
   },
   {
    "cell_type": "code",
-   "execution_count": 14,
+   "execution_count": 26,
    "metadata": {
     "slideshow": {
      "slide_type": "subslide"
@@ -532,6 +532,19 @@
    "latex_user_defs": false,
    "report_style_numbering": false,
    "user_envs_cfg": false
+  },
+  "toc": {
+   "base_numbering": 1,
+   "nav_menu": {},
+   "number_sections": true,
+   "sideBar": true,
+   "skip_h1_title": false,
+   "title_cell": "Table of Contents",
+   "title_sidebar": "Contents",
+   "toc_cell": false,
+   "toc_position": {},
+   "toc_section_display": true,
+   "toc_window_display": false
   },
   "varInspector": {
    "cols": {
