@@ -148,7 +148,7 @@ We will not present a comprehensive list of numerical simulation schemes, but us
    notebooks/L9/2_spherical_waves.ipynb
    notebooks/L9/3_huygens_principle.ipynb
    notebooks/L9/4_gaussian_beams.ipynb
-   lectures/L9/assignment_9.rst
+   lectures/L9/assignment_7.rst
 
 .. toctree::
    :maxdepth: 2
