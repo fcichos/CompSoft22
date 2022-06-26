@@ -266,6 +266,10 @@
 <li class="toctree-l1"><a class="reference internal" href="2_particle_in_a_box.html">Wavepacket in a Potential Box</a></li>
 <li class="toctree-l1"><a class="reference internal" href="3_tunneling.html">Tunneling through a barrier</a></li>
 </ul>
+<p class="caption" role="heading"><span class="caption-text">Lecture 12:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lectures/L12/overview_12.html">Lecture Contents</a></li>
+</ul>
 
 </div>
 </div>
@@ -603,19 +607,19 @@ div.rendered_html tbody tr:hover {
 <h3>Demonstration of superposition of plane waves<a class="headerlink" href="#Demonstration-of-superposition-of-plane-waves" title="Permalink to this headline">¶</a></h3>
 <p>The code below just shows how waves of different wave vector can be combined to result in a wave packet, i.e. n object that is localized in space. This is nothing else then a Fourier decomposition of a spatially extended object.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[27]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">wavelength</span><span class="o">=</span><span class="mf">1e-10</span> <span class="c1"># wavelenth of the matter wave in Angstroem</span>
 <span class="n">k0</span><span class="o">=</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">wavelength</span> <span class="c1"># wavevector of the matter wave</span>
-<span class="n">dk</span><span class="o">=</span><span class="n">k0</span><span class="o">/</span><span class="mi">40</span> <span class="c1"># intervall of the matter wave</span>
+<span class="n">dk</span><span class="o">=</span><span class="n">k0</span><span class="o">/</span><span class="mi">10</span> <span class="c1"># intervall of the matter wave</span>
 <span class="n">electron_mass</span><span class="o">=</span><span class="mf">9.10938356e-31</span>
 <span class="n">hbar</span><span class="o">=</span><span class="mf">1.0545718e-34</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[20]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
@@ -680,7 +684,7 @@ div.rendered_html tbody tr:hover {
 <h3>Wavepacket with rectangular amplitude<a class="headerlink" href="#Wavepacket-with-rectangular-amplitude" title="Permalink to this headline">¶</a></h3>
 <p>The wavepacket above had just constant amplitudes over a range of wavenumbers. While we have an analytical function for this type of wave, we just program a function to show that the superposition works as well.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[23]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># matter wave packet with a frequency that scales with the square of the wave vector</span>
@@ -697,7 +701,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <p>The plot below now shows the magnitude square of the wavefunction, i.e. <span class="math notranslate nohighlight">\(|\Psi |^2\)</span>. You may recognize the side lobes besides the main peak. The whole distribution is reminiscent of the diffraction pattern of a single slit in the far field as tackeled also in our lectures on electromagnetic waves. You may want to think about this similarity a bit longer.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[28]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
@@ -723,21 +727,21 @@ div.rendered_html tbody tr:hover {
 <h3>Gaussian Wave Packet<a class="headerlink" href="#Gaussian-Wave-Packet" title="Permalink to this headline">¶</a></h3>
 <p>We next create a Gaussian wave packet, which means that the amplitudes <span class="math notranslate nohighlight">\(\phi(k)\)</span> of the interfering plane waves follow a Gaussian distribution. The result is then also a Gaussian function for the spatial distribution.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[11]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[37]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">gauss_wave_packet</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">t</span><span class="p">):</span>
     <span class="n">h</span><span class="o">=</span><span class="mi">0</span>
+    <span class="n">sigma</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">dk</span>
     <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">k0</span><span class="o">-</span><span class="mi">5</span><span class="o">*</span><span class="n">dk</span><span class="p">,</span><span class="n">k0</span><span class="o">+</span><span class="mi">5</span><span class="o">*</span><span class="n">dk</span><span class="p">,</span><span class="mi">1000</span><span class="p">):</span>
         <span class="n">frequency</span><span class="o">=</span><span class="n">hbar</span><span class="o">*</span><span class="n">k</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">electron_mass</span><span class="p">)</span>
-        <span class="n">sigma</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">dk</span>
         <span class="n">h</span><span class="o">+=</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="p">((</span><span class="n">k</span><span class="o">-</span><span class="n">k0</span><span class="p">)</span><span class="o">/</span><span class="n">sigma</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="mi">1</span><span class="n">j</span><span class="o">*</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">x</span><span class="o">-</span><span class="n">frequency</span><span class="o">*</span><span class="n">t</span><span class="p">))</span>
     <span class="k">return</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[12]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[48]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fig</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
@@ -766,7 +770,7 @@ div.rendered_html tbody tr:hover {
 <p>We would like to plot in the next sections the time evolution of the wavefunction. Of course, we want to see the function developing live over time in a nice diagram. We could use the <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> <code class="docutils literal notranslate"><span class="pre">animate</span></code> method, which is commonly used to create a movie file that is later embedded in the notebook. Here we want to take a different route. We use <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> to generate the plot. We store the image data for the plot in an numpy array, which we then show with the help of our <code class="docutils literal notranslate"><span class="pre">ipycanvas</span></code>
 module. When calculations are not taking to long, this is a good way to animate in real time.</p>
 <div class="nbinput docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[49]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## setup the canvas</span>
@@ -779,10 +783,10 @@ module. When calculations are not taking to long, this is a good way to animate 
 <div class="prompt empty docutils container">
 </div>
 <div class="output_area docutils container">
-<script type="application/vnd.jupyter.widget-view+json">{"model_id": "9a16b40aa2c145b68085e4f13de4698e", "version_major": 2, "version_minor": 0}</script></div>
+<script type="application/vnd.jupyter.widget-view+json">{"model_id": "e480c2df3f95456e9418bd7920c316f3", "version_major": 2, "version_minor": 0}</script></div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[13]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[50]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ch">#![](wavepacket.mov)</span>
@@ -798,7 +802,7 @@ plt.close()
 </div>
 <p>which draws the diagram without the data into the buffer. We store that buffer as the background with <code class="docutils literal notranslate"><span class="pre">fig.canvas.copy_from_bbox(ax.bbox)</span></code>, because it is everytime the same. The third line obtains the data point list as a matplotlib object. This list can be later updated with new data for the animation. Finally, we close the figure with <code class="docutils literal notranslate"><span class="pre">plt.close()</span></code> to prevent extra drawing below the cell.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[8]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[51]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">20e-9</span><span class="p">,</span><span class="mi">1000</span><span class="p">)</span>
@@ -821,7 +825,7 @@ plt.close()
 </div>
 <p>The animation is then done by a for loop through time calculating the new wavefunction data and supplying it to the <code class="docutils literal notranslate"><span class="pre">points</span></code> object as new data. In detail it looks this way.</p>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[53]:
 </pre></div>
 </div>
 <div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mf">5e-15</span><span class="p">,</span><span class="mi">100</span><span class="p">):</span>
@@ -841,16 +845,8 @@ plt.close()
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>
-</pre></div>
-</div>
-</div>
 <script type="application/vnd.jupyter.widget-state+json">
-{"state": {"7b31c20a95d54cfaa7ea32bf303397b8": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}, "9a16b40aa2c145b68085e4f13de4698e": {"model_module": "ipycanvas", "model_module_version": "^0.10.2", "model_name": "CanvasModel", "state": {"_model_module_version": "^0.10.2", "_view_module_version": "^0.10.2", "height": 200, "layout": "IPY_MODEL_7b31c20a95d54cfaa7ea32bf303397b8", "width": 800}}}, "version_major": 2, "version_minor": 0}
+{"state": {"785f9409e0f84253a0d8752a535b4707": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}, "7b31c20a95d54cfaa7ea32bf303397b8": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}, "8cc64d4d037544a1ae4d98b222b624e6": {"model_module": "@jupyter-widgets/base", "model_module_version": "1.2.0", "model_name": "LayoutModel", "state": {}}, "900628548e0446b88d62b9053f3245ee": {"model_module": "ipycanvas", "model_module_version": "^0.10.2", "model_name": "CanvasModel", "state": {"_model_module_version": "^0.10.2", "_view_module_version": "^0.10.2", "height": 200, "layout": "IPY_MODEL_8cc64d4d037544a1ae4d98b222b624e6", "width": 800}}, "9a16b40aa2c145b68085e4f13de4698e": {"model_module": "ipycanvas", "model_module_version": "^0.10.2", "model_name": "CanvasModel", "state": {"_model_module_version": "^0.10.2", "_view_module_version": "^0.10.2", "height": 200, "layout": "IPY_MODEL_7b31c20a95d54cfaa7ea32bf303397b8", "width": 800}}, "e480c2df3f95456e9418bd7920c316f3": {"model_module": "ipycanvas", "model_module_version": "^0.10.2", "model_name": "CanvasModel", "state": {"_model_module_version": "^0.10.2", "_view_module_version": "^0.10.2", "height": 200, "layout": "IPY_MODEL_785f9409e0f84253a0d8752a535b4707", "width": 800}}}, "version_major": 2, "version_minor": 0}
 </script></section>
 </section>
 
@@ -883,7 +879,7 @@ plt.close()
 
         <div class="related-information">
               Copyright &#169; 2022, Frank Cichos |
-            Last updated on Jun 21, 2022. |
+            Last updated on Jun 26, 2022. |
             Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
               and
               <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
