@@ -176,6 +176,7 @@ We will not present a comprehensive list of numerical simulation schemes, but us
    :caption: Lecture 12:
 
    lectures/L12/overview_12.rst
+   notebooks/Pluto/lecture.jl.html
 
    
 Indices and tables
