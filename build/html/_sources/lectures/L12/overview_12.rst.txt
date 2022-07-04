@@ -10,7 +10,7 @@ I hope you stay motivated! Stay safe!
 
 
 
-    `Pluto Notebook for the Lecture <./notebooks/pluto/lecture.jl.html>`_
+    `Pluto Notebook for the Lecture <./pluto/lecture.jl.html>`_
 
 
 
