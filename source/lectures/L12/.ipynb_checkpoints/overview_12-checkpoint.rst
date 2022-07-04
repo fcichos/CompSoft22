@@ -8,3 +8,9 @@ I'm very glad that two students will be presenting this system to you. So thank 
 
 I hope you stay motivated! Stay safe!
 
+
+
+    `Pluto Notebook for the Lecture <./notebooks/pluto/lecture.jl.html>`_
+
+
+
