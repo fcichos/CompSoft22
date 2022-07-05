@@ -32,3 +32,50 @@ The deadline for handing in the project is **3. September 2022**
 The projects and videos shall be handed in via the `Molecular Nanophotonics Website <https://home.uni-leipzig.de/~physik/sites/mona/teaching/periodic-lectures/introduction-to-computer-based-physical-modeling-ss-2021/>`_
 
 
+Since many of you asked for some guiding topics abnd I as well hope that you do not submit a simulation of planetary motion, here are some topics, though some of them might be for the advanced physicist.
+
+
+Mechanics
+=========
+- planetary motion (of course)
+- the Brachistochrone, first find out what it is, and then simulate it
+- N-coupled pendula and mechanical waves
+- elastic/inelastic collisions 
+- spinning top
+
+
+Thermodynamics/Statistical Physics
+==================================
+- ideal gas law from microscopic particle motions and wall collisions
+- Maxwell deamon, find out what it is and simulate
+- entropy from microstates
+- Carnot cycle 
+- Vicsek model, find out what it is and simulate
+
+
+Optics
+======
+- Caustics: ray tracing through spherical surfaces with paraxial approximation
+- Caustics: ray tracing through spherical surfaces without paraxial approximation
+- imaging errors, aberations 
+- ray tracing of a prism with wavelength dependent refractive index
+- light propagation though and optical fiber
+
+
+Electrodynamics
+===============
+- thin film interference
+- electromagnetic wave propagation through thin films (Fresnel coefficients)
+- double slit experiment with light 
+- grating diffraction, grating resolution
+- scattering of an electron on a Coulomb potential (classical)
+- array of freely rotating magnets
+
+Quantum Mechanics
+=================
+- wave packet in a periodic potential
+- scattering of an electron on a coulomb potential (quantum mechanical)
+
+
+
+

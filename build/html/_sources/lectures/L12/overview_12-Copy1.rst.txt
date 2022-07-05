@@ -6,7 +6,8 @@ In Lecture 13 we want close our considerations of different physical problems wi
 1. Hydrodynamics
 2. Reinforcement Learning
 
-I hope you stay motivated! Stay safe!
+
+
 
 .. raw:: html
 
