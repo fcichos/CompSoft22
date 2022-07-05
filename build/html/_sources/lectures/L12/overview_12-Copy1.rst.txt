@@ -1,7 +1,7 @@
 Lecture Contents
 ================
 
-In Lecture 12 we want close our considerations of different physical problems with a bit of hydrodynamics. We will do only simple things in this field, which introduce you to streamplots a bit. We will also start a new topic, which is Machine Learning. Since we can not cover a lot of ground there, we will restrict ourselves at some simpler algorithms like Reinforcement Learning this time and Neural Nets in the next lectures. 
+In Lecture 13 we want close our considerations of different physical problems with a bit of hydrodynamics. We will do only simple things in this field, which introduce you to streamplots a bit. We will also start a new topic, which is Machine Learning. Since we can not cover a lot of ground there, we will restrict ourselves at some simpler algorithms like Reinforcement Learning this time and Neural Nets in the next lectures. 
 
 1. Hydrodynamics
 2. Reinforcement Learning
